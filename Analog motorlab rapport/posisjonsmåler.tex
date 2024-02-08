@@ -1,0 +1,16 @@
+\section{Posisjonsmåler}\label{sec:pos_måler}
+Dersom du vil legge inn matematikk, kan du bruke equation-miljøet, som under. Her har vi et uttrykk for en
+PI-regulator
+\begin{equation}
+    u(t) = K_p (x(t)-x_r(t)) + K_i\int_{\tau=t_0}^t (x(\tau)-x_r(\tau))d\tau,
+    \label{eq:PI_regulator}
+\end{equation}
+hvor $u$ er pådraget, $x$ er tilstanden vi regulerer, $t$ er tiden, $x_r$ er referansen, og $K_p$ og $K_i$ er regulatorkonstanter. Det er en fordel å la likninger være en del av teksten (som over), ettersom dette typisk gjør rapporten mer lettlest. Merk også at vi bruker tegnsetting på samme måte som i vanlige setninger. Altså,
+hvis likningen er slutten på en setning, så skal det være et punktum på slutten. Over har jeg brukt komma, ettersom jeg fortsatte setningen etter likningen. Det er også viktig å gjøre rede for hva likningen viser,
+og forklare symbolbruken i likningen, som gjort over.
+
+Dersom vi ønsker å skrive matematiske uttrykk (eller bare variabler) i løpende tekst (utenfor likning),
+kan vi gjøre det med å skrive \$uttrykk\$.
+
+Referanser til likninger skal gjøres med parantes rundt likningsnummeret. Dette ordnes automatisk dersom dere
+bruker kommandoen \texttt{\textbackslash eqref}.

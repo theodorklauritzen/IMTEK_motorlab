@@ -1,0 +1,29 @@
+\def\x{4}
+\def\y{4}
+% Size of the bridge
+\def\dx{1.5}
+\def\dy{1.5}
+\begin{circuitikz}[american voltages]
+  \node at (\x+2*\dx,\y) {} ;
+  % Voltage source
+  \draw (0,0) to [V, l_=$V$,invert]
+  (0, \y) to (\x, \y)
+  % Left half bridge
+  to [R, l_=$R_1$, -] (\x-\dx,\y-\dy) % Top left resistor
+  to [R, l_=$R_2$, -] (\x,\y-2*\dy);  % Bottom left resistor
+  % Right half bridge
+  \draw (\x,\y)
+  to [R, l_=$R_3$, -] (\x+\dx, \y-\dy) % Top right resistor
+  to [R, l_=$R_T$, -] (\x,\y-2*\dy)  % Bottom left resistor
+  % Draw connection to (-) terminal of voltage source
+  to (\x, 0) to (0,0);
+
+  % Draw amplifer
+  \draw (\x-\dx, \y-\dy) to (\x-1.2*\dx, \y-\dy)
+  %\draw (\x-1.5\dx, \y-\dy) 
+  to (\x-1.2*\dx, \y-1)
+  to[crossing] (\x-1.2*\dx, \y+1) to [short,-*](\x+2*\dx,\y+1);
+  \draw (\x+\dx, \y-\dy) to (\x+1.2*\dx, \y-\dy)
+  to (\x+1.2*\dx, \y-1)
+  to [short,-*](\x+2*\dx,\y-1);
+\end{circuitikz}

@@ -1,0 +1,35 @@
+\section{Posisjonsregulator}\label{sec:posisjonsregulator}
+Dersom dere ønsker å tegne kretsskjema med Tikz, finner dere et eksempel i filen
+\texttt{kretsskjema.tex} under \texttt{figurer}. Resultatet kan dere se i 
+Figur \ref{fig:kretsskjema}. Det er ikke nødvendig å bruke tikz for å tegne kretsskjema, dere kan også bruke andre (mer brukervennlige) programmer. Pass på at 
+det er lett å lese kretsskjemaet når dere har satt det inn i rapporten deres!
+
+\begin{figure}[t]
+    \centering
+    \input{figurer/kretsskjema.tex}
+    \caption{Eksempel på kretsskjema fra Eksamen i TTK4101 2021.}
+    \label{fig:kretsskjema}
+\end{figure}
+
+Dersom dere eksporterer plots som eps, bruker vi kommandoen \texttt{includegraphics}
+for å tegne figuren, som vist i kildekoden. Resultatet er vist i Figur 
+\ref{fig:eps_eksempel}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.4\textwidth]{figurer/eksempel_plott.eps}
+\caption{Eksempel på plott med eps-fil. Merk at fontstørrelsen er mindre enn i
+resten av dokumentet, ettersom den er styrt av figurstørrelsen når vi laget plottet.}
+\label{fig:eps_eksempel}
+\end{figure}
+
+Dersom dere eksporterer figurene deres som tikz, bruker vi kommandoen \texttt{\\input}
+for å vise figuren. Resultatet er vist i Figur \ref{fig:tikz_eksempel}.
+\setlength{\figW}{0.4\textwidth}
+\setlength{\figH}{0.35\textwidth}
+\begin{figure}[t]
+\centering
+\input{figurer/eksempel_plott.tex}
+\caption{Eksempel på plott med tikz-kode. Merk at fontstørrelsen er lik resten av dokumentet, ettersom den er styrt av Latex-kompilatoren.}
+\label{fig:tikz_eksempel}
+\end{figure}

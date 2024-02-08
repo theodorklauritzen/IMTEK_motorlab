@@ -1,0 +1,37 @@
+\section{Hastighetsregulator}\label{sec:hastighetsreg}
+\subsection{Tabeller}
+Under finner dere kildekoden til Tabell \ref{tab:eksempeltabell}
+
+
+\begin{table}[tb]
+	\centering
+	\caption{Et eksempel på en tabell med regulatorparametre. Merk både at tabellteksten plasseres over tabellen, og at vi vanligvis ikke bruker loddrette linjer.}
+	\begin{tabular}{ll} 
+	    % ll står for to venstrejusterte kolonner. For høyrejustering kan dere bruke r i stedet. Disse kan selvsagt blandes etter behov. Vi skiller kolonner med &, og avslutter linjer med \\, som dere ser under.
+		\toprule
+		Variabel & Verdi \\
+		\midrule
+        $K_p$ & $10.0$ \\
+        $K_i$ & $2.0$\\
+		\bottomrule
+	\end{tabular}
+\label{tab:eksempeltabell}
+\end{table}
+
+\subsection{Sitering og referansehåndtering}
+I akademisk skriving er det veldig viktig å sitere kilder. I latex har vi et verktøy kalt BiBTeX som 
+håndterer dette. Kilden legges til i en .bib-fil, i vårt tilfelle \texttt{bibliography.bib}. Der kan dere
+se hvordan kilder legges inn. For å sitere kilden kan du bruke kommandoen \texttt{\textbackslash{cite}}.
+Merk at kilder som ikke siteres, ikke vil dukke opp i kildelisten! Dette betyr at dere i bibliografi-filen kan
+legge inn alle kilder dere \emph{tror} dere kommer til å bruke, men de vil ikke dukke opp i kildelisten før du
+faktisk siterer dem!
+
+Det finnes mange forskjellige siteringsstiler, og dere kan modifisere mye. Hvis dere vil vite mer om dette
+kan dere finne informasjon her \cite{BiberBibtexEtc,WikibookLatex}\footnote{Prøv å begrense sitering av 
+nettsider så mye som mulig, og bruk eventuelt \url{http://web.archive.org} hvis dere er bekymret for at en 
+referanse kan endre seg i fremtiden.}.
+
+Det finnes mange verktøy for å håndtere referanser. 
+De fleste av dere vil nok ikke trenge dem i dette faget, men vi legger ved informasjon, så dere vet om dem 
+senere. Noen populære referanseverktøy er JabRef (\url{http://www.jabref.org/}), Mendeley (\url{https://www.mendeley.com/}), EndNote, og Zotero. Alle disse kan eksportere .bib-filer (JabRef lagrer alle
+data i en .bib-fil).

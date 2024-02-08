@@ -1,0 +1,43 @@
+\documentclass[11pt, a4paper, twocolumn, norsk]{article} % change ``USenglish'' to ``norsk'' if applicable.
+
+\usepackage{kyblab} % Contains all included packages. See kyblab.sty.
+\addbibresource{bibliography.bib} % Makes the bibliography file available to biblatex.
+\newlength{\figH}
+\newlength{\figW}
+\begin{document}
+
+% Titlepage
+\title{LaTeX Rapportmal}
+\author{Gruppe T00\\
+        Navn 1, Navn 2}
+\date{\today}
+
+%\begin{titlepage}
+%    \maketitle
+%    \begin{figure}[b]
+%    \centering
+%    \includegraphics[width=0.5\textwidth]{figurer/itk_ntnu}\\
+%    Institutt for teknisk kybernetikk
+%    \end{figure}
+%    \thispagestyle{empty}
+%\end{titlepage}
+
+% Main content
+\maketitle
+\input{abstract}
+\input{intro}
+\input{hastighetsmåler}
+\input{hastighetsregulator}
+\input{posisjonsmåler}
+\input{posisjonsregulator}
+\input{konklusjon}
+% \input simply inserts the contents of the file, while \include forces a \newpage.
+% See \input vs. \include: http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
+
+% References
+%\newpage
+%\addcontentsline{toc}{section}{Kilder}
+\printbibliography{}
+\label{sec:bibliography}
+
+\end{document}
