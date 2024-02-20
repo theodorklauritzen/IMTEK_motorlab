@@ -3,5 +3,6 @@ Plan for dag 5:
 - Sprangrespons til Hastighetsregulator
 - Sprangresponsen til Posisjonsregulator
 - Poisjon med referanse på frekvens
+- Bilde uten prober og med bedre lys
 
 - Bodeplot
