@@ -1,8 +1,12 @@
 Plan for dag 5:
 
-- Sprangrespons til Hastighetsregulator
-- Sprangresponsen til Posisjonsregulator
-- Poisjon med referanse på frekvens
-- Bilde uten prober og med bedre lys
+[X] Sprangrespons til Hastighetsregulator
+[X] Sprangresponsen til Posisjonsregulator
+[X] Poisjon med referanse på frekvens
+[X] Bilde uten prober og med bedre lys
 
 - Bodeplot
+
+HUSK etter DAG 5
+
+Vi må skrive om slark i hjulet
