@@ -4,7 +4,7 @@ A repository for a project in IMTEK
 # Plan for utførelse av rapporten
 
 - [ ] Pakke ut zip filene
-- [ ] Se over lysarkene for rapportskrivekruset til Øyvind
+- [X] Se over lysarkene for rapportskrivekruset til Øyvind
 - [ ] Finne ut hvordan vi koder kresene så de blir fine
 - [ ] Se over vurderingskriteriene (Ikke ute per dato 29.2)
 - [ ] Lære Latex
@@ -36,7 +36,7 @@ A repository for a project in IMTEK
         - De viktigste resultatene
     
 
-# Husk
+# Krav til utforming
 
 - Bruk temasetninger i begynnelsen av hvert avsnitt
 
@@ -69,4 +69,13 @@ A repository for a project in IMTEK
 - Tabellnummer
 - Tabelltekst
     - Over tabellen
-- 
+- Måleenheter
+- Design
+    - Ingen vertikale linjer
+    - Kun horisontale linjer over og under overskirften. Eventuelt også under selve tabellen.
+
+## Likninger
+- En liking er en del av teksten
+- Skal ha lkningsnummer
+    - **Unntak**: Mellomregninger som ikke refereres til i brødteksten
+- Alle symboler skal forklares
