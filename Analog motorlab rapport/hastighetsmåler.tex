@@ -6,12 +6,31 @@ Husk å referere til alle figurer i teksten. Dersom dere ikke referer til en
 figur i teksten indikerer det enten at figuren ikke er relevant til det dere
 har skrevet (fjern figuren), eller at teksten deres ikke er komplett (skriv om).
 Hver figur har et nummer som dere kan referere til. Dette kan \LaTeX gjøre for dere
-på følgende måte. Hver figur har en \texttt{label}. Denne etiketten kan dere
+på følgende måte. 
+\begin{figure} [h]
+    \centering
+    \input {figurer/Instrumenteringsforsterker}
+    \caption{Intrumenteringsforsterker}
+    \label{fig:instrumenteringsforsterker}
+\end{figure}
+
+\begin{figure} [h]
+    \input {figurer/Differensialforsterker.tex}
+    \caption{Differensiell operasjonsforsterer}
+    \label{fig:differensialforsterker}
+\end{figure}
+
+
+
+Hver figur har en \texttt{label}. Denne etiketten kan dere
 referere til ved å bruke kommandoen \texttt{ref} (Det samme gjelder også for tabeller).
 Figurer (og tabeller) vil generelt ikke dukke opp der du har plassert den i teksten.
 Dette er helt greit, og gir typisk en penere rapport enn om man tvinger figurer til å dukke opp på et bestemt sted. I kildekoden for figurer vil dere se at det finnes et
 valgfritt argument \verb+[htb]+. Dette lar dere spesifisere hvor figuren bør plasseres. Her står \verb+h+ for her, \verb+t+ står for toppen av siden, og \verb+b+
 står for bunnen av siden. Generelt blir det penere med figurer og tabeller som legges på toppen eller bunnen av en side. Det finnes også en mulighet \verb+p+ for å legge figuren på en side sammen med andre figurer og tabeller. (Dere kan legge inn flere valg, i prioritert rekkefølge). Merk at figuren ikke alltid blir plassert slik du har bedt om. Dette er fordi LaTeX optimaliserer hvordan alt plasseres. Det finnes muligheter for å tvinge plassering, men dette er sterkt frarådet ettersom det ofte fører til rar layout et eller annet sted.
+
+
+
 
 \begin{figure}[b]
 	\centering

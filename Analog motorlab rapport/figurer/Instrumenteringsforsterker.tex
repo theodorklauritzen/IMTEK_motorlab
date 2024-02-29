@@ -1,0 +1,64 @@
+\begin{circuitikz} [scale=0.6, transform shape]
+\ctikzset{resistor = european}
+
+\node [op amp] (OP)
+
+\draw (OP.-)
+    -- ++(-2,0)
+    to[short,o-,l=$V_1$] ++(0,0)
+
+\draw (OP.+)
+    -- ++(-1,0)
+    -- ++(0,-1)
+    coordinate(o1)
+    to[short,*-] (o1)
+    to[R,l_=$R_1$] (o1 -| OP.out)
+    -- (OP.out)
+    to[short,*-] ++(0.5,0)
+    -- ++(0,-1)
+    to[R,l=$R_2$] ++(2,0)
+    coordinate(x2)
+    to[short,*-] (x2)
+    -- ++(0,-1)
+    -- ++(1,0)
+    node[op amp, anchor=-](OP2)
+
+\draw (x2)
+    to[R,l=$R_3$] (x2 -| OP2.out)
+    -- (OP2.out)
+    to[short,*-] ++(1,0)
+    to[short,o-,l_=$v_o_u_t$] ++(0,0)
+
+\draw (o1)
+    -- ++(-0.5,0)
+    to[R,l_=$R_G$] ++(0,-2)
+    -- ++(0.5,0)
+    coordinate(o2)
+    to[short,*-] (o2)
+    -- ++(0,-1)
+    -- ++(1,0)
+    node[op amp, anchor=-](OP3)
+    
+\draw (OP3.+)
+    -- ++(-2,0)
+    to[short,o-,l=$V_2$] ++(0,0)
+
+\draw (o2)
+    to[R,l=$R_1$] (o2 -| OP3.out)
+    -- (OP3.out)
+    to[short,*-] ++(0.5,0)
+    coordinate(temp2)
+    -- (OP2.+ -| temp2)
+    to[R,l=$R_2$] ++(2,0)
+    coordinate(x3)
+    to[short,*-] (OP2.+)
+    (x3)
+    -- ++(0,-0.5)
+    to[R,l=$R_3$] ++(0,-2)
+    node[ground] ++(0,0)
+    
+    
+    
+    
+
+\end{circuitikz}
