@@ -1,0 +1,22 @@
+\begin{circuitikz}
+    \ctikzset{resistor = european}
+    \node[op amp](OP1) {$OP1$};
+    
+    \draw (OP1.-)
+    to[R=$R_1$] ++(-2, 0)
+    to[short, *-, l=$\omega_m$] ++(0, 0);
+
+    \draw (OP1.+)
+    to[R=$R_1$] ++(-2, 0)
+    to[short, *-, l=$\omega_d$] ++(0, 0);
+
+    \draw (OP1.+)
+    to[R=$R_2$, *-] ++(0, -2)
+    node[ground] {};
+
+    \draw (OP1.-)
+    -- ++(0, 1, *-)
+    to[R=$R_2$] ++(2.4, 0)
+    -- (OP1.out)
+    
+\end{circuitikz}
