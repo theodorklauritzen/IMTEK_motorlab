@@ -1,5 +1,5 @@
 \section{Hastighetsmåler}
-\subsection{INTRODUSER nødvendig teori}
+\subsection{Teori}
 Håntering og justering av differensielle signaler
 
 Hastighetsregulator for å få motoren til å følge en ønsket hastighet
@@ -13,7 +13,7 @@ takling av høy og lav utgangsimpedans
 
 
 
-\subsection{Beskriv implementasjon}
+\subsection{Metode}
 Måling av motorhastighet ble implementert gjennom bruken av to forskjellige differensielle forsterkere, en 
 
 hvordan hver av de brukes
@@ -23,52 +23,59 @@ Forsterkning og resistorverdier
 Referere til figurer i tekst
 
 
+\begin{figure} [h]
+    \input {figurer/Differensialforsterker.tex}
+    \caption{Differensiell operasjonsforsterer HUSK Å REFERERE!!!!!!!}
+    \label{fig:differensialforsterker}
+\end{figure}
+
+
+\begin{table}[h]
+	\centering
+    \caption{Motstander i differensiellforsterkeren}
+	\begin{tabular}{lll}
+		\toprule
+		Størrelse & Verdi & Type \\
+		\midrule
+        $R_1$ & $10\,k\Omega$& Resistor \\
+        $R_2$ & $56\,k\Omega$ & Resistor\\
+		\bottomrule
+	\end{tabular}
+\label{tab:eksempeltabell}
+\end{table}
+
 
 \begin{figure} [h]
     \centering
     \input {figurer/Instrumenteringsforsterker}
-    \caption{Intrumenteringsforsterker HUSK Å REFERERE TIL KILDE}
+    \caption{Intrumenteringsforsterker HUSK Å REFERERE TIL KILDE!!!!!!!!!}
     \label{fig:instrumenteringsforsterker}
 \end{figure}
 
 \begin{table}[h]
 	\centering
-	\begin{tabular}{lll} 
-	    % ll står for to venstrejusterte kolonner. For høyrejustering kan dere bruke r i stedet. Disse kan selvsagt blandes etter behov. Vi skiller kolonner med &, og avslutter linjer med \\, som dere ser under.
+    \caption{Motstander i Instrumenteringsforsterkeren}
+	\begin{tabular}{lll}
 		\toprule
 		Størrelse & Verdi & Type \\
 		\midrule
-        $R_1$ & $10k\Omega$ & $4$ \\
-        $R_2$ & $2.0$ & $3$\\
-        
-        
+        $R_1, R_3$ & $10\,k\Omega$& Resistor \\
+        $R_2$ & $18\,k\Omega$ & Resistor\\
+        $R_G$ & $10\,k\Omega$ & Potmeter\\
 		\bottomrule
 	\end{tabular}
-    \caption{En tabell}
+    
 \label{tab:eksempeltabell}
 \end{table}
 
-
-
-
-
-
-
-\begin{figure} [h]
-    \input {figurer/Differensialforsterker.tex}
-    \caption{Differensiell operasjonsforsterer HUSK Å REFERERE}
-    \label{fig:differensialforsterker}
-\end{figure}
-
-
-\subsection{Presenter resultater}
+\subsection{Resultater}
 Vise til grafer
 
 \textbf{insert graf her}
 
 
 
-\subsection{Diskuter resultater}
+\subsection{Diskusjon}
 
 Forventet resultat
 

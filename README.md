@@ -52,7 +52,7 @@ A repository for a project in IMTEK
 
 ## Måleenheter
 
-- Bruk denne kommandoen for half space: `sdw`
+- Bruk denne kommandoen for half space: `\,`
 
 ## Metode
 - Ingen teori
