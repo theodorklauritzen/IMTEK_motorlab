@@ -22,18 +22,22 @@ A repository for a project in IMTEK
         - Hvordan vil motoren oppføre seg med de to regulatorene dersom vi påfører ytterligere belastning på motoren, for eksempel ved å bremse den med en finger?
         - Hva er ”jobben” til proporsjonal- og integraldelen? Altså, hvilken funksjon har de to i et reguleringssystem?
 - [ ] Hastisghetsmåler (Dag 1) *@AnhoRhino*
+    - Nødvendig teori
     - [Metode](#metode)
     - [Resultater](#resultater)
     - [Diskusjon](#diskusjon)
 - [ ] Hastighetsregulator (Dag 2) *@theodorklauritzen*
+    - Nødvendig teori
     - [Metode](#metode)
     - [Resultater](#resultater)
     - [Diskusjon](#diskusjon)
 - [ ] Posisjonsmåler (Dag 2)
+    - Nødvendig teori
     - [Metode](#metode)
     - [Resultater](#resultater)
     - [Diskusjon](#diskusjon)
 - [ ] Posisjonsregulator (Dag 3)
+    - Nødvendig teori
     - [Metode](#metode)
     - [Resultater](#resultater)
     - [Diskusjon](#diskusjon)

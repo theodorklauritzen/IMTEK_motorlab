@@ -1,22 +1,107 @@
-\begin{circuitikz}
+\begin{circuitikz} [scale=0.5, transform shape]
     \ctikzset{resistor = european}
+
+    % --- OP1 ---
     \node[op amp](OP1) {$OP1$};
     
     \draw (OP1.-)
     to[R=$R_1$] ++(-2, 0)
-    to[short, *-, l=$\omega_m$] ++(0, 0);
+    to[short, o-, l=$\omega_m$] ++(0, 0);
 
     \draw (OP1.+)
     to[R=$R_1$] ++(-2, 0)
-    to[short, *-, l=$\omega_d$] ++(0, 0);
+    to[short, o-, l=$\omega_d$] ++(0, 0);
 
     \draw (OP1.+)
     to[R=$R_2$, *-] ++(0, -2)
     node[ground] {};
 
     \draw (OP1.-)
-    -- ++(0, 1, *-)
-    to[R=$R_2$] ++(2.4, 0)
-    -- (OP1.out)
+    to[short, *-] ++(0, 1)
+    coordinate(t1)
+    to[R=$R_2$] (t1 -| OP1.out)
+    -- (OP1.out);
+
+    % --- OP2 ---
+
+    \draw (OP1.out)
+    to[short, *-] ++(0.5, 0)
+    to[R=$R_3$] ++(2, 0)
+    node[op amp, anchor=-](OP2) {$OP2$};
+
+    \draw (OP2.-)
+    to[short, *-] ++(0, 1)
+    coordinate(t2)
+    to[R=$R_4$] (t2 -| OP2.out)
+    -- (OP2.out);
+
+    \draw (OP2.+)
+    node[ground] {};
+
+    \draw (OP2.out)
+    to[short, *-] ++(0, 0)
+    to[R=$R7$] ++(0, -2)
+    coordinate(t7);
+
+    % --- OP3 ---
+
+    \draw (OP1.out)
+    -- ++(0, -2)
+    to[potentiometer, n=R5, l=$R_5$] ++(0, -2)
+    coordinate(t3);
+
+    \draw (R5.wiper)
+    -- (R5.wiper |- t3)
+    -- (t3);
+
+    \draw (t3)
+    to[short, *-] ++(0, -1)
+    to[R=$R_6$] ++(2, 0)
+    node[op amp, anchor=-](OP3) {$OP3$};
+
+    \draw (OP3.+)
+    node[ground] {};
+    
+    \draw (OP3.-)
+    to[short, *-] ++(0, 1)
+    coordinate(t4)
+    to[C=$C_1$] (t4 -| OP3.out)
+    coordinate(t5)
+    -- (OP3.out);
+
+    \draw (t4)
+    to[short, *-] ++(0, 1.3)
+    coordinate(t6)
+    to[open jumper, l=$JP1$] (t6 -| t5)
+    to[short, -*] (t5);
+
+    \draw (OP3.out)
+    to[short, *-] (OP3.out -| OP2.out)
+    to[R, l_=$R7$] ++(0, 2)
+    coordinate (t8)
+    to[short, *-*] (t7);
+
+    % --- OP4 ---
+
+    \draw (t8)
+    -- ++(1.5, 0)
+    node[op amp, anchor=-](OP4) {$OP4$};
+
+    \draw (OP4.+)
+    node[ground] {};
+
+    \draw (t7)
+    to[R=$R8$] ++(2, 0)
+    coordinate(t9)
+    to[potentiometer, n=R9, l=$R9$] (t9 -| OP4.out)
+    coordinate(t10)
+    -- (OP4.out);
+
+    \draw (R9.wiper)
+    -- (R9.wiper -| t10)
+    to[short, -*] (t10);
+
+    \draw (OP4.out)
+    to[short, *-o, l=$V_m$] ++(1, 0);
     
 \end{circuitikz}
