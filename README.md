@@ -8,7 +8,7 @@ A repository for a project in IMTEK
 - [ ] Finne ut hvordan vi koder kretsene så de blir fine
 - [ ] Se over vurderingskriteriene (Ikke ute per dato 29.2)
 - [ ] Lære Latex
-- [ ] Se over oppgavet arket for å se om vi har glemt noe
+- [ ] Se over oppgavearket for å se om vi har glemt noe
 
 # Outline
 

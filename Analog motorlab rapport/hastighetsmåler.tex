@@ -1,15 +1,37 @@
+
+%[] fikse referanser
+%[] sette inn likninger
+
+
+
 \section{Hastighetsmåler}
 \subsection{Teori}
-Håntering og justering av differensielle signaler
+Differensialforsterkeren\,\ref{fig:differensialforsterker} er er operasjonsforsterkerkrets som forsterker opp forskjellen på de to signalene/spenningene som blir satt inn på kretsen. En differensialforsterker av typen i \texttt{figur}\,\ref{fig:differensialforsterker} vil med en ideell operasjonsforsterker kunne utrykkes ved transferfunksjonen\cite{Johnson}:
+\begin{equation}
+    V_{out} = \frac{R_2}{R_1}(V_2-V_1)
+    \label{eq:differensialforsterker}
+\end{equation}
 
-Hastighetsregulator for å få motoren til å følge en ønsket hastighet
+En Instrumenteringsforsterker som vist i \texttt{figur}\,\ref{fig:instrumenteringsforsterker} er en mer komplisert versjon av en differensialforsterker, men som har noen viktige fordeler, hver av inngangene i instrumenteringsforsterkeren blir blant annet buffret slik at inngangsimpedansen til kretsen blir høy. Dette fungerer fordi det målte signalet blir sendt rett inn i portene på opampene der inngangsimpedansen er høy, og signalet har ingen andre veier å gå sånn som det har i differensialforsterkeren. Forsterkningen i kretsen kan også endres ved å endre på $R_G$. Instrumenteringsforsterkeren i \texttt{figur}\,\ref{fig:instrumenteringsforsterker} kan dersom man antar en ideell operasjonsforsterker uttrykkes ved transferfunksjonen:
+\begin{equation}
+    V_{out} = (1+\frac{2R_1}{R_G})(\frac{R_3}{R_2})(V_2-V_1)
+    \label{eq:instrumenteringsforsterker}
+\end{equation}
 
-To typer differensialforsterkere
 
-takling av høy og lav utgangsimpedans
+\begin{figure} [h]
+    \input {figurer/Differensialforsterker.tex}
+    \caption{Differensiell operasjonsforsterer. Figur hentet fra \cite{Johnson}}
+    \label{fig:differensialforsterker}
+\end{figure}
 
 
-
+\begin{figure} [h]
+    \centering
+    \input {figurer/Instrumenteringsforsterker}
+    \caption{Intrumenteringsforsterker. Figur hentet fra \cite{Johnson}}
+    \label{fig:instrumenteringsforsterker}
+\end{figure}
 
 
 
@@ -22,12 +44,6 @@ Forsterkning og resistorverdier
 
 Referere til figurer i tekst
 
-
-\begin{figure} [h]
-    \input {figurer/Differensialforsterker.tex}
-    \caption{Differensiell operasjonsforsterer HUSK Å REFERERE!!!!!!!}
-    \label{fig:differensialforsterker}
-\end{figure}
 
 
 \begin{table}[h]
@@ -44,13 +60,6 @@ Referere til figurer i tekst
 \label{tab:eksempeltabell}
 \end{table}
 
-
-\begin{figure} [h]
-    \centering
-    \input {figurer/Instrumenteringsforsterker}
-    \caption{Intrumenteringsforsterker HUSK Å REFERERE TIL KILDE!!!!!!!!!}
-    \label{fig:instrumenteringsforsterker}
-\end{figure}
 
 \begin{table}[h]
 	\centering
@@ -86,31 +95,30 @@ Som vi ser i \texttt{Figur} \ref{fig:differensialforsterker}
 
 ------------------------------------------
 
+% For hver del bør dere gå gjennom hva dere skal gjøre, hvordan dere gjør det, resultatene dere fikk,
+% og diskusjon av disse. 
 
-For hver del bør dere gå gjennom hva dere skal gjøre, hvordan dere gjør det, resultatene dere fikk,
-og diskusjon av disse. 
-
-Husk å referere til alle figurer i teksten. Dersom dere ikke referer til en 
-figur i teksten indikerer det enten at figuren ikke er relevant til det dere
-har skrevet (fjern figuren), eller at teksten deres ikke er komplett (skriv om).
-Hver figur har et nummer som dere kan referere til. Dette kan \LaTeX gjøre for dere
-på følgende måte. 
-
-
-
-Hver figur har en \texttt{label}. Denne etiketten kan dere
-referere til ved å bruke kommandoen \texttt{ref} (Det samme gjelder også for tabeller).
-Figurer (og tabeller) vil generelt ikke dukke opp der du har plassert den i teksten.
-Dette er helt greit, og gir typisk en penere rapport enn om man tvinger figurer til å dukke opp på et bestemt sted. I kildekoden for figurer vil dere se at det finnes et
-valgfritt argument \verb+[htb]+. Dette lar dere spesifisere hvor figuren bør plasseres. Her står \verb+h+ for her, \verb+t+ står for toppen av siden, og \verb+b+
-står for bunnen av siden. Generelt blir det penere med figurer og tabeller som legges på toppen eller bunnen av en side. Det finnes også en mulighet \verb+p+ for å legge figuren på en side sammen med andre figurer og tabeller. (Dere kan legge inn flere valg, i prioritert rekkefølge). Merk at figuren ikke alltid blir plassert slik du har bedt om. Dette er fordi LaTeX optimaliserer hvordan alt plasseres. Det finnes muligheter for å tvinge plassering, men dette er sterkt frarådet ettersom det ofte fører til rar layout et eller annet sted.
+% Husk å referere til alle figurer i teksten. Dersom dere ikke referer til en 
+% figur i teksten indikerer det enten at figuren ikke er relevant til det dere
+% har skrevet (fjern figuren), eller at teksten deres ikke er komplett (skriv om).
+% Hver figur har et nummer som dere kan referere til. Dette kan \LaTeX gjøre for dere
+% på følgende måte. 
 
 
 
+% Hver figur har en \texttt{label}. Denne etiketten kan dere
+% referere til ved å bruke kommandoen \texttt{ref} (Det samme gjelder også for tabeller).
+% Figurer (og tabeller) vil generelt ikke dukke opp der du har plassert den i teksten.
+% Dette er helt greit, og gir typisk en penere rapport enn om man tvinger figurer til å dukke opp på et bestemt sted. I kildekoden for figurer vil dere se at det finnes et
+% valgfritt argument \verb+[htb]+. Dette lar dere spesifisere hvor figuren bør plasseres. Her står \verb+h+ for her, \verb+t+ står for toppen av siden, og \verb+b+
+% står for bunnen av siden. Generelt blir det penere med figurer og tabeller som legges på toppen eller bunnen av en side. Det finnes også en mulighet \verb+p+ for å legge figuren på en side sammen med andre figurer og tabeller. (Dere kan legge inn flere valg, i prioritert rekkefølge). Merk at figuren ikke alltid blir plassert slik du har bedt om. Dette er fordi LaTeX optimaliserer hvordan alt plasseres. Det finnes muligheter for å tvinge plassering, men dette er sterkt frarådet ettersom det ofte fører til rar layout et eller annet sted.
 
-\begin{figure}[b]
-	\centering
-	\includegraphics[width=0.40\textwidth]{figurer/itk_ntnu.jpg}
-	\caption{En figur med logoen til ITK.}
-\label{fig:layers_openloop}
-\end{figure}
+
+
+
+% \begin{figure}[b]
+% 	\centering
+% 	\includegraphics[width=0.40\textwidth]{figurer/itk_ntnu.jpg}
+% 	\caption{En figur med logoen til ITK.}
+% \label{fig:layers_openloop}
+% \end{figure}

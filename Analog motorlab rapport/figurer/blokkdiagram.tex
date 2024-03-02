@@ -1,0 +1,49 @@
+
+\tikzstyle{block} = [draw,fill=white,rectangle,]
+\tikzstyle{sum} = [draw, fill=white, circle, radius=1mm, node distance=1.5cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+
+
+
+\begin{tikzpicture}[auto, node distance=2cm, on grid,scale = 0.7,transform shape]
+
+\node[input] (input) {};
+\node[input, above = of input] (input1) {};
+\node [sum, right = of input] (sum) {};
+\node [block, right = of sum] (controller) {$K(s)$};
+\node [sum, right = of controller] (sum1) {};
+\node [block, right = of sum1] (filterinv) {$H^{-1}(s)$};
+\node [block, right = 2.5cm of filterinv] (system) {$G(s)$};
+\node [output, right = of system] (output) {};
+\node [output, above = of output] (output1) {};
+\node [block, above = of controller] (delay) {$D(s)$};
+\node [sum, below = of sum1] (sum2) {};
+\node [block] (filter) at (sum2-|filterinv) {$H(s)$};
+
+\draw [draw,->] (input) node[above right] {$s_{i-1}$} -- (sum);
+\draw [->] (sum) -- node {$e_{i}$} (controller);
+\draw [->] (controller) -- node {} (sum1);
+\draw [->] (sum1) -- node[name=xi] {$\xi_{i}$} (filterinv);
+\draw [->] (filterinv) -- node[name=u, pos=.3] {$u_{i}$} (system);
+\draw [->] (system) -- (output) node [name=q, above left] {$q_{i}$};
+
+\draw [->] ([xshift=-5mm]q.south) |- (filter);
+\draw [->] (filter) -- node {} (sum2);
+\draw [draw,<-] (sum2) -- ++(90:.6cm) node[above]{$L_i+r_i$};
+
+\draw [->] (sum2) -| node[pos=0.99, right] {$-$} 
+    node [pos=.25, above] {$\tilde{s}_i$} (sum);
+
+\draw [draw,->] (input1) node[above right] (ui-1) {$u_{i-1}$} -- (delay);
+\draw [->] (delay) -| node[] {} 
+    node [near end] {} (sum1);
+
+\draw [->] (u.east|-system) |-  
+    (output1) node[above left] (ui) {$u_i$};
+
+%\node[text=red, above left= 5mm and 6mm of ui.west] (veh) {vehicle $i$};
+%\draw[red, dashed] (veh.east)-|(ui.west)|-([yshift=-3mm]filter.south)-|(ui-1.east)|-(veh.west);
+
+\end{tikzpicture}
