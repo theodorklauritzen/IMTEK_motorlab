@@ -5,21 +5,27 @@ A repository for a project in IMTEK
 
 - [ ] Pakke ut zip filene
 - [X] Se over lysarkene for rapportskrivekruset til Øyvind
-- [ ] Finne ut hvordan vi koder kresene så de blir fine
+- [ ] Finne ut hvordan vi koder kretsene så de blir fine
 - [ ] Se over vurderingskriteriene (Ikke ute per dato 29.2)
 - [ ] Lære Latex
+- [ ] Se over oppgavet arket for å se om vi har glemt noe
 
 # Outline
 
 - [ ] Sammendrag
     - Hovedfokus på det vi har gjort og resultater
 - [ ] Introduksjon
-    - Nødvendig teori (mtp. målgruppen tror jeg ikke dette er vedlig nødvendig)
+    - Nødvendig teori
+    - Deler som bør være med
+        - P- og PI-regulatorer
+    - Spesifikke spørsmål i oppgaven
+        - Hvordan vil motoren oppføre seg med de to regulatorene dersom vi påfører ytterligere belastning på motoren, for eksempel ved å bremse den med en finger?
+        - Hva er ”jobben” til proporsjonal- og integraldelen? Altså, hvilken funksjon har de to i et reguleringssystem?
 - [ ] Hastisghetsmåler (Dag 1) *@AnhoRhino*
     - [Metode](#metode)
     - [Resultater](#resultater)
     - [Diskusjon](#diskusjon)
-- [ ] Hastighetsregulator (Dag 2) *@theodorklauritzen
+- [ ] Hastighetsregulator (Dag 2) *@theodorklauritzen*
     - [Metode](#metode)
     - [Resultater](#resultater)
     - [Diskusjon](#diskusjon)
