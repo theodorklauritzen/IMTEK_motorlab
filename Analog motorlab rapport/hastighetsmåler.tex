@@ -6,13 +6,15 @@ Hastighetsregulator for å få motoren til å følge en ønsket hastighet
 
 To typer differensialforsterkere
 
+takling av høy og lav utgangsimpedans
+
 
 
 
 
 
 \subsection{Beskriv implementasjon}
-Tegning av begge kretsene
+Måling av motorhastighet ble implementert gjennom bruken av to forskjellige differensielle forsterkere, en 
 
 hvordan hver av de brukes
 
@@ -28,6 +30,29 @@ Referere til figurer i tekst
     \caption{Intrumenteringsforsterker HUSK Å REFERERE TIL KILDE}
     \label{fig:instrumenteringsforsterker}
 \end{figure}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lll} 
+	    % ll står for to venstrejusterte kolonner. For høyrejustering kan dere bruke r i stedet. Disse kan selvsagt blandes etter behov. Vi skiller kolonner med &, og avslutter linjer med \\, som dere ser under.
+		\toprule
+		Størrelse & Verdi & Type \\
+		\midrule
+        $R_1$ & $10k\Omega$ & $4$ \\
+        $R_2$ & $2.0$ & $3$\\
+        
+        
+		\bottomrule
+	\end{tabular}
+    \caption{En tabell}
+\label{tab:eksempeltabell}
+\end{table}
+
+
+
+
+
+
 
 \begin{figure} [h]
     \input {figurer/Differensialforsterker.tex}

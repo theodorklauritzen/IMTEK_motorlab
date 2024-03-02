@@ -50,6 +50,10 @@ A repository for a project in IMTEK
 
 - Bruk temasetninger i begynnelsen av hvert avsnitt
 
+## Måleenheter
+
+- Bruk denne kommandoen for half space: `sdw`
+
 ## Metode
 - Ingen teori
 - Presenter hva vi har gjort og hvordan vi har gjort det
