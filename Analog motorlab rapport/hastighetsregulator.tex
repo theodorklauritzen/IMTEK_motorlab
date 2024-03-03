@@ -7,7 +7,26 @@
     \label{fig:krets_hastighets_regulator}
 \end{figure}
 
+\subsection{Teori}
+
+Regulatorer brukes for å styre tilstander i en prosess. En regulator regulator får inn et avvik mellom referansen og den målte tilstanden. Regulatorer bruker avviket til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proposjonalt med avviket, $e$. $K_p$ er proposjonalitetsleddet i regulatoren, sammenhengen er vist i uttrykk \ref{eq:P_regulator}.
+
+\begin{equation}
+    \label{eq:P_regulator}
+    u(t) = K_p e
+\end{equation}
+
+En slik regulator er effektiv så lenge det ikke er en kraft som er proposjonal med tilstanden. I et slikt tilfelle vil ikke regulatoren regulere tilstanden til referanseverdien og det til oppstå et stasjonærtavvik. Et integratorledd vil forhindre dette.
+
+\begin{equation}
+    \label{eq:PI_regulator}
+    u(t) = K_p e + \fraq{K_p}{T_i}
+\end{equation}
+
+
 Under er ting fra Øyvind, dette må fjernes senere
+
+------------------------
 
 \subsection{Tabeller}
 Under finner dere kildekoden til Tabell \ref{tab:eksempeltabell}
