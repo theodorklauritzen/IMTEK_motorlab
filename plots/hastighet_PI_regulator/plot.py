@@ -4,19 +4,19 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # For et syyykt irriterende bibliotek, det har ikke blitt oppdatert på to år, så og er bugs som har vært kjent i halvannet år her som er mega irriterende
-from tikzplotlib import save as save_tikz
+#from tikzplotlib import save as save_tikz
 
 # Smerke og lidelse, jeg hater ulike python miljøer
-plt.rcParams.update({
-   "text.usetex": True,
-   "font.family": "sans-serif",
-   "font.sans-serif": ["Helvetica"]})
+#plt.rcParams.update({
+#   "text.usetex": True,
+#   "font.family": "sans-serif",
+#   "font.sans-serif": ["Helvetica"]})
 
 # Her kan dere legge inn flere filer om dere trenger det
 measurementFile = "Hastighet_PI_maaling.csv"
 referenceFile = "Hastighet_PI_referanse.csv"
 
-dataSlice = slice(26_500, 30_000, 5)
+dataSlice = slice(44_500, 48_000, 5)
 
 measData = pd.read_csv(measurementFile)
 refData= pd.read_csv(referenceFile)
@@ -39,7 +39,7 @@ ax.set_xlabel("$t$ [ms]")
 ax.set_ylabel("$V$ [V]")
 
 # Bruk denne for å få en vining som ikke er i latex, må kommenteres ut når vi skal eksportere latex
-#plt.show()
+plt.show()
 
 # Denne linjen lagrer til Latex
-save_tikz('out.tex') #Merk: denne funker ikke om dere bruker plt.show() i scriptet
+#save_tikz('out.tex') #Merk: denne funker ikke om dere bruker plt.show() i scriptet
