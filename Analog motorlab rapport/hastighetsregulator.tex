@@ -27,7 +27,7 @@ der $u$ er pådraget, $K_p$ er proposjonalitetskontanten, $e$ er avviket mellom 
     \label{fig:krets_hastighets_regulator}
 \end{figure}
 
-Hastighetsregulatoren ble implementer som en analog PI-regulator som vist i \autoref{fig:krets_hastighets_regulator}. $OP1$ er en differensialforsterker som finner avviket, $e$, transferfunksjonen er gitt ved \autoref{eq:differensialforsterker}.
+Hastighetsregulatoren ble implementert som en analog PI-regulator som vist i \autoref{fig:krets_hastighets_regulator}. $OP1$ er en differensialforsterker som finner avviket, $e$, transferfunksjonen er gitt ved \autoref{eq:differensialforsterker}.
 $OP2$ er en inverterende forsterker som inverterer avviket, uten forsterkning eller demping.
 $OP3$ er en integrerende forsterker som integrerer $e$ og forsterker den med $\frac{1}{T_i}$. $JP1$ brukes for å nullstille integratoren og skru av I-leddet i integratoren. Transferfunksjonen til $OP3$ er $-\frac{1}{(R_5 + R_6) C_1} \int e dt$.
 $OP4$ summerer spenningen fra $OP2$ og $OP3$ og forsterker resultatet med $K_p$. Transferfunksjonen for $OP4$ er $-\frac{R_8 + R_9}{R_7}(v_2 + v_3)$, der $v_2$ er spenningen ut av $OP2$ og $v_3$ er spenningen ut av $OP3$. Ut fra dette finner vi uttrykk for $K_p$ og $T_i$ som vist i \autoref{eq:K_p_og_T_i}.

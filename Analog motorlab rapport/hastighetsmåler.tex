@@ -6,13 +6,13 @@
 
 \section{Hastighetsmåler}
 \subsection{Teori}
-Differensialforsterkeren\,\ref{fig:differensialforsterker} er er operasjonsforsterkerkrets som forsterker opp forskjellen på de to signalene/spenningene som blir satt inn på kretsen. En differensialforsterker av typen i \texttt{figur}\,\ref{fig:differensialforsterker} vil med en ideell operasjonsforsterker kunne utrykkes ved transferfunksjonen\cite{Johnson}:
+Differensialforsterkeren i \autoref{fig:differensialforsterker} er er operasjonsforsterkerkrets som forsterker opp forskjellen på de to signalene/spenningene som blir satt inn på kretsen. En differensialforsterker av typen i \autoref{fig:differensialforsterker} vil med en ideell operasjonsforsterker kunne utrykkes ved transferfunksjonen\cite{Johnson}:
 \begin{equation}
     V_{out} = \frac{R_2}{R_1}(V_2-V_1)
     \label{eq:differensialforsterker}
 \end{equation}
 
-En Instrumenteringsforsterker som vist i \texttt{figur}\,\ref{fig:instrumenteringsforsterker} er en mer komplisert versjon av en differensialforsterker, men som har noen viktige fordeler, hver av inngangene i instrumenteringsforsterkeren blir blant annet buffret slik at inngangsimpedansen til kretsen blir høy. Dette fungerer fordi det målte signalet blir sendt rett inn i portene på opampene der inngangsimpedansen er høy, og signalet har ingen andre veier å gå sånn som det har i differensialforsterkeren. Forsterkningen i kretsen kan også endres ved å endre på $R_G$. Instrumenteringsforsterkeren i \texttt{figur}\,\ref{fig:instrumenteringsforsterker} kan dersom man antar en ideell operasjonsforsterker uttrykkes ved transferfunksjonen:
+En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker} er en mer komplisert versjon av en differensialforsterker, men som har noen viktige fordeler, hver av inngangene i instrumenteringsforsterkeren blir blant annet buffret slik at inngangsimpedansen til kretsen blir høy. Dette fungerer fordi det målte signalet blir sendt rett inn i portene på opampene der inngangsimpedansen er høy, og signalet har ingen andre veier å gå sånn som det har i differensialforsterkeren. Forsterkningen i kretsen kan også endres ved å endre på $R_G$. Instrumenteringsforsterkeren i \autoref{fig:instrumenteringsforsterker} kan dersom man antar en ideell operasjonsforsterker uttrykkes ved transferfunksjonen:
 \begin{equation}
     V_{out} = (1+\frac{2R_1}{R_G})(\frac{R_3}{R_2})(V_2-V_1)
     \label{eq:instrumenteringsforsterker}
@@ -36,6 +36,15 @@ En Instrumenteringsforsterker som vist i \texttt{figur}\,\ref{fig:instrumenterin
 
 
 \subsection{Metode}
+
+For å måle hastigheten, var et tachometer montert på den ene enden av motoren. Dette tachometeret ga ut hastigheten til motoren i form av en differensiell spenning i intervallet $\pm1.79\,V$. For å oppnå ønsket spenningsnivå i $\omega_m$ på $\pm10\,V$ ble en differensiellforsterker (\autoref{fig:differensialforsterker}) og en instrumenteringsforsterker (\autoref{fig:instrumenteringsforsterker}) implementert på studentkortet.
+Hensikten med å implementere både differensiellforsterkeren og instrumenteringsforsterkeren var å sammenlikne de to spesielt med tanke på variasjon i utgangsimpedanse fra tachometeret.
+
+
+
+
+-----------------------------
+
 Måling av motorhastighet ble implementert gjennom bruken av to forskjellige differensielle forsterkere, en 
 
 hvordan hver av de brukes
@@ -80,7 +89,7 @@ Referere til figurer i tekst
 \subsection{Resultater}
 Vise til grafer
 
-\textbf{insert graf her}
+\textbf{insert grafer her}
 
 
 
@@ -90,7 +99,7 @@ Forventet resultat
 
 Eventuelt hva annet vi forventet
 
-Som vi ser i \texttt{Figur} \ref{fig:differensialforsterker}
+Som vi ser i  \autoref{fig:differensialforsterker}
 
 
 ------------------------------------------
