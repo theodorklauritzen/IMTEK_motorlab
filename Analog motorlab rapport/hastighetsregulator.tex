@@ -1,5 +1,6 @@
 \section{Hastighetsregulator}\label{sec:hastighetsreg}
 
+
 \subsection{Teori}
 
 Regulatorer brukes for å styre tilstander i en prosess. En regulator regulator får inn et avvik mellom referansen og den målte tilstanden. Regulatorer bruker avviket til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proposjonalt med avviket, $e = \omega_d - \omega_m$. $K_p$ er proposjonalitetsleddet i regulatoren, sammenhengen er vist i \autoref{eq:P_regulator}.
@@ -9,7 +10,7 @@ Regulatorer brukes for å styre tilstander i en prosess. En regulator regulator 
     u(t) = K_p e(t)
 \end{equation}
 
-En slik regulator er effektiv så lenge det ikke er en kraft som forhindrer systemet å oppnå en spesifikk tilstand. I et slikt tilfelle vil ikke regulatoren regulere tilstanden til referanseverdien og det til oppstå et stasjonærtavvik. Et integratorledd vil forhindre stasjonærtavvik ved å gi et pådrag som er likt den kraften som forhindrer at systemet når referanse tilstanden. \autoref{eq:PI_regulator} beskriver en PI-regulator,
+En slik regulator er effektiv så lenge det ikke er en kraft som forhindrer systemet å oppnå en spesifikk tilstand. Da vil ikke regulatoren regulere tilstanden helt til referanseverdien og det oppstår et stasjonærtavvik. Friksjon og luftmotstand er krefter som vil motvirke at et system oppnår en hasighet større enn $0$. Et integratorledd vil motvirke slike krefter, ved å gi et pådrag lik som disse kreftene. Da vil tilstanden nå referansetilstanden og det stasjonæreavviket forsvinner. \autoref{eq:PI_regulator} beskriver en PI-regulator,
 
 \begin{equation}
     \label{eq:PI_regulator}
@@ -70,6 +71,13 @@ Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_
 
 \begin{figure}[h!]
     \centering
+    \input{figurer/plots/hastighet_P_regulator_derivert}
+    \caption{Derivert sprangrespons til P-regulator. Dataen har blitt lavpass filtrert. Responsen har ikke en tilhørende y-akse. Data er hentet fra \cite{EksempelData}}
+    \label{fig:hastighet_P_regulator_derivert}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
     \input{figurer/plots/hastighet_PI_regulator}
     \caption{Sprangresponsen til PI-hastighetsregulatoren. Data er hentet fra \cite{EksempelData}}
     \label{fig:hastighet_PI_regulator}
@@ -78,6 +86,13 @@ Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_
 \subsection{Diskusjon}
 
 I \autoref{fig:hastighet_P_regulator} er det et tydelig stasjonæravvik, mellom responen til regulatoren og referanseverdien. Det er flere årsaker til at stasjonværavviket oppstå, blant annet friksjon i motoren, giret, og potmeteret. Dersom motoren bremses, vil det stasjonæreavviket øke, til tross for at pådraget også vil øke.
-Til tross for at det er et stasjonæravvik er det ikke så stort. Dette kommer antageligvis av at $K_p$ er et stort tall. Dersom vi ser på 
 
-PI-regulatoren oppnår stasjonærverdi, som vist i \autoref{fig:hastighet_PI_regulator}. Legg merke til
+Til tross for at det er et stasjonæravvik er det ikke så stort. Dette kommer antageligvis av at $K_p$ er stor. Siden $K_p$ er stor kan dette føre til at pådraget til regulatoren går i metning. Dette vil føre til at vi får slew-rate i regulatoren. Dette kommer fram i \autoref{fig:hastighet_P_regulator_derivert}. I intervallet $[80, 100]\,ms$ er akselerasjonen til motoren konstant, altså er endringen til hastigheten begrenset.
+
+PI-regulatoren oppnår stasjonærverdi, som vist i \autoref{fig:hastighet_PI_regulator}. Etter omtrent $150\,ms$ er det er oversving, som viser at systemet er underdempet.
+
+
+\todo[inline]{
+Skal vi sammenlikne motoren uten en regulator, kun et pådrag?
+}
+% Sammenlign hvor følsom motorhastigheten er for ekstra belastning n˚ar vi bruker regulatorenkontra å styre motoren direkte slik dere gjorde i forrige uke

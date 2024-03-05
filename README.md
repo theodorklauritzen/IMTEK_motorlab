@@ -5,9 +5,9 @@ A repository for a project in IMTEK
 
 - [ ] Pakke ut zip filene
 - [X] Se over lysarkene for rapportskrivekruset til Øyvind
-- [ ] Finne ut hvordan vi koder kretsene så de blir fine
-- [ ] Se over vurderingskriteriene (Ikke ute per dato 29.2)
-- [ ] Lære Latex
+- [X] Finne ut hvordan vi koder kretsene så de blir fine
+- [ ] Se over vurderingskriteriene
+- [X] Lære Latex
 - [ ] Se over oppgavearket for å se om vi har glemt noe
 
 # Outline
