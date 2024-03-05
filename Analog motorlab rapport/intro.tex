@@ -1,10 +1,10 @@
 \section{Introduksjon}\label{sec:intro}
 
-Analog motorlab hadde som mål å konstruere et sett med kretser for å måle og kontrollere en servomotor. Labratoriearbeidet var delt inn i 4 forskjellige delsystemer som vist i \autoref{fig:blokkdiagram}
+Analog motorlab hadde som mål å konstruere et sett med kretser for å måle og kontrollere en servomotor. Disse kretsene var delt inn i 4 forskjellige delsystemer, hastighetsmåler, hastighetsregulator, posisjonsmåler og posisjonsregulator, som vist i \autoref{fig:blokkdiagram}. Denne rapporten vil gå gjennom teori, metode, resultater og diskusjon for hver av delsystemene.
 
-Utlevert til labratoriearbeidet var et motorkort og et studentkort, Motoren med tachometeret og potensiometeret var koblet på et ferdig montert motorkort som ga tilgang til informasjon om motorens hastighet $\omega$ og posisjon $\theta$. Studenkortet besto av 13 operasjonsforsterkerer av typen LM741\cite{LM741} og et sett med headerpinner for å koble til motorkortet med.
+Utlevert til labratoriearbeidet var et motorkort og et studentkort, Motoren med tachometeret og potensiometeret var koblet på et ferdig montert motorkort som ga tilgang til informasjon om motorens hastighet $\omega$ og posisjon $\theta$. Studenkortet besto av 13 operasjonsforsterkerer av typen LM741\cite{LM741} og et sett med pin headere for å koble til motorkortet med. Motorens hastighet kunne justeres ved å endre spenningen $V_m$ på en en av pin headerene. Det ble først laget et system for å måle og regulere hastighet før det ble laget et tilsvarende system men for å måle og regulere posisjonenen til motoren.
 
-Denne rapporten vil gå gjennom teori, metode, resultater og diskusjon for hver av delsystemene.
+
 
 
 \begin{figure}[b]
