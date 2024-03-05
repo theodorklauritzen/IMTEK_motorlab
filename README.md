@@ -53,6 +53,8 @@ A repository for a project in IMTEK
 ## Måleenheter
 
 - Bruk denne kommandoen for half space: `\,`
+- Husk at måleenheter ikke skal være i kursiv
+- Bruk SIunits biblioteket
 
 ## Metode
 - Ingen teori
