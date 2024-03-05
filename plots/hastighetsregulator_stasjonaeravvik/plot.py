@@ -31,13 +31,16 @@ time = time*1000 # Setter tidsakse til ms
 fig,a = plt.subplots(1,1)
 # Vi hopper 100 punkter om gangen her for å spare regnekraft når vi tegner plottet. Denne må tilpasses til hvor tett data er samplet
 a.plot(time[::100],signal[::100])
+a.set_title("Tittel")
 a.set_xlabel("$t$ [ms]")
 a.set_ylabel("$V$ [V]")
+
+plt.show()
 
 # Lagre data i et egnet format, her ligger eksempler for både tikz og eps
 # Dersom du bruker Tikz, må du bruke pakkene pgfplots og tikz i latex-dokumentet ditt
 # Enkel lagring
-save_tikz('out.tex') #Merk: denne funker ikke om dere bruker plt.show() i scriptet
+#save_tikz('out.tex') #Merk: denne funker ikke om dere bruker plt.show() i scriptet
 # Mer avansert, her legger vi inn symboler for å styre figurstørrelsen som vi kan styre
 # direkte i latex
 #save_tikz('filsti.../filNavn.tex',axis_height='\\figH',axis_width='\\figW') #Merk: denne funker ikke om dere bruker plt.show() i scriptet
