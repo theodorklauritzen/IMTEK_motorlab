@@ -16,7 +16,7 @@ plt.rcParams.update({
 measurementFile = "Hastighet_PI_maaling.csv"
 referenceFile = "Hastighet_PI_referanse.csv"
 
-dataSlice = slice(25_000, 30_000, 1)
+dataSlice = slice(26_500, 30_000, 5)
 
 measData = pd.read_csv(measurementFile)
 refData= pd.read_csv(referenceFile)
