@@ -4,11 +4,13 @@ A repository for a project in IMTEK
 # Plan for utførelse av rapporten
 
 - [ ] Pakke ut zip filene
+    - De er pakket ut, men må sorteres. Dessuten har vi ikek noe referanse, som gjør mange av dem ubrukelige.
 - [X] Se over lysarkene for rapportskrivekruset til Øyvind
 - [X] Finne ut hvordan vi koder kretsene så de blir fine
 - [ ] Se over vurderingskriteriene
 - [X] Lære Latex
 - [ ] Se over oppgavearket for å se om vi har glemt noe
+- [ ] Husk å se over alle målenheter, dette må samkjøres
 
 # Outline
 
@@ -31,7 +33,7 @@ A repository for a project in IMTEK
     - [Metode](#metode)
     - [Resultater](#resultater)
     - [Diskusjon](#diskusjon)
-- [ ] Posisjonsmåler (Dag 2)
+- [ ] Posisjonsmåler (Dag 2) *@theodorklauritzen*
     - Nødvendig teori
     - [Metode](#metode)
     - [Resultater](#resultater)
