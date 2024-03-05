@@ -1,9 +1,3 @@
-
-%[] fikse referanser
-%[] sette inn likninger
-
-
-
 \section{Hastighetsmåler}
 \subsection{Teori}
 Differensialforsterkeren i \autoref{fig:differensialforsterker} er er operasjonsforsterkerkrets som forsterker opp forskjellen på de to signalene/spenningene som blir satt inn på kretsen. En differensialforsterker av typen i \autoref{fig:differensialforsterker} vil med en ideell operasjonsforsterker kunne utrykkes ved transferfunksjonen\cite{Johnson}:
@@ -12,7 +6,7 @@ Differensialforsterkeren i \autoref{fig:differensialforsterker} er er operasjons
     \label{eq:differensialforsterker}
 \end{equation}
 
-En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker} er en mer komplisert versjon av en differensialforsterker, men som har noen viktige fordeler, hver av inngangene i instrumenteringsforsterkeren går rett inn i en operasjonsforsterker slik at inngangsimpedansen holdes høy, dette gjør essensiellt at signalet blir buffret før det sendes inn i differensiellforsterkeren bestående av $R_1$, $R_2$ og $OP3$. Forsterkningen i kretsen kan også endres ved å endre på $R_G$. Instrumenteringsforsterkeren i \autoref{fig:instrumenteringsforsterker} kan dersom man antar en ideell operasjonsforsterker uttrykkes ved transferfunksjonen:
+En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker} er en mer komplisert versjon av en differensialforsterker, men som har noen viktige fordeler, hver av inngangene i instrumenteringsforsterkeren går rett inn i en operasjonsforsterker slik at inngangsimpedansen holdes høy, dette gjør essensiellt at signalet blir buffret før det sendes inn i differensialforsterkeren bestående av $R_1$, $R_2$ og $OP3$. Forsterkningen i kretsen kan også endres ved å endre på $R_G$. Instrumenteringsforsterkeren i \autoref{fig:instrumenteringsforsterker} kan dersom man antar en ideell operasjonsforsterker uttrykkes ved transferfunksjonen:
 \begin{equation}
     V_{out} = (1+\frac{2R_1}{R_G})(\frac{R_3}{R_2})(V_2-V_1)
     \label{eq:instrumenteringsforsterker}
@@ -37,21 +31,18 @@ En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker
 
 \subsection{Metode}
 
-For å måle hastigheten, var et tachometer montert på den ene enden av motoren. Dette tachometeret ga ut hastigheten til motoren i form av en differensiell spenning i intervallet $\pm1.79\,V$. For å oppnå ønsket spenningsnivå i $\omega_m$ på $\pm10\,V$ ble en differensiellforsterker (\autoref{fig:differensialforsterker}) og en instrumenteringsforsterker (\autoref{fig:instrumenteringsforsterker}) implementert på studentkortet.
-Hensikten med å implementere både differensiellforsterkeren og instrumenteringsforsterkeren var å sammenlikne de to spesielt med tanke på variasjon i utgangsimpedanse fra tachometeret.
+For å måle hastigheten, var et tachometer montert på den ene enden av motoren. Dette tachometeret ga ut hastigheten til motoren i form av en differensiell spenning i intervallet $\pm1.79\,V$. For å oppnå ønsket spenningsnivå i $\omega_m$ på $\pm10\,V$ ble en differensialforsterker (\autoref{fig:differensialforsterker}) og en instrumenteringsforsterker (\autoref{fig:instrumenteringsforsterker}) implementert på studentkortet.
+Hensikten med å implementere både differensialforsterkeren og instrumenteringsforsterkeren var å sammenlikne de to spesielt med tanke respons til variasjon i utgangsimpedanse fra tachometeret.
+To jumpere ble plassert på tachometerets to utganger $V_{11}$ og $V_{12}$ for å raskt kunne bytte mellom de to forsterkerkretsene. I differensialforsterkeren brukes resistorer med vedier for $R_1$ og $R_2$ gitt i \autoref{tab:differensiellforsterker}, og forsterkningen er gitt ved $\frac{R_2}{R_1} = \frac{56k\Omega}{10k\Omega}$(\autoref{eq:differensialforsterker}).
+
+Jabbe videre om instrumenteringsforsterkern.
+Motstander og forsterkning.
+snakke om $R_g$ 0ohm = 15V.
+Beregnet verdi av $R_g$.
+Stillte $R_g$ til ønsket $\pm$ 10V.
+Testet med høy og lav utgangsimpedans på tachometeret for å se foskjell.
 
 
-
-
------------------------------
-
-Måling av motorhastighet ble implementert gjennom bruken av to forskjellige differensielle forsterkere, en 
-
-hvordan hver av de brukes
-
-Forsterkning og resistorverdier
-
-Referere til figurer i tekst
 
 
 
@@ -66,7 +57,7 @@ Referere til figurer i tekst
         $R_2$ & $56\,k\Omega$ & Resistor\\
 		\bottomrule
 	\end{tabular}
-\label{tab:eksempeltabell}
+\label{tab:differensiellforsterker}
 \end{table}
 
 
