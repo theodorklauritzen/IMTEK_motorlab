@@ -12,7 +12,7 @@ Differensialforsterkeren i \autoref{fig:differensialforsterker} er er operasjons
     \label{eq:differensialforsterker}
 \end{equation}
 
-En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker} er en mer komplisert versjon av en differensialforsterker, men som har noen viktige fordeler, hver av inngangene i instrumenteringsforsterkeren blir blant annet buffret slik at inngangsimpedansen til kretsen blir høy. Dette fungerer fordi det målte signalet blir sendt rett inn i portene på opampene der inngangsimpedansen er høy, og signalet har ingen andre veier å gå sånn som det har i differensialforsterkeren. Forsterkningen i kretsen kan også endres ved å endre på $R_G$. Instrumenteringsforsterkeren i \autoref{fig:instrumenteringsforsterker} kan dersom man antar en ideell operasjonsforsterker uttrykkes ved transferfunksjonen:
+En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker} er en mer komplisert versjon av en differensialforsterker, men som har noen viktige fordeler, hver av inngangene i instrumenteringsforsterkeren går rett inn i en operasjonsforsterker slik at inngangsimpedansen holdes høy, dette gjør essensiellt at signalet blir buffret før det sendes inn i differensiellforsterkeren bestående av $R_1$, $R_2$ og $OP3$. Forsterkningen i kretsen kan også endres ved å endre på $R_G$. Instrumenteringsforsterkeren i \autoref{fig:instrumenteringsforsterker} kan dersom man antar en ideell operasjonsforsterker uttrykkes ved transferfunksjonen:
 \begin{equation}
     V_{out} = (1+\frac{2R_1}{R_G})(\frac{R_3}{R_2})(V_2-V_1)
     \label{eq:instrumenteringsforsterker}

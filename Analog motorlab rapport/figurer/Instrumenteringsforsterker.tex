@@ -1,7 +1,7 @@
 \begin{circuitikz} [scale=0.6, transform shape]
 \ctikzset{resistor = european}
 
-\node [op amp] (OP){};
+\node [op amp] (OP){$OP1$};
 
 \draw (OP.-)
     -- ++(-2,0)
@@ -20,7 +20,7 @@
     to[short,*-] (x2)
     -- ++(0,-1)
     -- ++(1,0)
-    node[op amp, anchor=-](OP2){};
+    node[op amp, anchor=-](OP2){$OP3$};
 
 \draw (x2)
     to[R,l=$R_3$] (x2 -| OP2.out)
@@ -36,7 +36,7 @@
     to[short,*-] (o2)
     -- ++(0,-1)
     -- ++(1,0)
-    node[op amp, anchor=-](OP3){};
+    node[op amp, anchor=-](OP3){$OP2$};
     
 \draw (OP3.+)
     -- ++(-2,0)

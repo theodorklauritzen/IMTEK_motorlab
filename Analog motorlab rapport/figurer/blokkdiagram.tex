@@ -1,19 +1,19 @@
 
-\tikzstyle{block} = [draw,fill=white,rectangle,minimum height = 1.5cm, minimum width = 3cm, text width = 2.5cm]
+\tikzstyle{block} = [draw,fill=white,rectangle,minimum height = 1.5cm, minimum width = 3cm, text width = 2cm]
 \tikzstyle{sum} = [draw, fill=white, circle, radius=2mm, node distance=5cm]
 \tikzstyle{input} = [coordinate]
 \tikzstyle{output} = [coordinate]
 
 
 
-\begin{tikzpicture}[auto, node distance=3cm, on grid,scale = 0.4,transform shape]
+\begin{tikzpicture}[auto, node distance=3cm, on grid,scale = 0.45,transform shape]
 
 \node[input](input){$\theta_d$};
 \node[sum,right = of input, xshift=-4cm](sum1){+};
 \node[block, right = of sum1](posreg) {Posisjons- regulator};
 \node[sum, right = of posreg,xshift=-2cm](sum2) {+};
 \node[block, right = of sum2](hastreg){Hastighets- regulator};
-\node[block, right = of hastreg,xshift=1cm](motor){Motor, gir og overføring};
+\node[block, right = of hastreg,xshift=1cm, text width=2.5cm](motor){Motor, gir og overføring};
 \node[block, below = of motor, yshift=1cm](hastsens){Hastighets- sensor};
 \node[block, below = of hastsens, yshift=1cm](possens){Posisjons- sensor};
 
