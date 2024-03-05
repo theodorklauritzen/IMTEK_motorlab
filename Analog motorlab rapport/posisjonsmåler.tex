@@ -1,16 +1,32 @@
-\section{Posisjonsmåler}\label{sec:pos_måler}
-Dersom du vil legge inn matematikk, kan du bruke equation-miljøet, som under. Her har vi et uttrykk for en
-PI-regulator
-\begin{equation}
-    u(t) = K_p (x(t)-x_r(t)) + K_i\int_{\tau=t_0}^t (x(\tau)-x_r(\tau))d\tau,
-    \label{eq:PI_regulator_OLD}
-\end{equation}
-hvor $u$ er pådraget, $x$ er tilstanden vi regulerer, $t$ er tiden, $x_r$ er referansen, og $K_p$ og $K_i$ er regulatorkonstanter. Det er en fordel å la likninger være en del av teksten (som over), ettersom dette typisk gjør rapporten mer lettlest. Merk også at vi bruker tegnsetting på samme måte som i vanlige setninger. Altså,
-hvis likningen er slutten på en setning, så skal det være et punktum på slutten. Over har jeg brukt komma, ettersom jeg fortsatte setningen etter likningen. Det er også viktig å gjøre rede for hva likningen viser,
-og forklare symbolbruken i likningen, som gjort over.
+\section{Posisjonsmåler}
+\label{sec:pos_måler}
 
-Dersom vi ønsker å skrive matematiske uttrykk (eller bare variabler) i løpende tekst (utenfor likning),
-kan vi gjøre det med å skrive \$uttrykk\$.
+\subsection{Teori}
 
-Referanser til likninger skal gjøres med parantes rundt likningsnummeret. Dette ordnes automatisk dersom dere
-bruker kommandoen \texttt{\textbackslash eqref}.
+\subsection{Metode}
+
+\begin{figure}[h]
+    \centering
+    \input{figurer/krets_posisjons_maler}
+    \caption{Krets for å omforme spenningen fra posisjonsmåleren til et $1\,V$ til $5\,V$ signal. Figur hentet fra \cite{AnalogMotorlabbOppgaver}}
+    \label{fig:krets_posisjons_maler}
+\end{figure}
+
+\begin{table}[h]
+    \centering
+    \caption{Motstander og kondensatorer i posisjonomformer. Verdiene er hentet fra \cite{AnalogMotorlabbOppgaver}}
+    \begin{tabular}{lll}
+        \toprule
+        Størrelse & Verdi & Type \\
+		\midrule
+        $R_1$ & 1\,\kilo\ohm & Resistor\\
+        $R_2$ & $6,8\,k\Omega$ & Resistor \\
+        $R_3$ & $100\,k\Omega$ & Potmeter \\
+        $R_4$ & $10\,k\Omega$ & Potmeter \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:Komponenter_i_posisjonsmaler}
+\end{table}
+
+\subsection{Resultater}
+\subsection{Diskusjon}

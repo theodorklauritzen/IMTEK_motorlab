@@ -97,3 +97,6 @@ A repository for a project in IMTEK
 - Skal ha lkningsnummer
     - **Unntak**: Mellomregninger som ikke refereres til i brødteksten
 - Alle symboler skal forklares
+- Tegnsetting på samme måte som i vanlige setninger.
+    - Altså, hvis likningen er slutten på en setning, så skal det være et punktum på slutten.
+- Referer til likninger med ´\\eqref´

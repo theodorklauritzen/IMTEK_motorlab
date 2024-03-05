@@ -3,18 +3,18 @@
 
 \subsection{Teori}
 
-Regulatorer brukes for å styre tilstander i en prosess. En regulator regulator får inn et avvik mellom referansen og den målte tilstanden. Regulatorer bruker avviket til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proposjonalt med avviket, $e = \omega_d - \omega_m$. $K_p$ er proposjonalitetsleddet i regulatoren, sammenhengen er vist i \autoref{eq:P_regulator}.
+Regulatorer brukes for å styre tilstander i en prosess. En regulator regulator får inn et avvik mellom referansen og den målte tilstanden. Regulatorer bruker avviket til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proposjonalt med avviket, $e = \omega_d - \omega_m$. $K_p$ er proposjonalitetsleddet i regulatoren, sammenhengen er vist i likning \eqref{eq:P_regulator}.
 
 \begin{equation}
     \label{eq:P_regulator}
     u(t) = K_p e(t)
 \end{equation}
 
-En slik regulator er effektiv så lenge det ikke er en kraft som forhindrer systemet å oppnå en spesifikk tilstand. Da vil ikke regulatoren regulere tilstanden helt til referanseverdien og det oppstår et stasjonærtavvik. Friksjon og luftmotstand er krefter som vil motvirke at et system oppnår en hasighet større enn $0$. Et integratorledd vil motvirke slike krefter, ved å gi et pådrag lik som disse kreftene. Da vil tilstanden nå referansetilstanden og det stasjonæreavviket forsvinner. \autoref{eq:PI_regulator} beskriver en PI-regulator,
+En slik regulator er effektiv så lenge det ikke er en kraft som forhindrer systemet å oppnå en spesifikk tilstand. Da vil ikke regulatoren regulere tilstanden helt til referanseverdien og det oppstår et stasjonærtavvik. Friksjon og luftmotstand er krefter som vil motvirke at et system oppnår en hasighet større enn $0$. Et integratorledd vil motvirke slike krefter, ved å gi et pådrag lik som disse kreftene. Da vil tilstanden nå referansetilstanden og det stasjonæreavviket forsvinner. Likning \eqref{eq:PI_regulator} beskriver en PI-regulator,
 
 \begin{equation}
     \label{eq:PI_regulator}
-    u(t) = K_p e(t) + \frac{K_p}{T_i} \int_{0}^{t} e(\tau) d\tau
+    u(t) = K_p e(t) + \frac{K_p}{T_i} \int_{0}^{t} e(\tau) d\tau,
 \end{equation}
 
 der $u$ er pådraget, $K_p$ er proposjonalitetskontanten, $e$ er avviket mellom referansen og tilstanden og $T_i$ er integratorkonstanten som representerer tidskonstanten til regulatoren.
