@@ -35,15 +35,7 @@ For å måle hastigheten, var et tachometer montert på den ene enden av motoren
 Hensikten med å implementere både differensialforsterkeren og instrumenteringsforsterkeren var å sammenlikne de to spesielt med tanke respons til variasjon i utgangsimpedanse fra tachometeret.
 To jumpere ble plassert på tachometerets to utganger $V_{11}$ og $V_{12}$ for å raskt kunne bytte mellom de to forsterkerkretsene. I differensialforsterkeren brukes resistorer med vedier for $R_1$ og $R_2$ gitt i \autoref{tab:differensiellforsterker}, og forsterkningen er gitt ved $\frac{R_2}{R_1} = \frac{56k\Omega}{10k\Omega}$(\autoref{eq:differensialforsterker}).
 
-Jabbe videre om instrumenteringsforsterkern.
-Motstander og forsterkning.
-snakke om $R_g$ 0ohm = 15V.
-Beregnet verdi av $R_g$.
-Stillte $R_g$ til ønsket $\pm$ 10V.
-Testet med høy og lav utgangsimpedans på tachometeret for å se foskjell.
-
-
-
+I instrumenteringsforsterkeren brukes motstander med verdiene gitt i \autoref{tab:Instrumenteringsforsterker}. Instumenteringsforsterkeren kan endres forsterkning på ved å variere på motstanden $R_G$, hvor dersom $R_G$ settes til $0\Omega$, vil utgangsspenningen være avgrenset av operasjonsforsterkerens forsyningsspenning på $\pm15V$. $R_G$ ble beregnet til ca. $2.2k\Omega$ for å oppnå $\pm10V$ på utgangen, før $R_G$ så ble manuelt stillt for å oppnå best mulig resultat på forsterkningen. Begge forsterkerene ble så testet med både høy og lav utgangsimpedans på tachometeret, hvor målinger ble gjort på $\omega_m$ for å sammenligne responser.
 
 
 \begin{table}[h]
@@ -73,8 +65,7 @@ Testet med høy og lav utgangsimpedans på tachometeret for å se foskjell.
         $R_G$ & $10\,k\Omega$ & Potmeter\\
 		\bottomrule
 	\end{tabular}
-    
-\label{tab:eksempeltabell}
+    \label{tab:Instrumenteringsforsterker}
 \end{table}
 
 \subsection{Resultater}
