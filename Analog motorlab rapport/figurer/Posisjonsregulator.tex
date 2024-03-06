@@ -1,0 +1,94 @@
+\begin{circuitikz} [scale=0.5, transform shape]
+\ctikzset{resistor = european}
+
+\node[op amp](OP1){$OP1$};
+
+\draw (OP1.-)
+    to[short,-*] ++(-0.5,0)
+    coordinate(temp)
+    to[R,l_=$R_6$] ++(-2,0)
+    -- ++(-6,0)
+    to[short,-o,l=$\theta_m$] ++(0,0);
+
+\draw (temp)
+    -- ++(0,1)
+    coordinate(temp)
+    to[R,l=$R_7$] (temp -| OP1.out)
+    -- (OP1.out)
+    to[short,*-] ++(1,0)
+    node[op amp, noinv input up, anchor=+](OP2){$OP2$};
+
+\draw (OP1.+)
+    to[short,-*] ++(-0.5,0)
+    coordinate(OP1out)
+    to[R,l=$R_6$] ++(-2,0)
+    --node[anchor=west, yshift=-1cm]{$\theta_d$} ++(0,-2)
+    coordinate(potwiper)
+    ++(-1,1)
+    coordinate(pottop)
+    to[potentiometer, l_=$R_4$, n=R4] ++(0,-2)
+    to[R,l=$R_5$] ++(-2,0)
+    to[short,-*] ++(0,0)
+    coordinate(Cbot)
+    to[short, -*] ++(-1,0)
+    coordinate(zenerbot)
+    node[ground]{};
+
+\draw (pottop)
+    to[R, l_=$R_3$] ++(-2,0)
+    to[short, -*] ++(0,0)
+    coordinate(Ctop)
+    to[short,-*] ++(-1,0)
+    coordinate(zenertop)
+    to[R, l_=$R_2$] ++(-2,0)
+    -- ++(0,1)
+    to[short, -o, l=$+15V$] ++(0,0);
+
+\draw (Ctop)
+    to[C, l=$C_1$] (Cbot);
+\draw (zenerbot)
+    to[zzDo, l=$D1$] (zenertop);
+
+\draw (potwiper)
+    -- (R4.wiper);
+
+\draw (OP1out)
+    to[R, l=$R_7$] ++(0,-3)
+    node[ground]{};
+
+\draw (OP2.-)
+    to[short,-*] ++(-0.5,0)
+    coordinate(OP2+)
+    -- ++(-0.5,0)
+    to[R, l_=$R_8$] ++(0,-2)
+    -- ++(0,-0.5)
+    node[ground]{};
+
+\draw (OP2.out)
+    -- ++(0,-2)
+    coordinate(temp)
+    to[potentiometer, l_=$R_9$, n=R9] (temp -| OP2+)
+    -- (OP2+);
+
+\draw (temp)
+    ++(-0.5,0)
+    to[short,*-] ++(0,0)
+    -- ++(0,-1)
+    -| (R9.wiper);
+
+\draw (OP2.out)
+    to[short, *-] ++(0,0)
+    -- ++(1,0)
+    to[short, -o, l_=$\omega_d$] ++(0,0);
+    
+
+    
+    
+    
+    
+
+
+
+
+
+\end{circuitikz}
