@@ -6,7 +6,7 @@
     
     \draw (OP1.+)
     -- ++(-0.3, 0)
-    to[short, o-, l=$v$] ++(0, 0);
+    to[short, o-, l=$V(\theta)$] ++(0, 0);
 
     \draw (OP1.-)
     -- ++(0, 1)
@@ -16,7 +16,7 @@
 
     % --- OP2 ---
     \draw (OP1.out)
-    to[R=$R1$] ++(2, 0)
+    to[R=$R_1$] ++(2, 0)
     node[op amp, anchor=-](OP2) {$OP2$};
 
     \draw (OP2.+)
@@ -25,18 +25,18 @@
     \draw (OP2.-)
     to[short, *-] ++(0, 1)
     coordinate(t2)
-    to[R=$R1$] (t2 -| OP2.out)
+    to[R=$R_1$] (t2 -| OP2.out)
     to[short, -*] (OP2.out);
 
     % --- OP3 ---
     \draw (OP2.out)
-    to[R=$R3$] ++(2, 0)
+    to[R=$R_3$] ++(2, 0)
     node[op amp, anchor=-](OP3) {$OP3$};
 
     \draw (OP3.+)
     ++(-1, 0)
     to[short, o-, l=$+15V$] ++(0, 0)
-    to[potentiometer, l_=$R3$, n=R3] ++(0, -2)
+    to[potentiometer, l_=$R_3$, n=R3] ++(0, -2)
     to[short, -o, l=$-15V$] ++(0, 0);
 
     \draw (OP3.+)
@@ -46,7 +46,7 @@
     \draw (OP3.-)
     -- ++(0, 1)
     coordinate(t3)
-    to[potentiometer, l=$R4$, n=R4] (t3 -| OP3.out)
+    to[potentiometer, l=$R_4$, n=R4] (t3 -| OP3.out)
     -- (OP3.out);
 
     \draw (t3)
