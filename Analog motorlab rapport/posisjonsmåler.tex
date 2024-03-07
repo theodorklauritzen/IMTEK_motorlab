@@ -22,8 +22,6 @@ For å lettere detektere feil er standardiserte målesignaler med elevated zero 
 
 \subsection{Metode}
 
-I motorkortet er et potensiometer koblet til motorakslingen. Den er koblet i serie med to motstander, som vist i \autoref{fig:posisjon_maler_potmeter}.
-
 \begin{figure}[h]
     \centering
     \input{figurer/krets_posisjon_potmeter}
@@ -31,12 +29,31 @@ I motorkortet er et potensiometer koblet til motorakslingen. Den er koblet i ser
     \label{fig:posisjon_maler_potmeter}
 \end{figure}
 
+I motorkortet er et potensiometer koblet til motorakslingen. Den er koblet i serie med to motstander, som vist i \autoref{fig:posisjon_maler_potmeter}. Spenningsdeling brukes for å kommefram til følgende uttryk for $V(\theta)$
+
+\begin{equation}
+    \label{eq:V_av_theta}
+    V(\theta) = \frac{\SI{5}{\kilo\ohm} + R(\theta)}{\SI{12}{\kilo\ohm} + \SI{5}{\kilo\ohm} + \SI{8.2}{\kilo\ohm}} \SI{30}{\volt} - \SI{15}{\volt},
+\end{equation}
+
+der $V(\theta)$ er spenningen ut fra motorkortet, $R(\theta)$ er motstaden i potensiometeret gitt vinkelen til motoren. Det betyr at $V(\theta_{min}) = \SI{0.71428}{\volt}$ og $V(\theta_{max}) =\SI{-5.23809}{\volt}$. 
+
 \begin{figure}[h]
     \centering
     \input{figurer/krets_posisjons_maler}
     \caption{Krets for å omforme spenningen fra posisjonsmåleren til et $1\,V$ til $5\,V$ signal. Figur hentet fra \cite{AnalogMotorlabbOppgaver}}
     \label{fig:krets_posisjons_maler}
 \end{figure}
+
+Transferfunksjonen i \autoref{fig:krets_posisjons_maler} kan deles opp i to deler. De to første operasjonsforsterkerne har denne transferfuksjonen $V_x = -V(\theta)$. Den neste bruker vi opampens gyldne regler for å sette opp følgende uttrykk
+\begin{equation}
+    \label{eq:posisjonmåler_skalering}
+    (V_x - V_y) \frac{1}{R_2} = (V_y - V_{\theta_m}(\theta)) \frac{1}{R_4},
+\end{equation}
+der $V_x$, $V_y$ og $V_{\theta_m}$ er potensialet i punktene navngitt i \autoref{fig:krets_posisjons_maler} og $R_2$ og $R_4$ er motstandene i same figur.
+
+For å finne $R_3$ og $R_4$ må vi løse for $V_y$ og$R_4$. Da bruker vi sammenhengene $V_{\theta_m}(\theta_{min}) = \SI{1}{\volt}$ og $V_{\theta_m}(\theta_{max}) = \SI{5}{\volt}$. Da blir $R_4 = \SI{4.6}{\kilo\ohm}$ og 
+$V_y = \SI{2.7}{\volt}$. Sammenhengen mellom $R_3$ og $V_y$ er gitt ved $\frac{R_3}{\SI{100}{\kilo\ohm}} \SI{30}{\volt} = V_y + \SI{15}{\volt}$, da blir $R_3 = \SI{59}{\kilo\ohm}$.
 
 \begin{table}[h]
     \centering
@@ -55,4 +72,9 @@ I motorkortet er et potensiometer koblet til motorakslingen. Den er koblet i ser
 \end{table}
 
 \subsection{Resultater}
+
+\todo[inline]{RIIIIP, vi har jo ikke resultater for dette}
+
 \subsection{Diskusjon}
+
+\todo[inline]{Dette er vrient uten resultater}

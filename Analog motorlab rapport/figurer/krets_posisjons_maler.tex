@@ -29,10 +29,18 @@
     to[R=$R_1$] (t2 -| OP2.out)
     to[short, -*] (OP2.out);
 
+    \draw (OP2.out)
+    ++(0, -0.1)
+    node[anchor=north] {$V_x$};
+
     % --- OP3 ---
     \draw (OP2.out)
-    to[R=$R_3$] ++(2, 0)
+    to[R=$R_2$] ++(2, 0)
     node[op amp, anchor=-](OP3) {$OP3$};
+
+    \draw (OP3.-)
+    ++(0, -0.1)
+    node[anchor=north] {$V_y$};
 
     \draw (OP3.+)
     ++(-1, 0)
@@ -45,16 +53,16 @@
     -- (R3.wiper);
 
     \draw (OP3.-)
-    -- ++(0, 1)
+    to[short, *-] ++(0, 1)
     coordinate(t3)
     to[potentiometer, l=$R_4$, n=R4] (t3 -| OP3.out)
     -- (OP3.out);
 
     \draw (t3)
-    -- (t3 |- R4.wiper)
+    to[short, *-] (t3 |- R4.wiper)
     -- (R4.wiper);
 
     \draw (OP3.out)
-    to[short, *-o, l_=$\theta_m$] ++(0.3, 0);
+    to[short, *-o, l_=$V_{\theta_m}(\theta)$] ++(0.3, 0);
     
 \end{circuitikz}
