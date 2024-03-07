@@ -3,7 +3,33 @@
 
 \subsection{Teori}
 
+% Enpolet målesignal
+%   - Referanse til signaljord
+% Signalkilde -[signal]-> signalmottaker / last
+% Målevariabel -> Føler -> Omsetter -> Målesignal
+
+% Standardiserte signalnivåer
+% 1 - 5V
+% Elevated Zero
+%   - Muliggjør deteksjon av feil
+%   - Vanskelig å måle 0, krever negativ strømforsyning
+%   - Ledningsbrud
+%   - Muliggjør alarmgrenser utenfor ordinært måleområde
+
+Posisjonsmåling kan enten være en vinkelmåling eller en strekningsmåling. For en servomotor er målevariabelen vinkel nyttigst. Potensiometer kan brukes som en føler for måleveraibelen. Med en spennig over potensiometeret, vil dette generere et målesignal.
+
+For å lettere detektere feil er standardiserte målesignaler med elevated zero nyttig. Ledningsbrudd blir da lettere å oppdage, i tillegg er det vanskelig å måle spenninger rundt $0V$, med laveste signal over $0V$ vil ikke dette bli et problem. Derfor er det lurt å omformere målesignalet til et standardisert målesignal.
+
 \subsection{Metode}
+
+I motorkortet er et potensiometer koblet til motorakslingen. Den er koblet i serie med to motstander, som vist i \autoref{fig:posisjon_maler_potmeter}.
+
+\begin{figure}[h]
+    \centering
+    \input{figurer/krets_posisjon_potmeter}
+    \caption{Potensiometeret i motorkortet. Figur hentet fra \cite{AnalogMotorlabbOppgaver}}
+    \label{fig:posisjon_maler_potmeter}
+\end{figure}
 
 \begin{figure}[h]
     \centering
@@ -19,7 +45,7 @@
         \toprule
         Størrelse & Verdi & Type \\
 		\midrule
-        $R_1$ & 1\,\kilo\ohm & Resistor\\
+        $R_1$ & $1\,k\Omega$ & Resistor\\
         $R_2$ & $6,8\,k\Omega$ & Resistor \\
         $R_3$ & $100\,k\Omega$ & Potmeter \\
         $R_4$ & $10\,k\Omega$ & Potmeter \\

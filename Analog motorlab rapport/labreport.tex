@@ -2,6 +2,7 @@
 
 \usepackage{kyblab} % Contains all included packages. See kyblab.sty.
 \addbibresource{bibliography.bib} % Makes the bibliography file available to biblatex.
+\sisetup{output-decimal-marker={,}}
 \newlength{\figH}
 \newlength{\figW}
 \setlength{\figW}{0.48\textwidth}
@@ -27,6 +28,7 @@
 
 % Main content
 \maketitle
+\todo[inline]{Husk å fikse måleenheter}
 \input{abstract}
 \input{intro}
 \input{teori}

@@ -1,0 +1,21 @@
+\begin{circuitikz}[scale=0.7, transform shape]
+    \ctikzset{resistor = european}
+
+    \draw (0, 0)
+    to[short, o-, l=15<\volt>] ++(0, 0)
+    to[R=12<\kilo\ohm>] ++(2, 0)
+    to[potentiometer, n=R2] ++(0, -2)
+    to[R=8.2<\kilo\ohm>] ++(-2, 0)
+    to[short, -o, l=-15<\volt>] ++(0, 0);
+
+    \draw[->] (R2) ++(-0.4, 0.3)
+    -- ++(0, -0.6);
+    
+    \draw (R2) ++(0.2, 0.4)
+    node[anchor=west]{\SI{5}{\kilo\ohm}};
+
+    \draw (R2.wiper)
+    to[short, -o] ++(0.5, 0)
+    node[anchor=west]{$V(\theta)$};
+    
+\end{circuitikz}
