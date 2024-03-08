@@ -8,7 +8,10 @@
 \begin{axis}[
 tick align=outside,
 tick pos=left,
-title={Hastighet P-regulator},
+title={Posisjon P-regulator},
+legend pos=south east,
+height=\figH,
+width=\figW,
 x grid style={darkgray176},
 xlabel={\(\displaystyle t\) [ms]},
 xmin=-46.1769, xmax=969.714900000001,
@@ -39,6 +42,7 @@ yticklabels={
   \(\displaystyle {6}\)
 }
 ]
+\legend {Respons, Referanse}
 \addplot [semithick, steelblue31119180]
 table {%
 0 1.14258

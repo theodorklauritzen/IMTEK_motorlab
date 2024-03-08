@@ -60,6 +60,9 @@ Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_
 
 \subsection{Resultater}
 
+\label{obs:hastighet_regulator_breming_med_finger}
+Vi observerte at stasjonæravviket og pådraget økte, dersom vi bremset motoren med en finger ved bruk av P-regulator. Ved bruk av PI-regulator økte pådraget til tilstanden nådde referanseverdien, selv med en finger som bremset motoren.
+
 \begin{figure}[h]
     \centering
     \input{figurer/plots/hastighet_P_regulator}
@@ -83,12 +86,11 @@ Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_
 
 \subsection{Diskusjon}
 
-I \autoref{fig:hastighet_P_regulator} er det et tydelig stasjonæravvik, mellom responen til regulatoren og referanseverdien. Det er flere årsaker til at stasjonværavviket oppstå, blant annet friksjon i motoren, giret, og potmeteret. Dersom motoren bremses, vil det stasjonæreavviket øke, til tross for at pådraget også vil øke.
+I \autoref{fig:hastighet_P_regulator} er det et tydelig stasjonæravvik, mellom responen til regulatoren og referanseverdien. Det er flere årsaker til at stasjonværavviket oppstår, blant annet friksjon i motoren, giret, og potmeteret. Dersom motoren bremses, vil det stasjonæreavviket øke, til tross for at pådraget også vil øke. Observasjon \ref{obs:hastighet_regulator_breming_med_finger} viser også at dette stasjonæravviket vil øke dersom motoren bremses mer.
 
 Til tross for at det er et stasjonæravvik er det ikke så stort. Dette kommer antageligvis av at $K_p$ er stor. Siden $K_p$ er stor kan dette føre til at pådraget til regulatoren går i metning. Dette vil føre til at vi får slew-rate i regulatoren. Dette kommer fram i \autoref{fig:hastighet_P_regulator_derivert}. I intervallet $[80, 100]\,ms$ er akselerasjonen til motoren konstant, altså er endringen til hastigheten begrenset.
 
-PI-regulatoren oppnår stasjonærverdi, som vist i \autoref{fig:hastighet_PI_regulator}. Etter omtrent $150\,ms$ er det er oversving, som viser at systemet er underdempet.
-
+PI-regulatoren oppnår stasjonærverdi, som vist i \autoref{fig:hastighet_PI_regulator} og i observasjon \ref{obs:hastighet_regulator_breming_med_finger}. Etter omtrent $150\,ms$ er det er oversving, som viser at systemet er litt underdempet. 
 
 \todo[inline]{
 Skal vi sammenlikne motoren uten en regulator, kun et pådrag?
