@@ -1,13 +1,13 @@
 \begin{circuitikz} [scale=0.6, transform shape]
 \ctikzset{resistor = european}
 
-\node [op amp] (OP){$OP1$};
+\node [op amp, noinv input up] (OP){$OP1$};
 
-\draw (OP.-)
+\draw (OP.+)
     -- ++(-2,0)
     to[short,o-,l=$V_1$] ++(0,0);
 
-\draw (OP.+)
+\draw (OP.-)
     -- ++(-1,0)
     to[short,-*] ++(0, -1)
     coordinate(o1)
