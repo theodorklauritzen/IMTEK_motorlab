@@ -69,23 +69,23 @@ I instrumenteringsforsterkeren brukes motstander med verdiene gitt i \autoref{ta
 \end{table}
 
 \subsection{Resultater}
-Vise til grafer
 
-\textbf{insert grafer her}
+\todo[inline]{Skrive resultater i form av tekst eller bare fjerne resultatdelen og putte alt i diskusjon?}
+
+observasjoner
 
 
 
 \subsection{Diskusjon}
 
-Respons fra begge forsterkerne med lav utgangsimpedanse på tachometeret
+Med lav utgangsimpedans fra tachometeret ga både differensialforsterkeren og intrumenteringsforsterkeren en $\omega_m$ på intervallet $\pm${\SI{10}{\volt}}, som følger forventningen. Begge forsterkerne viser tendenser til offset på outputen, som kan skyldes av at operasjonsforsterkerene har litt offset i seg, eller at det er litt offset på utgangssignalet til tachometeret. 
+Hverken differensial- eller instrumenteringsforsterkerkretsen hadde mulighet for å justere offset, men intervallet var innenfor akseptable marginer.
 
-Diskutere offset
-- 
+Med høy utgangsimpedans på tachometeret ga instrumenteringsforsterkeren fortsatt ut $\omega_m$ i intervallet $\pm${\SI{10}{\volt}}, dette skjer på grunn av at signalet fra tachometeret går rett inn i en operasjonsforsterker med veldig høy inngangsimpedans slik at kretsen trekker lite strøm og dermed ikke ble påvirket i noen særlig grad av den høyere impedansen. 
+Differensialforsterkeren på sin side ble sterkt påvirket av endringen i utgangsimpedans. Den ga en $\omega_m$ på ca. $\pm${\SI{100}{\milli\volt}} når utgangsimpedansen ble satt høy. Dette følger teorien ettersom du får en spenningsdeling mellom en motstand på {\SI{1}{\mega\ohm}} og $R_1$\autoref{fig:differensialforsterker}.
 
-Som vi ser i  \autoref{fig:differensialforsterker}
+På grunn av instrumenteringsforsterkerens høyere robusthet, var det denne som ble brukt videre i motorlaben for å ende opp med et best mulig resultat til slutt.
 
-
-------------------------------------------
 
 % For hver del bør dere gå gjennom hva dere skal gjøre, hvordan dere gjør det, resultatene dere fikk,
 % og diskusjon av disse. 
