@@ -33,12 +33,25 @@ forsterkning_db = 20 * np.log10(FORSTERKNING)
 
 # Plot med pyplot, her kan dere bruke så mye avanserte funksjoner dere vil, med subplots osv
 fig, ax = plt.subplots(1,1)
+
+ax.axhline(y = 0, color = 'orange', linestyle = '-')
+ax.grid(True, which="both", ls="-")
+
+# Forsøk på litt regresjon
+s = slice(15, -1, 1)
+x = FREKVENS[s]
+y = forsterkning_db[s]
+fit = np.polyfit(np.log(x), y, 1)
+X = np.linspace(0.7, 5, 10)
+ax.plot(X, fit[0] * np.log(X) + fit[1], color = 'orange', linestyle = '-')
+
 # Vi hopper 100 punkter om gangen her for å spare regnekraft når vi tegner plottet. Denne må tilpasses til hvor tett data er samplet
 ax.set_xscale("log")
 ax.set_xlabel("Frekvens [Hz]")
 ax.set_ylabel("Forsterkning [dB]")
 ax.plot(FREKVENS, forsterkning_db)
 ax.set_title("Bodeplot for Posisjonregulator")
+
 
 # Bruk denne for å få en vining som ikke er i latex, må kommenteres ut når vi skal eksportere latex
 #plt.show()
