@@ -3,14 +3,14 @@
 
 \subsection{Teori}
 
-Regulatorer brukes for å styre tilstander i en prosess. En regulator får inn et avvik mellom referansen og den målte tilstanden. Regulatorer bruker avviket til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proporsjonalt med avviket, $e = \omega_d - \omega_m$. $K_p$ er proporsjonalitetsleddet i regulatoren, sammenhengen er vist i \autoref{eq:P_regulator}.
+Regulatorer brukes for å styre tilstander i en prosess. En regulator får inn et avvik mellom referansen og den målte tilstanden. Regulatorer bruker avviket til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proporsjonalt med avviket, $e = \omega_d - \omega_m$. $K_p$ er proporsjonalitetsleddet i regulatoren, uttrykket for denne regulatoren er slik
 
 \begin{equation}
     \label{eq:P_regulator}
-    u(t) = K_p e(t)
+    u(t) = K_p e(t).
 \end{equation}
 
-En slik regulator er effektiv så lenge det ikke er en kraft som forhindrer systemet å oppnå en spesifikk tilstand. Da vil ikke regulatoren regulere tilstanden helt til referanseverdien og det oppstår et stasjonæravvik. Friksjon og luftmotstand er krefter som vil motvirke at et system oppnår en hastighet større enn $0$. Et integratorledd vil motvirke slike krefter, ved å gi et pådrag lik som disse kreftene. Da vil tilstanden nå referansetilstanden og det stasjonære avviket forsvinner. \autoref{eq:PI_regulator} beskriver en PI-regulator,
+En slik regulator er effektiv så lenge det ikke er en kraft som forhindrer systemet å oppnå en spesifikk tilstand. Da vil ikke regulatoren regulere tilstanden helt til referanseverdien og det oppstår et stasjonæravvik. Friksjon og luftmotstand er krefter som vil motvirke at et system oppnår en hastighet større enn $0$. Et integratorledd vil motvirke slike krefter, ved å gi et pådrag tilsvarende disse kreftene. Da vil tilstanden nå referansetilstanden og det stasjonære avviket forsvinner. \autoref{eq:PI_regulator} beskriver en PI-regulator,
 
 \begin{equation}
     \label{eq:PI_regulator}
@@ -42,7 +42,7 @@ $OP4$ summerer spenningen fra $OP2$ og $OP3$ og forsterker resultatet med $K_p$.
 \begin{equation}
     \label{eq:K_p_og_T_i}
     K_p = \frac{R_2}{R_1} \frac{R_8 + R_9}{R_7}, 
-    T_i = (R_5 + R_6) C_1
+    T_i = (R_5 + R_6) C_1.
 \end{equation}
 
 Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_i_hastighetsregulatoren}.
@@ -70,8 +70,9 @@ Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_
 
 
 \subsection{Resultater}
+
 \label{obs:hastighet_regulator_breming_med_finger}
-Det ble observert at stasjonæravviket og pådraget økte dersom en bremset motoren med en finger ved bruk av P-regulator. Ved bruk av PI-regulator økte pådraget til tilstanden nådde referanseverdien, selv med en finger som bremset motoren.
+Det ble observert at stasjonæravviket og pådraget økte, dersom motoren ble bremset med en finger, da motoren ble regulert ved bruk av P-regulatoren. Ved bruk av PI-regulator økte pådraget til tilstanden nådde referanseverdien, selv med en finger som bremset motoren.
 
 \begin{figure}[h]
     \centering

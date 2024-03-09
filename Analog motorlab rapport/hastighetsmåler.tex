@@ -1,14 +1,14 @@
 \section{Hastighetsmåler}
 \subsection{Teori}
-Differensialforsterkeren i \autoref{fig:differensialforsterker} er er operasjonsforsterkerkrets som forsterker opp forskjellen på de to signalene/spenningene som blir satt inn på kretsen. En differensialforsterker av typen i \autoref{fig:differensialforsterker} vil med en ideell operasjonsforsterker kunne uttrykkes ved transferfunksjonen\cite{Johnson}:
+Differensialforsterkeren i \autoref{fig:differensialforsterker} er er operasjonsforsterkerkrets som forsterker opp forskjellen på de to signalene/spenningene som blir satt inn på kretsen. En differensialforsterker av typen i \autoref{fig:differensialforsterker} vil med en ideell operasjonsforsterker kunne utrykkes ved transferfunksjonen \cite{Johnson}
 \begin{equation}
-    V_{out} = \frac{R_2}{R_1}(V_2-V_1)
+    V_{out} = \frac{R_2}{R_1}(V_2-V_1).
     \label{eq:differensialforsterker}
 \end{equation}
 
-En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker} er en mer komplisert versjon av en differensialforsterker, men som har noen viktige fordeler, hver av inngangene i instrumenteringsforsterkeren går rett inn i operasjonsforsterkere slik at inngangsimpedansen holdes høy, dette gjør essensielt at signalet blir buffret før det sendes inn i differensialforsterkeren bestående av $R_2$, $R_3$ og $OP3$. Forsterkningen i kretsen kan også endres ved å endre på $R_G$. Instrumenteringsforsterkeren i \autoref{fig:instrumenteringsforsterker} kan dersom man antar en ideell operasjonsforsterker uttrykkes ved transferfunksjonen:
+En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker} er en mer komplisert versjon av en differensialforsterker, men som har noen viktige fordeler, hver av inngangene i instrumenteringsforsterkeren går rett inn i en operasjonsforsterker slik at inngangsimpedansen holdes høy, dette gjør essensielt at signalet blir buffret før det sendes inn i differensialforsterkeren bestående av $R_1$, $R_2$ og $OP3$. Forsterkningen i kretsen kan også endres ved å endre på $R_G$. Instrumenteringsforsterkeren i \autoref{fig:instrumenteringsforsterker} kan dersom man antar en ideell operasjonsforsterker uttrykkes ved transferfunksjonen \cite{Johnson}
 \begin{equation}
-    V_{out} = (1+\frac{2R_1}{R_G})(\frac{R_3}{R_2})(V_2-V_1)
+    V_{out} = (1+\frac{2R_1}{R_G})(\frac{R_3}{R_2})(V_2-V_1).
     \label{eq:instrumenteringsforsterker}
 \end{equation}
 
@@ -93,6 +93,8 @@ Ved å flippe mellom høy og lav impedans på utgangen til tachometeret ble det 
 
 Med lav utgangsimpedans fra tachometeret ga både differensialforsterkeren og intrumenteringsforsterkeren en $\omega_m$ på intervallet $\pm${\SI{10}{\volt}}, som følger forventningen. Begge forsterkerne viser tendenser til offset på outputen, som kan skyldes av at operasjonsforsterkerene har litt offset i seg, eller at det er litt offset på utgangssignalet til tachometeret. 
 Hverken differensial- eller instrumenteringsforsterkerkretsen hadde mulighet for å justere offset, men intervallet var innenfor akseptable marginer.
+
+\todo[inline]{Burde dette vært nevnt i resultatene?}
 
 Med høy utgangsimpedans på tachometeret ga instrumenteringsforsterkeren fortsatt ut $\omega_m$ i intervallet $\pm${\SI{10}{\volt}}, dette skjer på grunn av at signalet fra tachometeret går rett inn i en operasjonsforsterker med veldig høy inngangsimpedans slik at kretsen trekker lite strøm og dermed ikke ble påvirket i noen særlig grad av den høyere impedansen. 
 Differensialforsterkeren på sin side ble sterkt påvirket av endringen i utgangsimpedans. Den ga en $\omega_m$ på ca. $\pm${\SI{100}{\milli\volt}} når utgangsimpedansen ble satt høy. Dette følger teorien ettersom man får en spenningsdeling mellom en motstand på {\SI{1}{\mega\ohm}} og $R_1$ på {\SI{10}{\kilo\ohm}} (\autoref{fig:differensialforsterker}).

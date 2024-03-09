@@ -4,13 +4,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # For et syyykt irriterende bibliotek, det har ikke blitt oppdatert på to år, så og er bugs som har vært kjent i halvannet år her som er mega irriterende
-#from tikzplotlib import save as save_tikz
+from tikzplotlib import save as save_tikz
 
 # Smerke og lidelse, jeg hater ulike python miljøer
-#plt.rcParams.update({
-#   "text.usetex": True,
-#   "font.family": "sans-serif",
-#   "font.sans-serif": ["Helvetica"]})
+plt.rcParams.update({
+   "text.usetex": True,
+   "font.family": "sans-serif",
+   "font.sans-serif": ["Helvetica"]})
 
 # Her kan dere legge inn flere filer om dere trenger det
 
@@ -28,9 +28,9 @@ FASE_VINKEL = DATA[2]
 #FREKVENS = np.array([0.1, 0.5, 1, 5, 7.5, 10, 50, 100])
 #FASE_VINKEL = np.array([0, 0, -0.05, -6, -110, -150, -180, -180])
 
-FREKVENS = FREKVENS[dataSlice]
-FORSTERKNING = FORSTERKNING[dataSlice]
-FASE_VINKEL = FASE_VINKEL[dataSlice]
+#FREKVENS = FREKVENS[dataSlice]
+#FORSTERKNING = FORSTERKNING[dataSlice]
+#FASE_VINKEL = FASE_VINKEL[dataSlice]
 
 forsterkning_db = 20 * np.log10(FORSTERKNING)
 
@@ -49,7 +49,7 @@ ax.set_title("Bodeplot for Posisjonregulator")
 
 
 # Bruk denne for å få en vining som ikke er i latex, må kommenteres ut når vi skal eksportere latex
-plt.show()
+#plt.show()
 
 # Denne linjen lagrer til Latex
-#save_tikz('out.tex') #Merk: denne funker ikke om dere bruker plt.show() i scriptet
+save_tikz('out.tex') #Merk: denne funker ikke om dere bruker plt.show() i scriptet
