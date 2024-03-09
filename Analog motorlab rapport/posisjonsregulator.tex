@@ -5,7 +5,8 @@
 \todo[inline]{Kan du skrive om bode-plot, tror du har forstått det litt bedre enn meg}
 
 En zenerdiode er en halvlederdiode som lar strøm gå både i og mot diodens sperreretning. Dioden er laget slik at den tillater strøm å gå i sperreretning etter at dioden når en viss spenning blir satt over den, det vil si at zenerdioden kun leder strøm i sperreretningen etter at den når sperrespenningen (zenerspenning) og dermed opprettholder dioden zenerspenningen over seg i sperreretning om en høyere spennning er satt over den.
-raskt om zener diode
+
+
 Reguleringoversving
 
 
@@ -17,9 +18,9 @@ Reguleringoversving
 \subsection{Metode}
 
 Som siste del av prosjektet ble posisjonsregulatoren implementert. Kretsen er vist i \autoref{fig:Posisjonsregulator}. Posisjonsregulatoren er satt sammen av en krets for å gi en posisjonsreferanse $\theta_d$ og regulatoren selv.
-Posisjonsreferansekretsen benytter en zenerdiode for å opprettholde en konstant referansespenning på 5.1V
+Posisjonsreferansekretsen benytter en zenerdiode for å opprettholde en konstant referansespenning på {\SI{5.1}{\volt}} til en spenningsdeling over $R_3$, $R_4$ og $R_5$. Kondensatoren $C_1$, vil hjelpe til med å holde en jevnere spenning, og fjerne støy inn til spenningsderingen. Posisjonsreferansen $\theta_d$ kunne dermed justeres ved å endre på potensiometeret $R_4$. Denne referansen ble så sendt inn i selve regulatoren 
 
-
+$\theta_d$ ble også styrt med en signalgenerator
 
 
 
