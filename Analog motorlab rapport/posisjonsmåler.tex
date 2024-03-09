@@ -16,9 +16,9 @@
 %   - Ledningsbrud
 %   - Muliggjør alarmgrenser utenfor ordinært måleområde
 
-Posisjonsmåling kan enten være en vinkelmåling eller en strekningsmåling. For en servomotor er målevariabelen vinkel nyttigst. Potensiometer kan brukes som en føler for måleveraibelen. Med en spennig over potensiometeret, vil dette generere et enpolet målesignal, med en spenningsforskjell til jord.
+Posisjonsmåling kan enten være en vinkelmåling eller en strekningsmåling. For en servomotor er målevariabelen vinkel nyttigst. Potensiometer kan brukes som en føler for måleveraibelen. Med en spennig over potensiometeret, vil dette generere et enpolet målesignal, med en spenningsforskjell til jord. I potensiometre er det et lite område der slepekontakten ikke er koblet til noe, dette skjer når potensiometeret har snurret en runde rundt.
 
-For å lettere detektere feil er standardiserte målesignaler med elevated zero nyttig. Ledningsbrudd blir da lettere å oppdage. I tillegg er det vanskelig å måle spenninger rundt \SI{0}{\volt}, med laveste signal over \SI{0}{\volt} vil ikke dette bli et problem. Derfor er det lurt å omformere målesignalet til et standardisert målesignal.
+For å lettere detektere feil er standardiserte målesignaler med elevated zero nyttig. Enkelte feil blir lettere å oppdage, der i blant ledningsbrudd. I tillegg er det vanskelig å måle spenninger rundt \SI{0}{\volt}, med laveste signal over \SI{0}{\volt} vil ikke dette bli et problem. Derfor er det lurt å omformere målesignalet til et standardisert målesignal.
 
 \subsection{Metode}
 
@@ -69,7 +69,7 @@ Transferfunksjonen i \autoref{fig:krets_posisjons_maler} kan deles opp i to dele
 der $V_x$, $V_y$ og $V_{\theta_m}$ er potensialet i punktene navngitt i \autoref{fig:krets_posisjons_maler} og $R_2$ og $R_4$ er motstandene i same figur.
 
 For å finne $R_3$ og $R_4$ må vi løse for $V_y$ og $R_4$. Da bruker vi sammenhengene $V_{\theta_m}(\theta_{min}) = \SI{1}{\volt}$ og $V_{\theta_m}(\theta_{max}) = \SI{5}{\volt}$. Da blir $R_4 = \SI{4.6}{\kilo\ohm}$ og 
-$V_y = \SI{2.7}{\volt}$. Sammenhengen mellom $R_3$ og $V_y$ er gitt ved $\frac{R_3}{\SI{100}{\kilo\ohm}} \SI{30}{\volt} = V_y + \SI{15}{\volt}$, da blir $R_3 = \SI{59}{\kilo\ohm}$. Etter at $R_3$ og $R_4$ ble satt til de utregnede verdiene ble de også finjustert manuelt.
+$V_y = \SI{2.7}{\volt}$. Sammenhengen mellom $R_3$ og $V_y$ er gitt ved $\frac{R_3}{\SI{100}{\kilo\ohm}} \SI{30}{\volt} = V_y + \SI{15}{\volt}$, der $R_3$ er måling mellom slepekontakten og \SI{-15}{\volt}. Da blir $R_3 = \SI{59}{\kilo\ohm}$. Etter at $R_3$ og $R_4$ ble satt til de utregnede verdiene ble de også finjustert manuelt.
 
 Transferfunksjonen for kretsen den totale kretsen blir
 \begin{equation}
@@ -93,4 +93,6 @@ Det ble observert at ved å stille inn retningen til motoren mellom $\theta_{max
 
 Målingen i \autoref{fig:posisjon_sagtann} er omtrent i intervallet (\SI{1}{\volt}, \SI{5}{\volt}). Årsaken til at grafen ser ut som en sagtannbølge er at potensiometeret roterer rundt og motstanden i potensiometeret syker gradvis, til den har rotert en runde og da er den på maksimum motstand.
 
-Ovservasjonen i \ref{obs:floating_potensiometer} kommer nok av at slepekontakten i potensiometeret ikke er koblet til noen av polene. Denne flytende pinnen inn i posisjonsmåleren tilsvarer spenningen vi forventer dersom vi putter inn setter $V(\theta) = \SI{0}{\volt}$ i uttrykk \eqref{eq:posisjon_maling_transferfuksjon}. Den forventede spenningen blir da \SI{4.5}{\volt}.
+Ovservasjonen i \ref{obs:floating_potensiometer} kommer nok av at slepekontakten i potensiometeret ikke er koblet til noen av polene. Denne flytende pinnen inn i posisjonsmåleren tilsvarer spenningen vi forventer dersom vi putter inn setter $V(\theta) = \SI{0}{\volt}$ i uttrykk \eqref{eq:posisjon_maling_transferfuksjon}. Den utregnede spenningen blir da \SI{4.5}{\volt}.
+
+\todo[inline]{Bør dette være snakket om tidligere?}
