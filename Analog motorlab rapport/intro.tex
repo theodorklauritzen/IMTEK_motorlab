@@ -2,21 +2,14 @@
 
 Analog motorlab hadde som mål å konstruere et sett med kretser for å måle og kontrollere en servomotor. Disse kretsene var delt inn i 4 forskjellige delsystemer, hastighetsmåler, hastighetsregulator, posisjonsmåler og posisjonsregulator, som vist i \autoref{fig:blokkdiagram}. Denne rapporten vil gå gjennom teori, metode, resultater og diskusjon for hver av delsystemene.
 
-Utlevert til labratoriearbeidet var et motorkort og et studentkort, motoren med tachometeret og potensiometeret var koblet på et ferdig montert motorkort som ga tilgang til informasjon om motorens hastighet $\omega$ og posisjon $\theta$. Studenkortet besto av 13 operasjonsforsterkerer av typen LM741\cite{LM741} og et sett med pin headere for å koble til motorkortet med. Operasjonsforsterkerene ble alle forsynt med $\pm${\SI{15}{\volt}}. Motorens hastighet kunne justeres ved å endre spenningen $V_m$ på en en av pinnene på headeren. Det ble først laget et system for å måle og regulere hastighet før det ble laget et tilsvarende system for å måle og regulere posisjonen til motoren.
+Utlevert til labratoriearbeidet var et motorkort og et studentkort, motoren med tachometeret og potensiometeret var koblet på et ferdig montert motorkort som ga tilgang til informasjon om motorens hastighet $\omega$ og posisjon $\theta$. Studenkortet besto av 13 operasjonsforsterkerer av typen LM741\cite{LM741} og et sett med header-pinner for å koble til motorkortet med. Operasjonsforsterkerene ble alle forsynt med $\pm${\SI{15}{\volt}}. Motorens hastighet kunne justeres ved å endre spenningen $V_m$ på en en av pinnene på headeren. Det ble først laget et system for å måle og regulere hastighet før det ble laget et tilsvarende system for å måle og regulere posisjonen til motoren.
 
-
-
-
-\begin{figure}[b]
+\begin{figure}[bh]
     \centering
     \includegraphics[width = 0.5\textwidth]{figurer/Blokkdiagram.png}
-    \caption{Blokkdiagram........Må fikse størrelse}
+    \caption{Blokkdiagram over servomotoren. Diagramet viser regulatorene og signalomforming. Diagrammet er hentet fra \cite{AnalogMotorlabbOppgaver}}
     \label{fig:blokkdiagram}
 \end{figure}
-
-
-
-
 
 % Introduksjonen skal inneholde en oversikt over arbeidet dere har gjort, samt noen setninger som gir en videre kontekst for arbeidet (hva er nytten av å gjøre det dere har gjort i den store sammenhengen?). Dere kan også gjerne gi en kort beskrivelse av hvordan rapporten er organisert.
 
