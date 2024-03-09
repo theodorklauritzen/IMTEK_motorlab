@@ -1,4 +1,4 @@
-\begin{circuitikz} [scale=0.5, transform shape]
+\begin{circuitikz} [scale=0.45, transform shape]
 \ctikzset{resistor = european}
 
 \node[op amp](OP1){$OP1$};
@@ -15,7 +15,7 @@
     coordinate(temp)
     to[R,l=$R_7$] (temp -| OP1.out)
     -- (OP1.out)
-    to[short,*-] ++(1,0)
+    to[short,*-] ++(0.5,0)
     node[op amp, noinv input up, anchor=+](OP2){$OP2$};
 
 \draw (OP1.+)
