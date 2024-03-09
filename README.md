@@ -10,7 +10,7 @@ A repository for a project in IMTEK
 - [ ] Se over vurderingskriteriene
 - [X] Lære Latex
 - [ ] Se over oppgavearket for å se om vi har glemt noe
-- [ ] Husk å se over alle målenheter, dette må samkjøres
+- [X] Husk å se over alle målenheter, dette må samkjøres
 
 # Outline
 
