@@ -39,7 +39,7 @@ En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker
 
 For å måle hastigheten, var et tachometer montert på den ene enden av motoren. Dette tachometeret ga ut hastigheten til motoren i form av en differensiell spenning i intervallet $\pm${\SI{1.79}{\volt}} . For å oppnå ønsket spenningsnivå i $\omega_m$ på $\pm${\SI{10}{\volt}} ble en differensialforsterker (\autoref{fig:differensialforsterker}) og en instrumenteringsforsterker (\autoref{fig:instrumenteringsforsterker}) implementert på studentkortet.
 Hensikten med å implementere både differensialforsterkeren og instrumenteringsforsterkeren var å sammenlikne de to spesielt med tanke respons til variasjon i utgangsimpedanse fra tachometeret.
-To jumpere ble plassert på tachometerets to utganger $V_{11}$ og $V_{12}$ for å raskt kunne bytte mellom de to forsterkerkretsene. I differensialforsterkeren brukes resistorer med vedier for $R_1$ og $R_2$ gitt i \autoref{tab:differensiellforsterker}, og forsterkningen er gitt ved $\frac{R_2}{R_1} = \frac{56k\Omega}{10k\Omega}$(\autoref{eq:differensialforsterker}).
+To jumpere ble plassert på tachometerets to utganger $V_{11}$ og $V_{12}$ for å raskt kunne bytte mellom de to forsterkerkretsene. I differensialforsterkeren brukes resistorer med vedier for $R_1$ og $R_2$ gitt i \autoref{tab:differensiellforsterker}, og forsterkningen er gitt ved $\frac{R_2}{R_1} = \frac{\SI{56}{\kilo\ohm}}{\SI{10}{\kilo\ohm}}$(\autoref{eq:differensialforsterker}).
 
 I instrumenteringsforsterkeren brukes motstander med verdiene gitt i \autoref{tab:Instrumenteringsforsterker}. Instumenteringsforsterkeren kan endres forsterkning på ved å variere på motstanden $R_G$, hvor dersom $R_G$ settes til {\SI{0}{\ohm}}, vil utgangsspenningen være avgrenset av operasjonsforsterkerens forsyningsspenning på $\pm${\SI{15}{\volt}} . $R_G$ ble beregnet til ca. {\SI{2.2}{\kilo\ohm}} for å oppnå $\pm${\SI{10}{\volt}} på utgangen, før $R_G$ så ble manuelt stillt for å oppnå best mulig resultat på forsterkningen. Begge forsterkerene ble så testet med både høy og lav utgangsimpedans på tachometeret, hvor målinger ble gjort på $\omega_m$ for å sammenligne responser.
 
@@ -50,8 +50,8 @@ I instrumenteringsforsterkeren brukes motstander med verdiene gitt i \autoref{ta
 		\toprule
 		Størrelse & Verdi & Type \\
 		\midrule
-        $R_1$ & $10\,k\Omega$& Resistor \\
-        $R_2$ & $56\,k\Omega$ & Resistor\\
+        $R_1$ & \SI{10}{\kilo\ohm} & Resistor \\
+        $R_2$ & \SI{56}{\kilo\ohm} & Resistor\\
 		\bottomrule
 	\end{tabular}
 \label{tab:differensiellforsterker}
@@ -64,9 +64,9 @@ I instrumenteringsforsterkeren brukes motstander med verdiene gitt i \autoref{ta
 		\toprule
 		Størrelse & Verdi & Type \\
 		\midrule
-        $R_1, R_3$ & $10\,k\Omega$& Resistor \\
-        $R_2$ & $18\,k\Omega$ & Resistor\\
-        $R_G$ & $10\,k\Omega$ & Potmeter\\
+        $R_1, R_3$ & \SI{10}{\kilo\ohm} & Resistor \\
+        $R_2$ & \SI{18}{\kilo\ohm} & Resistor\\
+        $R_G$ & \SI{10}{\kilo\ohm} & Potmeter\\
 		\bottomrule
 	\end{tabular}
     \label{tab:Instrumenteringsforsterker}
