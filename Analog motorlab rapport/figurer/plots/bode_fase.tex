@@ -1,0 +1,78 @@
+% This file was created with tikzplotlib v0.10.1.
+\begin{tikzpicture}
+
+\definecolor{darkgray176}{RGB}{176,176,176}
+\definecolor{steelblue31119180}{RGB}{31,119,180}
+
+\begin{axis}[
+log basis x={10},
+tick align=outside,
+tick pos=left,
+title={Bodeplot for Posisjonregulator},
+x grid style={darkgray176},
+xlabel={Frekvens [Hz]},
+xmajorgrids,
+xmin=0.0287281016071983, xmax=41.7709466642697,
+xminorgrids,
+xmode=log,
+xtick style={color=black},
+xtick={0.001,0.01,0.1,1,10,100,1000},
+xticklabels={
+  \(\displaystyle {10^{-3}}\),
+  \(\displaystyle {10^{-2}}\),
+  \(\displaystyle {10^{-1}}\),
+  \(\displaystyle {10^{0}}\),
+  \(\displaystyle {10^{1}}\),
+  \(\displaystyle {10^{2}}\),
+  \(\displaystyle {10^{3}}\)
+},
+y grid style={darkgray176},
+ylabel={Fasevinkel [deg]},
+ymajorgrids,
+ymin=-100.6025, ymax=0.6525,
+yminorgrids,
+ytick style={color=black},
+ytick={-120,-100,-80,-60,-40,-20,0,20},
+yticklabels={
+  \(\displaystyle {\ensuremath{-}120}\),
+  \(\displaystyle {\ensuremath{-}100}\),
+  \(\displaystyle {\ensuremath{-}80}\),
+  \(\displaystyle {\ensuremath{-}60}\),
+  \(\displaystyle {\ensuremath{-}40}\),
+  \(\displaystyle {\ensuremath{-}20}\),
+  \(\displaystyle {0}\),
+  \(\displaystyle {20}\)
+}
+]
+\addplot [semithick, steelblue31119180]
+table {%
+0.04 -3.95
+0.07 -4
+0.1 -4.22
+0.125 -4.44
+0.15 -8
+0.175 -9.37
+0.2 -9.26
+0.25 -13.09
+0.3 -16.5
+0.35 -18
+0.4 -20.25
+0.45 -19.6
+0.5 -22.11
+0.55 -25.5
+0.6 -29.15
+0.65 -29.8
+0.7 -30.69
+1 -40
+1.5 -55
+2 -62.5
+3 -70
+4 -77
+5 -78
+10 -90
+20 -94
+30 -96
+};
+\end{axis}
+
+\end{tikzpicture}
