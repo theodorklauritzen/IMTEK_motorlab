@@ -6,7 +6,7 @@ Differensialforsterkeren i \autoref{fig:differensialforsterker} er er operasjons
     \label{eq:differensialforsterker}
 \end{equation}
 
-En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker} er en mer komplisert versjon av en differensialforsterker, men som har noen viktige fordeler, hver av inngangene i instrumenteringsforsterkeren går rett inn i en operasjonsforsterker slik at inngangsimpedansen holdes høy, dette gjør essensiellt at signalet blir buffret før det sendes inn i differensialforsterkeren bestående av $R_1$, $R_2$ og $OP3$. Forsterkningen i kretsen kan også endres ved å endre på $R_G$. Instrumenteringsforsterkeren i \autoref{fig:instrumenteringsforsterker} kan dersom man antar en ideell operasjonsforsterker uttrykkes ved transferfunksjonen \cite{Johnson}
+En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker} er en mer komplisert versjon av en differensialforsterker, men som har noen viktige fordeler, hver av inngangene i instrumenteringsforsterkeren går rett inn i en operasjonsforsterker slik at inngangsimpedansen holdes høy, dette gjør essensielt at signalet blir buffret før det sendes inn i differensialforsterkeren bestående av $R_1$, $R_2$ og $OP3$. Forsterkningen i kretsen kan også endres ved å endre på $R_G$. Instrumenteringsforsterkeren i \autoref{fig:instrumenteringsforsterker} kan dersom man antar en ideell operasjonsforsterker uttrykkes ved transferfunksjonen \cite{Johnson}
 \begin{equation}
     V_{out} = (1+\frac{2R_1}{R_G})(\frac{R_3}{R_2})(V_2-V_1).
     \label{eq:instrumenteringsforsterker}
@@ -37,15 +37,17 @@ En Instrumenteringsforsterker som vist i \autoref{fig:instrumenteringsforsterker
 
 \subsection{Metode}
 
-For å måle hastigheten, var et tachometer montert på den ene enden av motoren. Dette tachometeret ga ut hastigheten til motoren i form av en differensiell spenning i intervallet $\pm${\SI{1.79}{\volt}} . For å oppnå ønsket spenningsnivå i $\omega_m$ på $\pm${\SI{10}{\volt}} ble en differensialforsterker (\autoref{fig:differensialforsterker}) og en instrumenteringsforsterker (\autoref{fig:instrumenteringsforsterker}) implementert på studentkortet.
-Hensikten med å implementere både differensialforsterkeren og instrumenteringsforsterkeren var å sammenlikne de to spesielt med tanke respons til variasjon i utgangsimpedanse fra tachometeret.
+\todo[inline]{Ser jeg har skrevet Tachometer på engelsk her, bytte til takometer eller ha det på engelsk? det er skrevet tachometer i oppgavearkene.}
+
+For å kunne måle hastigheten, var et tachometer ferdig montert på den ene enden av motoren. Dette tachometeret ga ut hastigheten til motoren i form av en differensiell spenning på intervallet $\pm${\SI{1.79}{\volt}}. For å oppnå ønsket spenningsnivå i $\omega_m$ på $\pm${\SI{10}{\volt}} ble en differensialforsterker (\autoref{fig:differensialforsterker}) og en instrumenteringsforsterker (\autoref{fig:instrumenteringsforsterker}) implementert på studentkortet.
+Hensikten med å implementere både differensialforsterkeren og instrumenteringsforsterkeren var å sammenligne de, spesielt med tanke respons til endring av utgangsimpedans fra tachometeret.
 To jumpere ble plassert på tachometerets to utganger $V_{11}$ og $V_{12}$ for å raskt kunne bytte mellom de to forsterkerkretsene. I differensialforsterkeren brukes resistorer med vedier for $R_1$ og $R_2$ gitt i \autoref{tab:differensiellforsterker}, og forsterkningen er gitt ved $\frac{R_2}{R_1} = \frac{\SI{56}{\kilo\ohm}}{\SI{10}{\kilo\ohm}}$(\autoref{eq:differensialforsterker}).
 
-I instrumenteringsforsterkeren brukes motstander med verdiene gitt i \autoref{tab:Instrumenteringsforsterker}. Instumenteringsforsterkeren kan endres forsterkning på ved å variere på motstanden $R_G$, hvor dersom $R_G$ settes til {\SI{0}{\ohm}}, vil utgangsspenningen være avgrenset av operasjonsforsterkerens forsyningsspenning på $\pm${\SI{15}{\volt}} . $R_G$ ble beregnet til ca. {\SI{2.2}{\kilo\ohm}} for å oppnå $\pm${\SI{10}{\volt}} på utgangen, før $R_G$ så ble manuelt stillt for å oppnå best mulig resultat på forsterkningen. Begge forsterkerene ble så testet med både høy og lav utgangsimpedans på tachometeret, hvor målinger ble gjort på $\omega_m$ for å sammenligne responser.
+I instrumenteringsforsterkeren brukes motstander med verdiene gitt i \autoref{tab:Instrumenteringsforsterker}. Instrumenteringsforsterkeren kan endres forsterkning på ved å variere på motstanden $R_G$, hvor dersom $R_G$ settes til {\SI{0}{\ohm}}, vil utgangsspenningen være avgrenset av operasjonsforsterkerens forsyningsspenning på $\pm${\SI{15}{\volt}} . $R_G$ ble beregnet til ca. {\SI{2.2}{\kilo\ohm}} for å oppnå $\pm${\SI{10}{\volt}} på utgangen, før $R_G$ så ble manuelt stilt for å oppnå best mulig resultat på forsterkningen. Begge forsterkerene ble så testet med både høy og lav utgangsimpedans på tachometeret, hvor målinger ble gjort på $\omega_m$ for å sammenligne responser.
 
 \begin{table}[h]
 	\centering
-    \caption{Motstander i differensiellforsterkeren}
+    \caption{Motstander i differensialforsterkeren}
 	\begin{tabular}{lll}
 		\toprule
 		Størrelse & Verdi & Type \\
@@ -80,7 +82,7 @@ I instrumenteringsforsterkeren brukes motstander med verdiene gitt i \autoref{ta
 
 \subsection{Resultater}
 
-Ved å flippe mellom høy og lav impedans på utgangen til tachometeret ble det med instrumenteringsforsterkeren ikke observert noen tydelig endring i spenningsintervallet. Med differensialforsterkeren og utgangsimpedansen til tachometeret lav, ble det observert et intervall i $\omega_m$ på omtrent $\pm${\SI{10}{\volt}}. Med utgangsimpedansen satt til høy på tachometeret, falt utgangsspenningen $\omega_m$ fra differensialforsterkeren til omtrent $\pm${\SI{100}{\milli\volt}}.
+Ved å flippe mellom høy og lav impedans på utgangen til tachometeret ble det med instrumenteringsforsterkeren ikke observert noen tydelig endring i spenningsintervallet som holt seg rundt $\pm${\SI{10}{\volt}}. Med differensialforsterkeren og utgangsimpedansen til tachometeret lav, ble det observert et intervall i $\omega_m$ på omtrent $\pm${\SI{10}{\volt}}. Med utgangsimpedansen satt til høy på tachometeret, falt utgangsspenningen $\omega_m$ fra differensialforsterkeren til omtrent $\pm${\SI{100}{\milli\volt}}.
 
 
 
@@ -95,6 +97,6 @@ Hverken differensial- eller instrumenteringsforsterkerkretsen hadde mulighet for
 \todo[inline]{Burde dette vært nevnt i resultatene?}
 
 Med høy utgangsimpedans på tachometeret ga instrumenteringsforsterkeren fortsatt ut $\omega_m$ i intervallet $\pm${\SI{10}{\volt}}, dette skjer på grunn av at signalet fra tachometeret går rett inn i en operasjonsforsterker med veldig høy inngangsimpedans slik at kretsen trekker lite strøm og dermed ikke ble påvirket i noen særlig grad av den høyere impedansen. 
-Differensialforsterkeren på sin side ble sterkt påvirket av endringen i utgangsimpedans. Den ga en $\omega_m$ på ca. $\pm${\SI{100}{\milli\volt}} når utgangsimpedansen ble satt høy. Dette følger teorien ettersom du får en spenningsdeling mellom en motstand på {\SI{1}{\mega\ohm}} og $R_1$\autoref{fig:differensialforsterker}.
+Differensialforsterkeren på sin side ble sterkt påvirket av endringen i utgangsimpedans. Den ga en $\omega_m$ på ca. $\pm${\SI{100}{\milli\volt}} når utgangsimpedansen ble satt høy. Dette følger teorien ettersom man får en spenningsdeling mellom en motstand på {\SI{1}{\mega\ohm}} og $R_1$ på {\SI{10}{\kilo\ohm}} (\autoref{fig:differensialforsterker}).
 
 På grunn av instrumenteringsforsterkerens høyere robusthet, var det denne som ble brukt videre i motorlaben for å ende opp med et best mulig resultat til slutt.

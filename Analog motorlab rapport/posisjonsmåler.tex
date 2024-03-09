@@ -20,6 +20,11 @@ Posisjonsmåling kan enten være en vinkelmåling eller en strekningsmåling. Fo
 
 For å lettere detektere feil er standardiserte målesignaler med elevated zero nyttig. Enkelte feil blir lettere å oppdage, der i blant ledningsbrudd. I tillegg er det vanskelig å måle spenninger rundt \SI{0}{\volt}, med laveste signal over \SI{0}{\volt} vil ikke dette bli et problem. Derfor er det lurt å omformere målesignalet til et standardisert målesignal.
 
+
+
+
+
+
 \subsection{Metode}
 
 \begin{figure}[h]
@@ -45,7 +50,7 @@ For å lettere detektere feil er standardiserte målesignaler med elevated zero 
     \label{tab:Komponenter_i_posisjonsmaler}
 \end{table}
 
-I motorkortet er et potensiometer koblet til motorakslingen. Den er koblet i serie med to motstander, som vist i \autoref{fig:posisjon_maler_potmeter}. Spenningsdeling brukes for å kommefram til følgende uttryk for $V(\theta)$
+På motorkortet er et potensiometer koblet til motorakslingen. Den er koblet i serie med to motstander, som vist i \autoref{fig:posisjon_maler_potmeter}. Spenningsdeling brukes for å kommefram til følgende uttryk for $V(\theta)$
 
 \begin{equation}
     \label{eq:V_av_theta}
@@ -77,6 +82,12 @@ Transferfunksjonen for kretsen den totale kretsen blir
     V_{\theta_m}(\theta) = V_y + \frac{R_4}{R_2}(V_y + V(\theta)).
 \end{equation}
 
+
+
+
+
+
+
 \subsection{Resultater}
 
 \begin{figure}[h]
@@ -88,6 +99,13 @@ Transferfunksjonen for kretsen den totale kretsen blir
 
 \label{obs:floating_potensiometer}
 Det ble observert at ved å stille inn retningen til motoren mellom $\theta_{max}$ og $\theta_{min}$ fikk vi en måling på omtrent \SI{4.4}{\volt}.
+
+
+
+
+
+
+
 
 \subsection{Diskusjon}
 

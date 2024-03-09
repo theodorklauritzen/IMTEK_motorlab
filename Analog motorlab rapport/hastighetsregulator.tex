@@ -3,47 +3,53 @@
 
 \subsection{Teori}
 
-Regulatorer brukes for å styre tilstander i en prosess. En regulator regulator får inn et avvik mellom en referanse og en målt tilstand. Avviket blir brukt til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proposjonalt med avviket, $e = \omega_d - \omega_m$. En slik regulator vil generere et pådrag for å endre tilstanden til referansen. $K_p$ er proposjonalitetsleddet i regulatoren, uttrykket for denne regulatoren er slik
+Regulatorer brukes for å styre tilstander i en prosess. En regulator får inn et avvik mellom referansen og den målte tilstanden. Regulatorer bruker avviket til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proporsjonalt med avviket, $e = \omega_d - \omega_m$. $K_p$ er proporsjonalitetsleddet i regulatoren, uttrykket for denne regulatoren er slik
 
 \begin{equation}
     \label{eq:P_regulator}
     u(t) = K_p e(t).
 \end{equation}
 
-En slik regulator er effektiv så lenge det ikke er en kraft som forhindrer systemet å oppnå en spesifikk tilstand. Da vil ikke regulatoren regulere tilstanden helt til referanseverdien og det oppstår et stasjonærtavvik. Friksjon og luftmotstand er krefter som vil motvirke at et system oppnår en hasighet større enn $0$. Et integratorledd vil motvirke slike krefter, ved å gi et pådrag tilsvarende disse kreftene. Da vil tilstanden nå referansetilstanden og det stasjonæreavviket forsvinner. Likning \eqref{eq:PI_regulator} beskriver en PI-regulator,
+En slik regulator er effektiv så lenge det ikke er en kraft som forhindrer systemet å oppnå en spesifikk tilstand. Da vil ikke regulatoren regulere tilstanden helt til referanseverdien og det oppstår et stasjonæravvik. Friksjon og luftmotstand er krefter som vil motvirke at et system oppnår en hastighet større enn $0$. Et integratorledd vil motvirke slike krefter, ved å gi et pådrag tilsvarende disse kreftene. Da vil tilstanden nå referansetilstanden og det stasjonære avviket forsvinner. \autoref{eq:PI_regulator} beskriver en PI-regulator,
 
 \begin{equation}
     \label{eq:PI_regulator}
     u(t) = K_p e(t) + \frac{K_p}{T_i} \int_{0}^{t} e(\tau) d\tau,
 \end{equation}
 
-der $u$ er pådraget, $K_p$ er proposjonalitetskontanten, $e$ er avviket mellom referansen og tilstanden og $T_i$ er integratorkonstanten som representerer tidskonstanten til regulatoren.
+der $u$ er pådraget, $K_p$ er proporsjonalitetskontanten, $e$ er avviket mellom referansen og tilstanden og $T_i$ er integratorkonstanten som representerer tidskonstanten til regulatoren.
+
+
+
+
+
+
 
 \subsection{Metode}
 
 \begin{figure}[b]
     \centering
     \input{figurer/krets_hastighets_regulator.tex}
-    \caption{PI-regulator krets for hastighetsregulatoren. Hentet fra \cite{AnalogMotorlabbOppgaver}}
+    \caption{PI-regulator krets for hastighetsregulatoren. Hentet fra \cite{AnalogMotorlabbOppgaver}}.
     \label{fig:krets_hastighets_regulator}
 \end{figure}
 
-Hastighetsregulatoren ble implementert som en analog PI-regulator som vist i \autoref{fig:krets_hastighets_regulator}. $OP1$ er en differensialforsterker som finner avviket, $e$, transferfunksjonen er gitt ved utrykk \eqref{eq:differensialforsterker}.
+Hastighetsregulatoren ble implementert som en analog PI-regulator som vist i \autoref{fig:krets_hastighets_regulator}. $OP1$ er en differensialforsterker som finner avviket $e$, transferfunksjonen er gitt ved \autoref{eq:differensialforsterker}.
 $OP2$ er en inverterende forsterker som inverterer avviket, uten forsterkning eller demping.
-$OP3$ er en integrerende forsterker som integrerer $e$ og forsterker den med $\frac{1}{T_i}$. $JP1$ brukes for å nullstille integratoren og skru av I-leddet i integratoren. Da vil regulatoren oppføre seg som en P-regulator. Transferfunksjonen til $OP3$ er $-\frac{1}{(R_5 + R_6) C_1} \int e dt$. Dersom $JP1$ er kortsluttet er spenningen ut fra $OP3$ alltid $0\,V$
-$OP4$ summerer spenningen fra $OP2$ og $OP3$ og forsterker resultatet med $K_p$. Transferfunksjonen for $OP4$ er $-\frac{R_8 + R_9}{R_7}(v_2 + v_3)$, der $v_2$ er spenningen ut av $OP2$ og $v_3$ er spenningen ut av $OP3$. Ut fra dette, har vi følgende sammenheng for $K_p$ og $T_i$,
+$OP3$ er en integrerende forsterker som integrerer $e$ og forsterker den med $\frac{1}{T_i}$. $JP1$ brukes for å nullstille integratoren og skru av I-leddet i integratoren. Da vil regulatoren oppføre seg som en P-regulator. Transferfunksjonen til $OP3$ er $-\frac{1}{(R_5 + R_6) C_1} \int e dt$. Dersom $JP1$ er kortsluttet er spenningen ut fra $OP3$ alltid {\SI{0}{\volt}}.
+$OP4$ summerer spenningen fra $OP2$ og $OP3$ og forsterker resultatet med $K_p$. Transferfunksjonen for $OP4$ er $-\frac{R_8 + R_9}{R_7}(v_2 + v_3)$, der $v_2$ er spenningen ut av $OP2$ og $v_3$ er spenningen ut av $OP3$. Ut fra dette finner vi uttrykk for $K_p$ og $T_i$ som vist i \autoref{eq:K_p_og_T_i}.
 
 \begin{equation}
     \label{eq:K_p_og_T_i}
-    K_p = \frac{R_2}{R_1} \frac{R_8 + R_9}{R_7},
+    K_p = \frac{R_2}{R_1} \frac{R_8 + R_9}{R_7}, 
     T_i = (R_5 + R_6) C_1.
 \end{equation}
 
-Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_i_hastighetsregulatoren}
+Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_i_hastighetsregulatoren}.
 
-\begin{table}
+\begin{table}[h]
     \centering
-    \caption{Motstander og kondensatorer i hastighetsregulatoren. Verdiene er hentet fra \cite{AnalogMotorlabbOppgaver}}
+    \caption{Motstander og kondensatorer i hastighetsregulatoren. Verdiene er hentet fra \cite{AnalogMotorlabbOppgaver}}.
     \begin{tabular}{lll}
         \toprule
         Størrelse & Verdi & Type \\
@@ -58,6 +64,11 @@ Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_
     \label{tab:Komponenter_i_hastighetsregulatoren}
 \end{table}
 
+
+
+
+
+
 \subsection{Resultater}
 
 \label{obs:hastighet_regulator_breming_med_finger}
@@ -66,30 +77,37 @@ Det ble observert at stasjonæravviket og pådraget økte, dersom motoren ble br
 \begin{figure}[h]
     \centering
     \input{figurer/plots/hastighet_P_regulator}
-    \caption{Sprangresponsen til P-hastighetsregulatoren. Data er hentet fra \cite{EksempelData}}
+    \caption{Sprangresponsen til P-hastighetsregulatoren. Data er hentet fra \cite{EksempelData}}.
     \label{fig:hastighet_P_regulator}
 \end{figure}
 
 \begin{figure}[h]
     \centering
     \input{figurer/plots/hastighet_P_regulator_derivert}
-    \caption{Derivert sprangrespons til P-regulator. Dataen har blitt lavpass filtrert. Responsen har ikke en tilhørende y-akse. Data er hentet fra \cite{EksempelData}}
+    \caption{Derivert sprangrespons til P-regulator. Dataen har blitt lavpassfiltrert. Responsen har ikke en tilhørende y-akse. Data er hentet fra \cite{EksempelData}}.
     \label{fig:hastighet_P_regulator_derivert}
+    \todo[inline]{denne figuren er vanskelig å tolke}
 \end{figure}
 
 \begin{figure}[h]
     \centering
     \input{figurer/plots/hastighet_PI_regulator}
-    \caption{Sprangresponsen til PI-hastighetsregulatoren. Data er hentet fra \cite{EksempelData}}
+    \caption{Sprangresponsen til PI-hastighetsregulatoren. Data er hentet fra \cite{EksempelData}}.
     \label{fig:hastighet_PI_regulator}
 \end{figure}
 
+
+
+
+
+
+\todo[inline]{figurtekst på figur 5 er fucked}
 \subsection{Diskusjon}
 
-I \autoref{fig:hastighet_P_regulator} er det et tydelig stasjonæravvik, mellom responen til regulatoren og referanseverdien. Det er flere årsaker til at stasjonværavviket oppstår, blant annet friksjon i motoren, giret, og potmeteret. Dersom motoren bremses, vil det stasjonæreavviket øke, til tross for at pådraget også vil øke. Observasjon \ref{obs:hastighet_regulator_breming_med_finger} viser også at dette stasjonæravviket vil øke dersom motoren bremses mer.
+I \autoref{fig:hastighet_P_regulator} er det et tydelig stasjonæravvik, mellom responsen til regulatoren og referanseverdien. Det er flere årsaker til at stasjonæravviket oppstår, blant annet friksjon i motoren, giret, og potensiometeret. Dersom motoren bremses, vil det stasjonære avviket øke, til tross for at pådraget også vil øke. Observasjonene i \ref{obs:hastighet_regulator_breming_med_finger} viser også at dette stasjonæravviket vil øke dersom motoren bremses mer.
 
 Til tross for at det er et stasjonæravvik er det ikke så stort. Dette kommer antageligvis av at $K_p$ er stor. Siden $K_p$ er stor kan dette føre til at pådraget til regulatoren går i metning. Dette vil føre til at vi får slew-rate i regulatoren. Dette kommer fram i \autoref{fig:hastighet_P_regulator_derivert}. I intervallet \SI{80}{\milli\second} til \SI{100}{\milli\second} er akselerasjonen til motoren konstant, altså er endringen til hastigheten begrenset.
 
-PI-regulatoren oppnår stasjonærverdi, som vist i \autoref{fig:hastighet_PI_regulator} og i observasjon \ref{obs:hastighet_regulator_breming_med_finger}. Etter omtrent \SI{150}{\milli\second} er det er oversving, som viser at systemet er litt underdempet. 
+PI-regulatoren oppnår stasjonærverdi, som vist i \autoref{fig:hastighet_PI_regulator} og sett i observasjonene i \ref{obs:hastighet_regulator_breming_med_finger}. Etter omtrent \SI{150}{\milli\second} er det er oversving, som viser at systemet er litt underdempet. 
 
 % Sammenlign hvor følsom motorhastigheten er for ekstra belastning n˚ar vi bruker regulatorenkontra å styre motoren direkte slik dere gjorde i forrige uke
