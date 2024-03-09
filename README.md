@@ -3,7 +3,7 @@ A repository for a project in IMTEK
 
 # Plan for utførelse av rapporten
 
-- [ ] Pakke ut zip filene
+- [X] Pakke ut zip filene
     - De er pakket ut, men må sorteres. Dessuten har vi ikek noe referanse, som gjør mange av dem ubrukelige.
 - [X] Se over lysarkene for rapportskrivekruset til Øyvind
 - [X] Finne ut hvordan vi koder kretsene så de blir fine
