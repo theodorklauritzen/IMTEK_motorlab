@@ -76,8 +76,12 @@ Etter at systemet var finjustert riktig ved bruk av de forskjelle potensiometere
     \label{fig:bodeplot}
 \end{figure}
 
-
-
+\begin{figure}[h]
+    \centering
+    \input{figurer/plots/bode_fase}
+    \caption{Bodeplot for posisjonsregulatoren}
+    \label{fig:bodeplot_fase}
+\end{figure}
 
 
 
@@ -90,6 +94,8 @@ Etter at systemet var finjustert riktig ved bruk av de forskjelle potensiometere
 \autoref{fig:posisjon_P_regulator} viser at regulatoren vår vår når referanseverdien uten stasjonæravvik. Det er verdt å legge merke til en spike i starten av tranisenten. Det kan være flere årsaker for at denne oppstår, deriblant induksjon fra pådragstrømmen til målestrømmen. Det er også et lite oversving i posisjonsregulatoren, til tross for at posisjonsregulatoren er av første orden. Dette kan skje siden hele systemet har en kaskaderegulator av høyere orden.
 
 \autoref{fig:bodeplot} har et knekkpunk omtrent ved \SI{0.8}{\hertz}. Det betyr at motoren klarer kommer følger referansen inntill frekvensen blir større enn \SI{0.8}{\hertz}. Deretter rekker ikke motoren å peke i riktig retning før den må bytte retning. Det gjør at den ikke oscillerer over hele området til referansen.
+
+\autoref{fig:bodeplot_fase} viser et faseskifte ved høyere frekvenser. Det vil si at motoren henger etter referansen, siden referansen endres så fort.
 
 \todo[inline]{
 Verdier for $K_p$ og de andre reguleringsparameterene??
