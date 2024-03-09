@@ -8,47 +8,15 @@
 % Zenerdiode
 
 
-\todo[inline]{Kan du skrive om bode-plot, tror du har forstått det litt bedre enn meg. Det kan jeg fikse}
+\todo[inline]{
+Kan du skrive om bode-plot, tror du har forstått det litt bedre enn meg.
+Det kan jeg fikse}
 
 En zenerdiode er en halvlederdiode som lar strøm gå både i og mot diodens sperreretning. Dioden er laget slik at den tillater strøm å gå i sperreretning etter at dioden når en viss spenning blir satt over den, det vil si at zenerdioden kun leder strøm i sperreretningen etter at den når sperrespenningen (zenerspenning) og dermed opprettholder dioden zenerspenningen over seg i sperreretning om en høyere spennning er satt over den.
 
-
-Noe om Reguleringoversving
-
-
-
-
-
-
+Regulatoren vil bli implemementert som en P-regulator, med uttrykk som i \eqref{eq:P_regulator}.
 
 \subsection{Metode}
-
-Som siste del av prosjektet ble posisjonsregulatoren implementert. Kretsen er vist i \autoref{fig:Posisjonsregulator}. Posisjonsregulatoren er satt sammen av en krets for å gi en posisjonsreferanse $\theta_d$ og regulatoren selv.
-Posisjonsreferansekretsen benytter en zenerdiode for å opprettholde en konstant referansespenning på {\SI{5.1}{\volt}} til en spenningsdeling over $R_3$, $R_4$ og $R_5$. Kondensatoren $C_1$, vil hjelpe til med å holde en jevnere spenning, og fjerne støy inn til spenningsderingen. Posisjonsreferansen $\theta_d$ kunne dermed justeres ved å endre på potensiometeret $R_4$. Denne referansen ble så sendt inn i selve regulatoren. Regulatoren ble implementert i form av en P-regulator, vist i høyre del av \autoref{fig:Posisjonsregulator}. Første operasjonforsterker sammenligner posisjonsreferansen $\theta_m$ og den målte posisjonen fra posisjonsmåleren $\theta_d$ ($e_{\theta} = \theta_d - \theta_m$). Den andre operasjonforsterkeren forsterker signalet med en forsterkning justert av potensiometeret $R_9$. Etter at systemet var finjustert riktig ved bruk av de forskjelle potensiometerene, ble en signalgenerator koblet til $\theta_d$ i stedet for referansekretsen. Med signalgeneratoren kunne systemets frekvensrespons testes.
-Ut av posisjonsregulatoren sendes $\omega_d$ til hastighetsregulatoren som referanse.
-
-
-
-
-
-
-
-\subsection{Resultater}
-\todo[inline]{Har vi noen grafer til her?}
-
-
-
-
-
-
-
-\subsection{Diskusjon}
-
-
-
-
-
-
 
 \begin{figure} [h]
     \centering
@@ -71,29 +39,51 @@ Ut av posisjonsregulatoren sendes $\omega_d$ til hastighetsregulatoren som refer
         $R_6, R_7$ & $100\,k\Omega$ & Resistor\\
         $R_8$ & $27\,k\Omega$ & Resistor\\
         $R_9$ & $10\,M\Omega$ & Potmeter\\
-        $D_1$ & $5.1\,V$ & Zener diode\\
+        $D_1$ & $5.1\,V$ & Zenerdiode\\
         $C_1$ & $100\,nF$ & Kondensator\\
 		\bottomrule
     \end{tabular}
     \label{tab:my_label}
 \end{table}
 
+Som siste del av prosjektet ble posisjonsregulatoren implementert. Kretsen er vist i \autoref{fig:Posisjonsregulator}. Posisjonsregulatoren er satt sammen av en krets for å gi en posisjonsreferanse $\theta_d$ og regulatoren selv.
+Posisjonsreferansekretsen benytter en zenerdiode for å opprettholde en konstant referansespenning på {\SI{5.1}{\volt}} til en spenningsdeling over $R_3$, $R_4$ og $R_5$. Kondensatoren $C_1$, vil hjelpe til med å holde en jevnere spenning, og fjerne støy inn til spenningsderingen. Posisjonsreferansen $\theta_d$ kunne dermed justeres ved å endre på potensiometeret $R_4$. Denne referansen ble så sendt inn i selve regulatoren. Ved bruk av spenningsdeling blir $\theta_d = \frac{x R_4 + R_5}{R_3 + R_4 + R_5} D1$, der $x$ er et tall fra 0 til 1, etter hvilken posisjon $R_4$ er i og $D1$ er spenningen over dioden. Intervallet til $R_4$ blir (\SI{1.7}{\volt}, \SI{4.7}{\volt}). Siden dette intervallet er litt mindre enn intervallet til $\theta_m$ vil små reguleringsoversving over eller under referansen ikke føre til at motoren roterer rundt.
+
+Regulatoren ble implementert i form av en P-regulator, vist i høyre del av \autoref{fig:Posisjonsregulator}. Første operasjonforsterker sammenligner posisjonsreferansen $\theta_m$ og den målte posisjonen fra posisjonsmåleren $\theta_d$ ($e_{\theta} = \theta_d - \theta_m$). Den andre operasjonforsterkeren forsterker signalet med en forsterkning justert av potensiometeret $R_9$. Etter at systemet var finjustert riktig ved bruk av de forskjelle potensiometerene, ble en signalgenerator koblet til $\theta_d$ i stedet for referansekretsen. Med signalgeneratoren kunne systemets frekvensrespons testes.
+Ut av posisjonsregulatoren sendes $\omega_d$ til hastighetsregulatoren som referanse.
 
 
+\subsection{Resultater}
+\todo[inline]{
+Har vi noen grafer til her?
+Ikke flere en disse to
+}
 
 \begin{figure}[h]
     \centering
     \input{figurer/plots/bodeplot}
-    \caption{Bodeplot av posisjonsregulatoren}
+    \caption{Bodeplot for posisjonsregulatoren}
     \label{fig:bodeplot}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \input{figurer/plots/posisjon_P_regulator}
-    \caption{INSERT TEXT HERE}
+    \caption{Sprangresponsen til posisjonsregulatoren. Data hentet fra \cite{EksempelData}}
     \label{fig:posisjon_P_regulator}
 \end{figure}
+
+\subsection{Diskusjon}
+
+
+
+
+
+
+
+
+
+
 
 
 
