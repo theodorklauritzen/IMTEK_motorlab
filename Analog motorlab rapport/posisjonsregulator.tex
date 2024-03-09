@@ -24,9 +24,9 @@ Noe om Reguleringoversving
 \subsection{Metode}
 
 Som siste del av prosjektet ble posisjonsregulatoren implementert. Kretsen er vist i \autoref{fig:Posisjonsregulator}. Posisjonsregulatoren er satt sammen av en krets for å gi en posisjonsreferanse $\theta_d$ og regulatoren selv.
-Posisjonsreferansekretsen benytter en zenerdiode for å opprettholde en konstant referansespenning på {\SI{5.1}{\volt}} til en spenningsdeling over $R_3$, $R_4$ og $R_5$. Kondensatoren $C_1$, vil hjelpe til med å holde en jevnere spenning, og fjerne støy inn til spenningsderingen. Posisjonsreferansen $\theta_d$ kunne dermed justeres ved å endre på potensiometeret $R_4$. Denne referansen ble så sendt inn i selve regulatoren. Regulatoren ble implementert i form av en P-regulator, vist i høyre del av \autoref{fig:Posisjonsregulator}. Første operasjonforsterker sammenlikner  $\theta_m$ fra $\theta_d$ ($e_{\theta} = \theta_d - \theta_m$)
+Posisjonsreferansekretsen benytter en zenerdiode for å opprettholde en konstant referansespenning på {\SI{5.1}{\volt}} til en spenningsdeling over $R_3$, $R_4$ og $R_5$. Kondensatoren $C_1$, vil hjelpe til med å holde en jevnere spenning, og fjerne støy inn til spenningsderingen. Posisjonsreferansen $\theta_d$ kunne dermed justeres ved å endre på potensiometeret $R_4$. Denne referansen ble så sendt inn i selve regulatoren. Regulatoren ble implementert i form av en P-regulator, vist i høyre del av \autoref{fig:Posisjonsregulator}. Første operasjonforsterker sammenligner posisjonsreferansen $\theta_m$ og den målte posisjonen fra posisjonsmåleren $\theta_d$ ($e_{\theta} = \theta_d - \theta_m$). Den andre operasjonforsterkeren forsterker signalet med en forsterkning justert av potensiometeret $R_9$. Etter at systemet var finjustert riktig ved bruk av de forskjelle potensiometerene, ble en signalgenerator koblet til $\theta_d$ i stedet for referansekretsen. Med signalgeneratoren kunne systemets frekvensrespons testes.
+Ut av posisjonsregulatoren sendes $\omega_d$ til hastighetsregulatoren som referanse.
 
-$\theta_d$ ble også styrt med en signalgenerator
 
 
 
