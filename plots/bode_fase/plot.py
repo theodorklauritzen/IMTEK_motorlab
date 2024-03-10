@@ -25,8 +25,9 @@ FREKVENS = DATA[0]
 FORSTERKNING = DATA[1] / REF_VOLTAGE
 FASE_VINKEL = DATA[2]
 
-#FREKVENS = np.array([0.1, 0.5, 1, 5, 7.5, 10, 50, 100])
-#FASE_VINKEL = np.array([0, 0, -0.05, -6, -110, -150, -180, -180])
+#FREKVENS     = np.array([0.1, 0.5, 1    , 5   , 7.5 , 10  , 50  , 100])
+#FORSTERKNING = np.array([5  , 5  , 5    , 4.55, 4.15, 3.8 , 1.5 , 1.25]) / 5
+#FASE_VINKEL  = np.array([0  , 0  , -0.05, -6  , -110, -150, -180, -180])
 
 #FREKVENS = FREKVENS[dataSlice]
 #FORSTERKNING = FORSTERKNING[dataSlice]
