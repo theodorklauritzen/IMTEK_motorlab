@@ -7,14 +7,9 @@
 % P-regulator
 % Zenerdiode
 
-En zenerdiode er en halvlederdiode som lar strøm gå både med og mot diodens sperreretning. Dioden er laget slik at den tillater strøm å gå i sperreretning først etter at en viss spenning blir satt over den, det vil si at zenerdioden kun leder strøm i sperreretningen etter at den når sperrespenningen (zenerspenning), og dermed opprettholder dioden zenerspenningen over seg i sperreretning om en høyere spenning er satt over den.
-\todo[inline]{avsnittet over må fikses, for trøtt til å gjøre det nå}
-
-Regulatoren vil bli implementert som en P-regulator, med uttrykk som i \eqref{eq:P_regulator}. Pådraget fra posisjonsregulatoren vil gå inn i hastighetsregulatoren og systemet blir da kaskaderegulert.
-\todo[inline]{er dette mer metode?}
-
-
-
+En zenerdiode er en halvlederdiode som lar strøm gå både med og mot diodens sperreretning. 
+Dioden er laget slik at det kreves en viss spenning for strøm skal kunne gå mot sperreretningen, denne spenningen kalles zenerspenningen.
+En zenerdiode sørger derfor for at spenningen over seg ikke blir noe høyere enn zenerspenningen sin, og kan derfor brukes til å holde en konstant spenning lavere enn den forsynte spenningen.
 
 
 
@@ -47,14 +42,19 @@ Regulatoren vil bli implementert som en P-regulator, med uttrykk som i \eqref{eq
         $C_1$ & \SI{100}{\nano\farad} & Kondensator\\
 		\bottomrule
     \end{tabular}
-    \label{tab:my_label}
+    \label{tab:Posisjonsregulator}
 \end{table}
 
-Som siste del av prosjektet ble posisjonsregulatoren implementert. Kretsen er vist i \autoref{fig:Posisjonsregulator}. Posisjonsregulatoren er satt sammen av en krets for å gi en posisjonsreferanse $\theta_d$ og regulatoren selv.
-Posisjonsreferansekretsen benytter en zenerdiode for å opprettholde en konstant referansespenning på {\SI{5.1}{\volt}} til en spenningsdeling over $R_3$, $R_4$ og $R_5$. Kondensatoren $C_1$, vil hjelpe til med å holde en jevnere spenning, og fjerne støy inn til spenningsdelingen. Posisjonsreferansen $\theta_d$ kunne dermed justeres ved å endre på potensiometeret $R_4$. Denne referansen ble så sendt inn i selve regulatoren. Ved bruk av spenningsdeling blir $\theta_d = \frac{x R_4 + R_5}{R_3 + R_4 + R_5} D1$, der $x$ er et tall fra 0 til 1, etter hvilken posisjon $R_4$ er i og $D1$ er spenningen over dioden. Intervallet til $R_4$ blir (\SI{1.7}{\volt}, \SI{4.7}{\volt}). Siden dette intervallet er litt mindre enn intervallet til $\theta_m$ vil små reguleringsoversving over eller under referansen ikke føre til at slepekontakten går over $\theta_{max}$ eller under $\theta_{min}$, slik at servomotoren ikke begynner å rotere hele runder.
+Som siste del av prosjektet ble posisjonsregulatoren implementert. Kretsen er vist i \autoref{fig:Posisjonsregulator} og ble implementert med komponentene i \autoref{tab:Posisjonsregulator}. Posisjonsregulatoren er satt sammen av en krets for å gi en posisjonsreferanse $\theta_d$ og regulatoren selv.
+Posisjonsreferansekretsen benytter en zenerdiode for å opprettholde en konstant referansespenning på {\SI{5.1}{\volt}} til en spenningsdeling over $R_3$, $R_4$ og $R_5$. 
+Kondensatoren $C_1$, vil hjelpe til med å holde en jevnere spenning, og fjerne støy inn til spenningsdelingen. 
+Posisjonsreferansen $\theta_d$ kunne dermed justeres ved å endre på potensiometeret $R_4$. Denne referansen ble så sendt inn i selve regulatoren. 
+Ved bruk av spenningsdeling blir $\theta_d = \frac{x R_4 + R_5}{R_3 + R_4 + R_5} D1$, der $x$ er et tall fra 0 til 1, etter hvilken posisjon $R_4$ er i og $D1$ er spenningen over zenerdioden. 
+Intervallet til $R_4$ blir (\SI{1.7}{\volt}, \SI{4.7}{\volt}). 
+Siden dette intervallet er litt mindre enn intervallet til $\theta_m$ vil små reguleringsoversving over eller under referansen ikke føre til at slepekontakten går over $\theta_{max}$ eller under $\theta_{min}$, slik at servomotoren ikke begynner å rotere hele runder.
 
 Regulatoren ble implementert som vist i høyre del av \autoref{fig:Posisjonsregulator}. Første operasjonforsterker sammenligner posisjonsreferansen $\theta_m$ og den målte posisjonen fra posisjonsmåleren $\theta_d$, slik at avviket blir $e_{\theta} = \theta_d - \theta_m$. Den andre operasjonforsterkeren forsterker signalet med en forsterkning justert av potensiometeret $R_9$. Ut av posisjonsregulatoren sendes $\omega_d$ til hastighetsregulatoren som referanse.
-Etter at systemet var finjustert riktig ved bruk av de forskjelle potensiometerene, ble en signalgenerator koblet til $\theta_d$ i stedet for referansekretsen. Med signalgeneratoren kunne systemets frekvensrespons testes.
+Etter at systemet var finjustert riktig ved bruk av de forskjellige potensiometerene, ble en signalgenerator koblet til $\theta_d$ i stedet for referansekretsen. Med signalgeneratoren kunne systemets frekvensrespons testes.
 
 
 
@@ -63,7 +63,7 @@ Etter at systemet var finjustert riktig ved bruk av de forskjelle potensiometere
 
 
 \subsection{Resultater}
-\todo[inline]{sørge for at alle resultatgrafer ligger under resultater}
+
 
 \begin{figure}[h]
     \centering
@@ -106,7 +106,7 @@ Reguleringen fungerte veldig bra ved bruk av kun proporsjonalvirkning som kommer
 Derfor ble reguleringen kanskje best ved et veldig lavt proporsjonal-ledd og lite til ingen integrasjonsvirkning.
 
 
-Bode-plottet i \autoref{fig:bodeplot} har et knekkpunkt omtrent ved \SI{0.8}{\hertz}. Det vil si at motoren ikke klarer å følge referansen dersom den endrer seg fortere enn knekkfkrevensen. Det gjør at den ikke oscillerer over hele området til referansen, men kun et mindre område. 
+Bode-plottet i \autoref{fig:bodeplot} har et knekkpunkt omtrent ved \SI{0.8}{\hertz}. Det vil si at motoren ikke klarer å følge referansen dersom den endrer seg fortere enn knekkfkrevensen. Det gjør at motoren ikke oscillerer over hele området til referansen, men kun et mindre område. 
 
 \autoref{fig:bodeplot_fase} viser et faseskifte ved høye frekvenser. Det vil si at motoren henger etter referansen, siden referansen endres så fort.
 
