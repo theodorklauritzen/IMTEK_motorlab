@@ -50,8 +50,8 @@ Posisjonsreferansekretsen benytter en zenerdiode for å opprettholde en konstant
 Kondensatoren $C_1$, vil hjelpe til med å holde en jevnere spenning, og fjerne støy inn til spenningsdelingen. 
 Posisjonsreferansen $\theta_d$ kunne dermed justeres ved å endre på potensiometeret $R_4$. Denne referansen ble så sendt inn i selve regulatoren. 
 Ved bruk av spenningsdeling blir $\theta_d = \frac{x R_4 + R_5}{R_3 + R_4 + R_5} D1$, der $x$ er et tall fra 0 til 1, etter hvilken posisjon $R_4$ er i og $D1$ er spenningen over zenerdioden. 
-Intervallet til $R_4$ blir (\SI{1.7}{\volt}, \SI{4.7}{\volt}). 
-Siden dette intervallet er litt mindre enn intervallet til $\theta_m$ vil små reguleringsoversving over eller under referansen ikke føre til at slepekontakten går over $\theta_{max}$ eller under $\theta_{min}$, slik at servomotoren ikke begynner å rotere hele runder.
+Intervallet til $R_4$ blir <\SI{1.7}{\volt}, \SI{4.7}{\volt}>. 
+Siden dette intervallet er litt mindre enn intervallet til $\theta_m$ vil små reguleringsoversving over eller under referansen ikke føre til at slepekontakten går over $\theta_{max}$ eller under $\theta_{min}$. Dette hindrer servomotoren fra å rotere hele runder.
 
 Regulatoren ble implementert som vist i høyre del av \autoref{fig:Posisjonsregulator}. Første operasjonforsterker sammenligner posisjonsreferansen $\theta_m$ og den målte posisjonen fra posisjonsmåleren $\theta_d$, slik at avviket blir $e_{\theta} = \theta_d - \theta_m$. Den andre operasjonforsterkeren forsterker signalet med en forsterkning justert av potensiometeret $R_9$. Ut av posisjonsregulatoren sendes $\omega_d$ til hastighetsregulatoren som referanse.
 Etter at systemet var finjustert riktig ved bruk av de forskjellige potensiometerene, ble en signalgenerator koblet til $\theta_d$ i stedet for referansekretsen. Med signalgeneratoren kunne systemets frekvensrespons testes.
@@ -75,7 +75,7 @@ Etter at systemet var finjustert riktig ved bruk av de forskjellige potensiomete
 \begin{figure}[h]
     \centering
     \input{figurer/plots/bode2}
-    \caption{Bodeplot for forstkerningen til systemet med posisjonsregulatoren. De røde stiplede linjene er pålagt grafikk, for å lettere finne knekkfrekvens.s}
+    \caption{Bodeplot for forstkerningen til systemet med posisjonsregulatoren. De røde stiplede linjene er pålagt grafikk, for å lettere finne knekkfrekvensen.}
     \label{fig:bodeplot}
 \end{figure}
 
@@ -94,7 +94,7 @@ Etter at systemet var finjustert riktig ved bruk av de forskjellige potensiomete
 
 \subsection{Diskusjon}
 
-\autoref{fig:posisjon_P_regulator} viser at regulatoren når referanseverdien uten stasjonæravvik. Det er verdt å legge merke til et hopp i starten av transienten. 
+\autoref{fig:posisjon_P_regulator} viser at regulatoren når referanseverdien uten stasjonæravvik. Det er verdt å legge merke til pulsen i starten av transienten. 
 Det kan være flere årsaker for at dette oppstår, deriblant induksjon fra pådragstrømmen til målestrømmen.
 
 Det er også et lite oversving i posisjonsregulatoren, til tross for at posisjonsregulatoren er av første orden. Dette kan skje siden hele systemet er reulgert av en en kaskaderegulator av høyere orden.
@@ -102,13 +102,13 @@ Det er også et lite oversving i posisjonsregulatoren, til tross for at posisjon
 Under tuning av reguleringen i hastighets- og posisjonsregulatoren var det vanskelig å finne et sett med parametere til potensiometerene for å få en god respons på posisjonsreguleringen. 
 Ved de fleste kombinasjoner av parametere endte motoren opp med å vibrere med høy frekvens rundt referansepunktet. 
 Dette kan ha blitt forårsaket av systemet er veldig sensitivt til støy eller at det har vært veldig mye støy i kretsen.
-Reguleringen fungerte veldig bra ved bruk av kun proporsjonalvirkning som kommer av at det ikke er noen kraft som hindrer servomotoren i å holde en konstant posisjon.
+Reguleringen fungerte veldig bra ved bruk av kun proporsjonalvirkning som kommer av at det ikke er noen krefter som hindrer servomotoren i å holde en konstant posisjon.
 Derfor ble reguleringen kanskje best ved et veldig lavt proporsjonal-ledd og lite til ingen integrasjonsvirkning.
 
 
-Bode-plottet i \autoref{fig:bodeplot} har et knekkpunkt omtrent ved \SI{0.8}{\hertz}. Det vil si at motoren ikke klarer å følge referansen dersom den endrer seg fortere enn knekkfkrevensen. Det gjør at motoren ikke oscillerer over hele området til referansen, men kun et mindre område. 
+Bode-plottet i \autoref{fig:bodeplot} har et knekkpunkt omtrent ved \SI{0.8}{\hertz}. Det vil si at motoren ikke klarer å følge referansen dersom den endrer seg fortere enn knekkfkrevensen. Det gjør at motoren ikke oscillerer over hele området til referansen, kun et mindre område. 
 
-\autoref{fig:bodeplot_fase} viser et faseskifte ved høye frekvenser. Det vil si at motoren henger etter referansen, siden referansen endres så fort.
+\autoref{fig:bodeplot_fase} viser et faseskifte ved høye frekvenser. Det vil si at motoren henger etter referansen, siden referansen endres så fort. Motoren henger etter ganske allerede fra \SI{0.1}{\hertz}, men er ikke spesielt merkbart før knekkfrekvensen.
 
 \todo[inline]{Hvorfor er det stygt?}
 
