@@ -21,6 +21,7 @@ A repository for a project in IMTEK
 - [ ] Lese over
 - [ ] skrive om ting
 - [ ] Fikse bibliografi
+- [ ] Fikse y-akse på plots
 
 # Outline
 

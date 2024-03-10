@@ -3,7 +3,7 @@
 
 \subsection{Teori}
 
-Regulatorer brukes for å styre tilstander i en prosess. En regulator får inn et avvik mellom referansen og den målte tilstanden. Regulatorer bruker avviket til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proporsjonalt med avviket, $e = \omega_d - \omega_m$. $K_p$ er proporsjonalitetsleddet i regulatoren, uttrykket for denne regulatoren er slik
+Regulatorer brukes for å styre tilstander i en prosess. En regulator får inn et avvik mellom referansen og den målte tilstanden. Regulatorer bruker avviket til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proporsjonalt med avviket, $e = \omega_d - \omega_m$. $K_p$ er proposjonalforstkerningen i regulatoren. Uttrykket for denne regulatoren er slik
 
 \begin{equation}
     \label{eq:P_regulator}
@@ -36,8 +36,13 @@ der $u$ er pådraget, $K_p$ er proporsjonalitetskontanten, $e$ er avviket mellom
 
 Hastighetsregulatoren ble implementert som en analog PI-regulator som vist i \autoref{fig:krets_hastighets_regulator}. $OP1$ er en differensialforsterker som finner avviket $e$, transferfunksjonen er gitt ved \eqref{eq:differensialforsterker}.
 $OP2$ er en inverterende forsterker som inverterer avviket, uten forsterkning eller demping.
-$OP3$ er en integrerende forsterker som integrerer $e$ og forsterker den med $\frac{1}{T_i}$. $JP1$ brukes for å nullstille integratoren og skru av I-leddet i integratoren. Da vil regulatoren oppføre seg som en P-regulator. Transferfunksjonen til $OP3$ er $-\frac{1}{(R_5 + R_6) C_1} \int e dt$. Dersom $JP1$ er kortsluttet er spenningen ut fra $OP3$ alltid {\SI{0}{\volt}}.
-$OP4$ summerer spenningen fra $OP2$ og $OP3$ og forsterker resultatet med $K_p$. Transferfunksjonen for $OP4$ er $-\frac{R_8 + R_9}{R_7}(v_2 + v_3)$, der $v_2$ er spenningen ut av $OP2$ og $v_3$ er spenningen ut av $OP3$. Ut fra dette kommer et uttrykk for $K_p$ og $T_i$ som vist i \eqref{eq:K_p_og_T_i}.
+$OP3$ er en integrerende forsterker som integrerer $e$ og forsterker den med $\frac{1}{T_i}$.
+$JP1$ brukes for å nullstille integratoren og skru av I-leddet i regulatoren.
+Da vil spenningen ut fra $OP3$ være \SI{0}{\volt} \cite{AnalogMotorlabbOppgaver}.
+Da vil regulatoren oppføre seg som en P-regulator.
+Ved bruk av operasjonsforsterkerens gyldne regler, blir transferfunksjonen til $OP3$ $-\frac{1}{(R_5 + R_6) C_1} \int e dt$.
+$OP4$ summerer spenningen fra $OP2$ og $OP3$ og forsterker resultatet med $K_p$.
+Transferfunksjonen for $OP4$ er $-\frac{R_8 + R_9}{R_7}(v_2 + v_3)$, der $v_2$ er spenningen ut av $OP2$ og $v_3$ er spenningen ut av $OP3$. Ut fra dette kommer et uttrykk for $K_p$ og $T_i$ som vist i \ref{eq:K_p_og_T_i}.
 
 \begin{equation}
     \label{eq:K_p_og_T_i}
@@ -45,7 +50,7 @@ $OP4$ summerer spenningen fra $OP2$ og $OP3$ og forsterker resultatet med $K_p$.
     T_i = (R_5 + R_6) C_1.
 \end{equation}
 
-Størrelsen på motstandene og kondensatoren er vist i likning \eqref{tab:Komponenter_i_hastighetsregulatoren}.
+Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_i_hastighetsregulatoren}.
 
 \begin{table}[h]
     \centering
@@ -72,7 +77,7 @@ Størrelsen på motstandene og kondensatoren er vist i likning \eqref{tab:Kompon
 \subsection{Resultater}
 
 \label{obs:hastighet_regulator_breming_med_finger}
-Det ble observert at stasjonæravviket og pådraget økte, dersom motoren ble bremset med en finger, da motoren ble regulert ved bruk av P-regulatoren. Ved bruk av PI-regulator økte pådraget til tilstanden nådde referanseverdien, selv med en finger som bremset motoren.
+Da motoren ble bremset med en finger, økte både pådraget og stasjonæravviket når intergratorleddet var skrudd av. Ved bruk av integratorleddet, økte pådraget helt til tilstanden nådde referanseverdien.
 
 \begin{figure}[h]
     \centering
@@ -87,7 +92,7 @@ Det ble observert at stasjonæravviket og pådraget økte, dersom motoren ble br
     \caption{
         Akselerasjonen til motoren under en sprangrespons, når motoren er regulert med en P-regulator for hastighet.
         Dataen har blitt lavpassfiltrert og er hentet fra \cite{EksempelData}.
-    }.
+    }
     \label{fig:hastighet_P_regulator_derivert}
 \end{figure}
 
@@ -105,9 +110,10 @@ Det ble observert at stasjonæravviket og pådraget økte, dersom motoren ble br
 
 \subsection{Diskusjon}
 
-I \autoref{fig:hastighet_P_regulator} er det et tydelig stasjonæravvik, mellom responsen til regulatoren og referanseverdien. Det er flere årsaker til at stasjonæravviket oppstår, blant annet friksjon i motoren, giret, og potensiometeret. Dersom motoren bremses, vil det stasjonære avviket øke, til tross for at pådraget også vil øke. Observasjonene i seksjon \ref{obs:hastighet_regulator_breming_med_finger} viser også at dette stasjonæravviket vil øke dersom motoren bremses mer.
+I \autoref{fig:hastighet_P_regulator} er det et tydelig stasjonæravvik, mellom responsen til regulatoren og referanseverdien. Det er flere årsaker til at stasjonæravviket oppstår, blant annet friksjon i motoren, giret, og potensiometeret.
+Dersom motoren bremses, vil det stasjonære avviket øke, til tross for at pådraget øker. Observasjonene i seksjon \ref{obs:hastighet_regulator_breming_med_finger} viser også at dette stasjonæravviket øker mer dersom motoren bremses mer.
 
-Til tross for at det er et stasjonæravvik er det ikke så stort. Dette kommer antageligvis av at $K_p$ er stor. Siden $K_p$ er stor kan dette føre til at pådraget til regulatoren går i metning. Dette vil føre til slew-rate i regulatoren. Dette kommer fram i \autoref{fig:hastighet_P_regulator_derivert}. I intervallet \SI{80}{\milli\second} til \SI{100}{\milli\second} er akselerasjonen til motoren konstant, altså er endringen til hastigheten begrenset.
+Til tross for at det er et stasjonæravvik er det ikke så stort. Dette kommer antageligvis av at $K_p$ er stor. Siden $K_p$ er stor kan dette føre til at pådraget til regulatoren går i metning. Dette vil føre til slew-rate i regulatoren. Dette kommer fram i \autoref{fig:hastighet_P_regulator_derivert}. I intervallet \SI{80}{\milli\second} til \SI{100}{\milli\second} er akselerasjonen til motoren konstant, altså er det en begrensing på hvor fort hastigheten kan endres.
 
 PI-regulatoren oppnår stasjonærverdi, som vist i \autoref{fig:hastighet_PI_regulator} og sett i observasjonene i seksjon \ref{obs:hastighet_regulator_breming_med_finger}. Etter omtrent \SI{150}{\milli\second} er det er oversving, som viser at systemet er litt underdempet. 
 
