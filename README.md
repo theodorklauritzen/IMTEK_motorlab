@@ -12,6 +12,16 @@ A repository for a project in IMTEK
 - [ ] Se over oppgavearket for å se om vi har glemt noe
 - [X] Husk å se over alle målenheter, dette må samkjøres
 
+
+
+# todo
+- [ ] Fikse figurtekst
+- [ ] Skrive sammendrag og konklusjon
+- [ ] Gjeldende siffer
+- [ ] Lese over
+- [ ] skrive om ting
+- [ ] Fikse bibliografi
+
 # Outline
 
 - [ ] Sammendrag
