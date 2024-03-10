@@ -3,14 +3,14 @@
 
 \subsection{Teori}
 
-Regulatorer brukes for å styre tilstander i en prosess. En regulator får inn et avvik mellom referansen og den målte tilstanden. Regulatorer bruker avviket til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proporsjonalt med avviket, $e = \omega_d - \omega_m$. $K_p$ er proposjonalforstkerningen i regulatoren. Uttrykket for denne regulatoren er slik
+Regulatorer brukes for å styre tilstander i en prosess. En regulator får inn et avvik mellom referansen og den målte tilstanden. Regulatorer bruker avviket til å beregne et pådrag til prosessen. P-regulator er en type regulator som lager et pådrag, $u$,  som er proporsjonalt med avviket, $e = \omega_d - \omega_m$. $K_p$ er proporsjonalforstkerningen i regulatoren. Uttrykket for denne regulatoren er slik
 
 \begin{equation}
     \label{eq:P_regulator}
     u(t) = K_p e(t).
 \end{equation}
 
-En slik regulator er effektiv så lenge det ikke er en kraft som forhindrer systemet å oppnå en spesifikk tilstand. Da vil ikke regulatoren regulere tilstanden helt til referanseverdien og det oppstår et stasjonæravvik. Friksjon og luftmotstand er krefter som vil motvirke at et system oppnår en hastighet større enn $0$. Et integratorledd vil motvirke slike krefter, ved å gi et pådrag tilsvarende disse kreftene. Da vil tilstanden nå referansetilstanden og det stasjonære avviket forsvinner. Uttrykk \eqref{eq:PI_regulator} beskriver en PI-regulator,
+En slik regulator er effektiv så lenge det ikke er en kraft som forhindrer systemet å oppnå en spesifikk tilstand. Med en slik kraft vil ikke regulatoren regulere tilstanden helt til referanseverdien og det oppstår et stasjonæravvik. Friksjon og luftmotstand er krefter som vil motvirke at et system oppnår en hastighet større enn $0$. Et integratorledd vil motvirke slike krefter, ved å gi et pådrag tilsvarende disse kreftene. Da vil tilstanden nå referansen og det stasjonære avviket forsvinner. Uttrykk \eqref{eq:PI_regulator} beskriver en PI-regulator,
 
 \begin{equation}
     \label{eq:PI_regulator}
@@ -77,7 +77,7 @@ Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_
 \subsection{Resultater}
 
 \label{obs:hastighet_regulator_breming_med_finger}
-Da motoren ble bremset med en finger, økte både pådraget og stasjonæravviket når intergratorleddet var skrudd av. Ved bruk av integratorleddet, økte pådraget helt til tilstanden nådde referanseverdien.
+Da motoren ble bremset med en finger, økte både pådraget og stasjonæravviket når integratorleddet var skrudd av. Ved bruk av integratorleddet, økte pådraget helt til tilstanden nådde referanseverdien.
 
 \begin{figure}[h]
     \centering
@@ -115,6 +115,6 @@ Dersom motoren bremses, vil det stasjonære avviket øke, til tross for at pådr
 
 Til tross for at det er et stasjonæravvik er det ikke så stort. Dette kommer antageligvis av at $K_p$ er stor. Siden $K_p$ er stor kan dette føre til at pådraget til regulatoren går i metning. Dette vil føre til slew-rate i regulatoren. Dette kommer fram i \autoref{fig:hastighet_P_regulator_derivert}. I intervallet \SI{80}{\milli\second} til \SI{100}{\milli\second} er akselerasjonen til motoren konstant, altså er det en begrensing på hvor fort hastigheten kan endres.
 
-PI-regulatoren oppnår stasjonærverdi, som vist i \autoref{fig:hastighet_PI_regulator} og sett i observasjonene i seksjon \ref{obs:hastighet_regulator_breming_med_finger}. Etter omtrent \SI{150}{\milli\second} er det er oversving, som viser at systemet er litt underdempet. 
+PI-regulatoren oppnår stasjonærverdi, som vist i \autoref{fig:hastighet_PI_regulator} og sett i observasjonene i seksjon \ref{obs:hastighet_regulator_breming_med_finger}. Etter omtrent \SI{150}{\milli\second} er det et oversving, som viser at systemet er litt underdempet. 
 
 % Sammenlign hvor følsom motorhastigheten er for ekstra belastning n˚ar vi bruker regulatorenkontra å styre motoren direkte slik dere gjorde i forrige uke
