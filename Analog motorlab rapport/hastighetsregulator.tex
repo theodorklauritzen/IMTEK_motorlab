@@ -34,7 +34,7 @@ der $u$ er pådraget, $K_p$ er proporsjonalitetskontanten, $e$ er avviket mellom
     \label{fig:krets_hastighets_regulator}
 \end{figure}
 
-Hastighetsregulatoren ble implementert som en analog PI-regulator som vist i \autoref{fig:krets_hastighets_regulator}. $OP1$ er en differensialforsterker som finner avviket $e$, transferfunksjonen er gitt ved \eqref{eq:differensialforsterker}.
+Hastighetsregulatoren ble implementert som en analog PI-regulator som vist i \autoref{fig:krets_hastighets_regulator}, med verdier for komponentene som i \autoref{tab:Komponenter_i_hastighetsregulatoren}. $OP1$ er en differensialforsterker som finner avviket $e$, transferfunksjonen er gitt ved \eqref{eq:differensialforsterker}.
 $OP2$ er en inverterende forsterker som inverterer avviket, uten forsterkning eller demping.
 $OP3$ er en integrerende forsterker som integrerer $e$ og forsterker den med $\frac{1}{T_i}$.
 $JP1$ brukes for å nullstille integratoren og skru av I-leddet i regulatoren.
@@ -59,8 +59,6 @@ Dette gir oss følgende uttrykk for $K_p$ og $T_i$,
     K_p = \frac{R_2}{R_1} \frac{R_8 + R_9}{R_7}, 
     T_i = (R_5 + R_6) C_1.
 \end{equation}
-
-Størrelsen på motstandene og kondensatoren er vist i \autoref{tab:Komponenter_i_hastighetsregulatoren}.
 
 \begin{table}[h]
     \centering
@@ -96,7 +94,7 @@ Da motoren ble bremset med en finger økte både pådraget og stasjonæravviket 
     \label{fig:hastighet_P_regulator}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \input{figurer/plots/hastighet_P_regulator_derivert}
     \caption{
@@ -106,7 +104,7 @@ Da motoren ble bremset med en finger økte både pådraget og stasjonæravviket 
     \label{fig:hastighet_P_regulator_derivert}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \input{figurer/plots/hastighet_PI_regulator}
     \caption{Sprangresponsen til PI-regulatoren for hastighet. Dataen er hentet fra \cite{EksempelData}.}

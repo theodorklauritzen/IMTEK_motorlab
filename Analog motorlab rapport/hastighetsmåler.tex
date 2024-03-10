@@ -44,16 +44,6 @@ Instrumenteringsforsterkeren i \autoref{fig:instrumenteringsforsterker} kan ders
 
 \subsection{Metode}
 
-For å kunne måle hastigheten, var et takometer montert på den ene enden av motoren.
-Dette takometeret ga ut hastigheten til motoren i form av en differensiell spenning på intervallet $\pm${\SI{1.79}{\volt}}.
-For å oppnå ønsket spenningsnivå for $\omega_m$ på $\pm${\SI{10}{\volt}} ble en differensialforsterker (\autoref{fig:differensialforsterker}) og en instrumenteringsforsterker (\autoref{fig:instrumenteringsforsterker}) implementert på studentkortet.
-Hensikten med å implementere både differensialforsterkeren og instrumenteringsforsterkeren var å sammenligne de, spesielt med tanke på respons til endring av utgangsimpedans fra takometeret.
-To jumpere ble plassert på takometerets to utganger for å raskt kunne bytte mellom de to forsterkerkretsene. I differensialforsterkeren brukes resistorer med vedier for $R_1$ og $R_2$ gitt i \autoref{tab:differensiellforsterker}, og forsterkningen er gitt ved $\frac{R_2}{R_1} = \frac{\SI{56}{\kilo\ohm}}{\SI{10}{\kilo\ohm}}$\eqref{eq:differensialforsterker}.
-
-I instrumenteringsforsterkeren brukes motstander med verdiene gitt i \autoref{tab:Instrumenteringsforsterker}. Instrumenteringsforsterkeren kan endres forsterkning på ved å variere på motstanden $R_G$. 
-Dersom $R_G$ settes til {\SI{0}{\ohm}}, vil utgangsspenningen være avgrenset av operasjonsforsterkerens forsyningsspenning på $\pm${\SI{15}{\volt}} . 
-$R_G$ finner man ved å løse likning \eqref{eq:instrumenteringsforsterker} for $R_G$ med verdiene i \autoref{tab:Instrumenteringsforsterker}. For å oppnå en ønsket spenning på $\pm${\SI{10}{\volt}} i utgangen på kretsen, blir $R_G$ ca. {\SI{2.2}{\kilo\ohm}}. $R_G$ ble så manuelt stilt for å oppnå best mulig resultat på forsterkningen. Begge forsterkerene ble så testet med både høy og lav utgangsimpedans på takometeret. For å sammenligne responser ble det tatt målinger av $\omega_m$.
-
 \begin{table}[h]
 	\centering
     \caption{Motstander i differensialforsterkeren. Verdiene er hentet fra \cite{AnalogMotorlabbOppgaver}.}
@@ -82,6 +72,16 @@ $R_G$ finner man ved å løse likning \eqref{eq:instrumenteringsforsterker} for 
 	\end{tabular}
     \label{tab:Instrumenteringsforsterker}
 \end{table}
+
+For å kunne måle hastigheten, var et takometer montert på den ene enden av motoren.
+Dette takometeret ga ut hastigheten til motoren i form av en differensiell spenning på intervallet $\pm${\SI{1.79}{\volt}}.
+For å oppnå ønsket spenningsnivå for $\omega_m$ på $\pm${\SI{10}{\volt}} ble en differensialforsterker (\autoref{fig:differensialforsterker}) og en instrumenteringsforsterker (\autoref{fig:instrumenteringsforsterker}) implementert på studentkortet.
+Hensikten med å implementere både differensialforsterkeren og instrumenteringsforsterkeren var å sammenligne de, spesielt med tanke på respons til endring av utgangsimpedans fra takometeret.
+To jumpere ble plassert på takometerets to utganger for å raskt kunne bytte mellom de to forsterkerkretsene. I differensialforsterkeren brukes resistorer med vedier for $R_1$ og $R_2$ gitt i \autoref{tab:differensiellforsterker}, og forsterkningen er gitt ved $\frac{R_2}{R_1} = \frac{\SI{56}{\kilo\ohm}}{\SI{10}{\kilo\ohm}}$\eqref{eq:differensialforsterker}.
+
+I instrumenteringsforsterkeren brukes motstander med verdiene gitt i \autoref{tab:Instrumenteringsforsterker}. Instrumenteringsforsterkeren kan endres forsterkning på ved å variere på motstanden $R_G$. 
+Dersom $R_G$ settes til {\SI{0}{\ohm}}, vil utgangsspenningen være avgrenset av operasjonsforsterkerens forsyningsspenning på $\pm${\SI{15}{\volt}} . 
+$R_G$ finner man ved å løse likning \eqref{eq:instrumenteringsforsterker} for $R_G$ med verdiene i \autoref{tab:Instrumenteringsforsterker}. For å oppnå en ønsket spenning på $\pm${\SI{10}{\volt}} i utgangen på kretsen, blir $R_G$ ca. {\SI{2.2}{\kilo\ohm}}. $R_G$ ble så manuelt stilt for å oppnå best mulig resultat på forsterkningen. Begge forsterkerene ble så testet med både høy og lav utgangsimpedans på takometeret. For å sammenligne responser ble det tatt målinger av $\omega_m$.
 
 
 

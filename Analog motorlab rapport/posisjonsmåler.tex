@@ -29,14 +29,21 @@ For å lettere detektere feil er standardiserte målesignaler med elevated zero 
 
 \subsection{Metode}
 
-\begin{figure}[h]
+\begin{figure}[t]
     \centering
     \input{figurer/krets_posisjon_potmeter}
     \caption{Potensiometerkretsen i motorkortet. Figuren er hentet fra \cite{AnalogMotorlabbOppgaver}.}
     \label{fig:posisjon_maler_potmeter}
 \end{figure}
 
-\begin{table}[h]
+\begin{figure}[h!]
+    \centering
+    \input{figurer/krets_posisjons_maler}
+    \caption{Krets for å omforme spenningen fra posisjonsmåleren til et \SI{1}{\volt} til \SI{5}{\volt} signal. Figuren er hentet fra \cite{AnalogMotorlabbOppgaver}.}
+    \label{fig:krets_posisjons_maler}
+\end{figure}
+
+\begin{table}[h!]
     \centering
     \caption{Motstander og kondensatorer i posisjonomformer. Verdiene er hentet fra \cite{AnalogMotorlabbOppgaver}.}
     \begin{tabular}{lll}
@@ -59,14 +66,7 @@ På motorkortet er et potensiometer koblet til motorakslingen. Den er koblet i s
     \theta = \frac{\SI{5}{\kilo\ohm} + R(\theta)}{\SI{12}{\kilo\ohm} + \SI{5}{\kilo\ohm} + \SI{8.2}{\kilo\ohm}} \SI{30}{\volt} - \SI{15}{\volt},
 \end{equation}
 
-der $\theta$ er spenningen ut fra motorkortet, $R(\theta)$ er motstaden i potensiometeret gitt vinkelen til motoren. Det betyr at ved $\theta_{min}$ blir $\theta = \SI{0.71428}{\volt}$ og ved $\theta_{max}$ blir $\theta_{max} =\SI{-5.23809}{\volt}$.
-
-\begin{figure}[h]
-    \centering
-    \input{figurer/krets_posisjons_maler}
-    \caption{Krets for å omforme spenningen fra posisjonsmåleren til et \SI{1}{\volt} til \SI{5}{\volt} signal. Figuren er hentet fra \cite{AnalogMotorlabbOppgaver}.}
-    \label{fig:krets_posisjons_maler}
-\end{figure}
+der $\theta$ er spenningen ut fra motorkortet, $R(\theta)$ er motstaden i potensiometeret gitt vinkelen til motoren. Det betyr at ved $\theta_{min}$ blir $\theta = \SI{0.71428}{\volt}$ og ved $\theta_{max}$ blir $\theta_{max}~=~\SI{-5.23809}{\volt}$.
 
 Vi implementerer kretsen for posisjonsmåling som vist i \autoref{fig:krets_posisjons_maler} med verdier fra \autoref{tab:Komponenter_i_posisjonsmaler}.
 Transferfunksjonen til kretsen i \autoref{fig:krets_posisjons_maler} kan deles opp i to deler. De to første operasjonsforsterkerne, $OP1$ og $OP2$, har transferfunksjonen
@@ -76,12 +76,14 @@ Transferfunksjonen til kretsen i \autoref{fig:krets_posisjons_maler} kan deles o
     V_x = -\theta,
 \end{equation}
 
-siden de er en buffer og en inverterende forsterker med -1 som gain.
+siden $OP1$ er en buffer og $OP2$ er en inverterende forsterker med -1 som gain.
 For $OP3$ kan operasjonsforsterkerens gyldne regler og Kirchhoffs strømlov brukes til å vise at strømmen gjennom $R_2$ er lik strømmen gjennom $R_4$. Dette fører til følgende sammenheng
+
 \begin{equation}
     \label{eq:posisjonmåler_skalering}
     (V_x - V_y) \frac{1}{R_2} = (V_y - \theta_m) \frac{1}{R_4},
 \end{equation}
+
 der $V_x$, $V_y$ og $\theta_m$ er potensialet i punktene navngitt i \autoref{fig:krets_posisjons_maler} og $R_2$ og $R_4$ er motstandene i samme figur.
 
 For å finne $R_3$ og $R_4$ må det løses for $V_y$ og $R_4$.
@@ -101,6 +103,7 @@ Ved å bruke spenningsdeling blir sammenhengen mellom $R_3$ og $V_y$ slik
 Da blir $R_3 = \SI{59}{\kilo\ohm}$. Etter at $R_3$ og $R_4$ ble satt til de utregnede verdiene ble de også finjustert manuelt.
 
 Ved å sette sammen \eqref{eq:posisjon_maler_deltransferfunksjon} og \eqref{eq:posisjonmåler_skalering}, blir transferfunksjonen for den totale kretsen
+
 \begin{equation}
     \label{eq:posisjon_maling_transferfuksjon}
     V_{\theta_m}(\theta) = V_y + \frac{R_4}{R_2}(V_y + V(\theta)).
@@ -111,8 +114,10 @@ Ved å sette sammen \eqref{eq:posisjon_maler_deltransferfunksjon} og \eqref{eq:p
 
 
 
-
 \subsection{Resultater}
+
+\label{obs:floating_potensiometer}
+Det ble observert at ved å stille inn retningen til motoren slik at slepekontakten var flytende ble $\theta_m$ målt til omtrent \SI{4.4}{\volt}.
 
 \begin{figure}[h]
     \centering
@@ -120,11 +125,6 @@ Ved å sette sammen \eqref{eq:posisjon_maler_deltransferfunksjon} og \eqref{eq:p
     \caption{Spenningen ut av posisjonsmåleren der rotasjonshastigheten er konstant.}
     \label{fig:posisjon_sagtann}
 \end{figure}
-
-\label{obs:floating_potensiometer}
-Det ble observert at ved å stille inn retningen til motoren slik at slepekontakten var flytende ble $\theta_m$ målt til omtrent \SI{4.4}{\volt}.
-
-
 
 
 
