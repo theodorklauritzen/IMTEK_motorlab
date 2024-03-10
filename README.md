@@ -15,13 +15,13 @@ A repository for a project in IMTEK
 
 
 # todo
-- [ ] Fikse figurtekst
-- [ ] Skrive sammendrag og konklusjon
+- [X] Fikse figurtekst
+- [X] Skrive sammendrag og konklusjon
 - [ ] Gjeldende siffer
-- [ ] Lese over
-- [ ] skrive om ting
-- [ ] Fikse bibliografi
-- [ ] Fikse y-akse på plots
+- [X] Lese over
+- [X] skrive om ting
+- [X] Fikse bibliografi
+- [X] Fikse y-akse på plots
 
 # Outline
 

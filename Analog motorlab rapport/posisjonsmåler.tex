@@ -66,7 +66,7 @@ På motorkortet er et potensiometer koblet til motorakslingen. Den er koblet i s
     \theta = \frac{\SI{5}{\kilo\ohm} + R(\theta)}{\SI{12}{\kilo\ohm} + \SI{5}{\kilo\ohm} + \SI{8.2}{\kilo\ohm}} \SI{30}{\volt} - \SI{15}{\volt},
 \end{equation}
 
-der $\theta$ er spenningen ut fra motorkortet, $R(\theta)$ er motstaden i potensiometeret gitt vinkelen til motoren. Det betyr at ved $\theta_{min}$ blir $\theta = \SI{0.71428}{\volt}$ og ved $\theta_{max}$ blir $\theta_{max}~=~\SI{-5.23809}{\volt}$.
+der $\theta$ er spenningen ut fra motorkortet, $R(\theta)$ er motstaden i potensiometeret gitt vinkelen til motoren. Det betyr at ved $\theta_{min}$ blir $\theta = \SI{0.71}{\volt}$ og ved $\theta_{max}$ blir $\theta_{max}~=~\SI{-5.2}{\volt}$.
 
 Vi implementerer kretsen for posisjonsmåling som vist i \autoref{fig:krets_posisjons_maler} med verdier fra \autoref{tab:Komponenter_i_posisjonsmaler}.
 Transferfunksjonen til kretsen i \autoref{fig:krets_posisjons_maler} kan deles opp i to deler. De to første operasjonsforsterkerne, $OP1$ og $OP2$, har transferfunksjonen
@@ -106,7 +106,7 @@ Ved å sette sammen \eqref{eq:posisjon_maler_deltransferfunksjon} og \eqref{eq:p
 
 \begin{equation}
     \label{eq:posisjon_maling_transferfuksjon}
-    V_{\theta_m}(\theta) = V_y + \frac{R_4}{R_2}(V_y + V(\theta)).
+    \theta_ = V_y + \frac{R_4}{R_2}(V_y + \theta).
 \end{equation}
 
 
