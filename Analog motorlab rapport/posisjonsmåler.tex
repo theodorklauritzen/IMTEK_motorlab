@@ -66,7 +66,7 @@ På motorkortet er et potensiometer koblet til motorakslingen. Den er koblet i s
     \theta = \frac{\SI{5}{\kilo\ohm} + R(\theta)}{\SI{12}{\kilo\ohm} + \SI{5}{\kilo\ohm} + \SI{8.2}{\kilo\ohm}} \SI{30}{\volt} - \SI{15}{\volt},
 \end{equation}
 
-der $\theta$ er spenningen ut fra motorkortet, $R(\theta)$ er motstaden i potensiometeret gitt vinkelen til motoren. Det betyr at ved $\theta_{min}$ blir $\theta = \SI{0.71}{\volt}$ og ved $\theta_{max}$ blir $\theta_{max}~=~\SI{-5.2}{\volt}$.
+der $\theta$ er spenningen ut fra motorkortet, $R(\theta)$ er motstanden i potensiometeret gitt vinkelen til motoren. Det betyr at ved $\theta_{min}$ blir $\theta = \SI{0.71}{\volt}$ og ved $\theta_{max}$ blir $\theta_{max}~=~\SI{-5.2}{\volt}$.
 
 Vi implementerer kretsen for posisjonsmåling som vist i \autoref{fig:krets_posisjons_maler} med verdier fra \autoref{tab:Komponenter_i_posisjonsmaler}.
 Transferfunksjonen til kretsen i \autoref{fig:krets_posisjons_maler} kan deles opp i to deler. De to første operasjonsforsterkerne, $OP1$ og $OP2$, har transferfunksjonen
@@ -84,7 +84,7 @@ For $OP3$ kan operasjonsforsterkerens gyldne regler og Kirchhoffs strømlov bruk
     (V_x - V_y) \frac{1}{R_2} = (V_y - \theta_m) \frac{1}{R_4},
 \end{equation}
 
-der $V_x$, $V_y$ og $\theta_m$ er potensialet i punktene navngitt i \autoref{fig:krets_posisjons_maler} og $R_2$ og $R_4$ er motstandene i samme figur.
+der $V_x$, $V_y$ og $\theta_m$ er potensialet i punktene navngitt i \autoref{fig:krets_posisjons_maler}, og $R_2$ og $R_4$ er motstandene i samme figur.
 
 For å finne $R_3$ og $R_4$ må det løses for $V_y$ og $R_4$.
 Da settes $\theta_m = \SI{1}{\volt}$ ved $\theta_{min}$.
@@ -106,7 +106,7 @@ Ved å sette sammen \eqref{eq:posisjon_maler_deltransferfunksjon} og \eqref{eq:p
 
 \begin{equation}
     \label{eq:posisjon_maling_transferfuksjon}
-    \theta_ = V_y + \frac{R_4}{R_2}(V_y + \theta).
+    \theta_m = V_y + \frac{R_4}{R_2}(V_y + \theta).
 \end{equation}
 
 
@@ -136,4 +136,4 @@ Det ble observert at ved å stille inn retningen til motoren slik at slepekontak
 Målingen i \autoref{fig:posisjon_sagtann} er omtrent i intervallet <\SI{1}{\volt}, \SI{5}{\volt}>. Årsaken til at grafen ser ut som en sagtannbølge er at potensiometeret roterer rundt og motstanden i potensiometeret synker gradvis til den har rotert en runde og da er den på maksimum motstand.
 
 
-Observasjonen i seksjon \ref{obs:floating_potensiometer} kommer av at slepekontakten i potensiometeret ikke er koblet til noen av polene. Denne flytende pinnen inn i posisjonsmåleren tilsvarer spenningen vi forventer dersom vi putter inn setter $\theta = \SI{0}{\volt}$ i uttrykk \eqref{eq:posisjon_maling_transferfuksjon}. Den teoretiske spenningen blir da \SI{4.5}{\volt}.
+Observasjonen i seksjon \ref{obs:floating_potensiometer} kommer av at slepekontakten i potensiometeret ikke er koblet til noen av polene. Den flytende spenningen går inn i posisjonsmåleren. Resultatet tilsvarer spenningen vi forventer dersom vi putter inn setter $\theta = \SI{0}{\volt}$ i uttrykk \eqref{eq:posisjon_maling_transferfuksjon}. Den teoretiske spenningen blir da \SI{4.5}{\volt}.

@@ -1,6 +1,6 @@
 \section{Hastighetsmåler}
 \subsection{Teori}
-Differensialforsterkeren i \autoref{fig:differensialforsterker} er er operasjonsforsterkerkrets som forsterker opp forskjellen på de to signalene/spenningene som blir satt inn på kretsen.
+Differensialforsterkeren i \autoref{fig:differensialforsterker} er er operasjonsforsterkerkrets som forsterker opp forskjellen på de to signalene som blir satt inn på kretsen.
 En differensialforsterker av typen i \autoref{fig:differensialforsterker} vil med en ideell operasjonsforsterker kunne uttrykkes ved transferfunksjonen \cite{Johnson}
 
 \begin{equation}
@@ -92,8 +92,8 @@ $R_G$ finner man ved å løse likning \eqref{eq:instrumenteringsforsterker} for 
 \subsection{Resultater}
 
 Ved å flippe mellom høy og lav impedans på utgangen til takometeret ble det med instrumenteringsforsterkeren ikke observert noen tydelig endring i spenningsintervallet som holdt seg rundt $\pm${\SI{10}{\volt}}. 
-Med differensialforsterkeren og utgangsimpedansen til takometeret lav, ble det observert et intervall i $\omega_m$ på omtrent $\pm${\SI{10}{\volt}}. Med utgangsimpedansen satt til høy på takometeret, falt utgangsspenningen $\omega_m$ fra differensialforsterkeren til omtrent $\pm${\SI{100}{\milli\volt}}.
-På utgangen av begge forsterkerkretsene kunne det også observeres et lite offset på omtrent $-${\SI{200}{\milli\volt}}.
+Med differensialforsterkeren og utgangsimpedansen til takometeret lav, ble det observert et intervall i $\omega_m$ på omtrent $\pm${\SI{10}{\volt}}. Med utgangsimpedansen satt til høy på takometeret, falt utgangsspenningen $\omega_m$ fra differensialforsterkeren til omtrent $\pm${\SI{0.1}{\volt}}.
+På utgangen av begge forsterkerkretsene kunne det også observeres et lite offset på omtrent $-${\SI{0.2}{\volt}}.
 
 
 
@@ -107,6 +107,6 @@ Begge forsterkerne viser tendenser til offset på outputen, som kan skyldes av a
 Hverken differensial- eller instrumenteringsforsterkerkretsen hadde mulighet for å justere offset, men offseten var negisjerbar.
 
 Med høy utgangsimpedans på takometeret ga instrumenteringsforsterkeren fortsatt ut $\omega_m$ i intervallet $\pm${\SI{10}{\volt}}, dette skjer på grunn av at signalet fra takometeret går rett inn i en operasjonsforsterker med veldig høy inngangsimpedans slik at kretsen trekker lite strøm og dermed ikke ble påvirket i noen særlig grad av den høyere impedansen. 
-Differensialforsterkeren på sin side ble sterkt påvirket av endringen i utgangsimpedans. Den ga en $\omega_m$ på ca. $\pm${\SI{100}{\milli\volt}} når utgangsimpedansen ble satt høy. Dette følger teorien ettersom man får en spenningsdeling mellom en motstand på takometerets utgang på {\SI{1}{\mega\ohm}}\cite{AnalogMotorlabbOppgaver} og $R_1$ på {\SI{10}{\kilo\ohm}} (\autoref{fig:differensialforsterker}).
+Differensialforsterkeren på sin side ble sterkt påvirket av endringen i utgangsimpedans. Den ga en $\omega_m$ på ca. $\pm${\SI{0.1}{\volt}} når utgangsimpedansen ble satt høy. Dette følger teorien ettersom man får en spenningsdeling mellom en motstand på takometerets utgang på {\SI{1}{\mega\ohm}}\cite{AnalogMotorlabbOppgaver} og $R_1$ på {\SI{10}{\kilo\ohm}} (\autoref{fig:differensialforsterker}).
 
 På grunn av instrumenteringsforsterkerens høyere robusthet, var det denne som ble brukt videre i motorlaben for å ende opp med et best mulig resultat til slutt.
